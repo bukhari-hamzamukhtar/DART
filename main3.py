@@ -97,8 +97,7 @@ class NeuralEvasionBrain(nn.Module):
         # Maneuver head: 64 (GRU hidden pooled) + 1 (danger) → 6 logits
         self.maneuver_head = nn.Sequential(
             nn.Linear(65, 32), nn.ReLU(), nn.LayerNorm(32),
-            nn.Linear(32, 16), nn.ReLU(),
-            nn.Linear(16, len(MANEUVER_NAMES))
+            nn.Linear(32, len(MANEUVER_NAMES))
         )
 
     def forward(self, sub_graphs_list, contexts, hidden=None):
@@ -191,7 +190,10 @@ def build_candidate_sub_graphs(jet_sim, missiles_sim, flares_sim):
         # Angle of attack
         mh_len = math.hypot(rvx, rvy) + 1e-5
         aoa    = max(0.0, (dx*rvx + dy*rvy) / ((dist+1e-5) * mh_len))
-        mtype  = float(m.get('type', 1))
+        # Node 'type' is the role (jet 0 / missile 1 / flare 2). The context's
+        # mtype is the guidance type (0 homing, 1 ballistic) -- training kept
+        # these separate, see architecture.ipynb cell 4.
+        mtype  = float(m.get('mtype', 0))
         ctx  = torch.tensor([nd, tti, closing_norm, aoa, mtype], dtype=torch.float)
         sub_graphs.append(Data(x=x, edge_index=edge_index, edge_attr=edge_attr, context=ctx))
     return sub_graphs
@@ -222,7 +224,8 @@ def gnn_inference_worker():
                 current_attn  = []
             else:
                 js  = {'pos':[jx,jy], 'vel':[tvx,tvy], 'type':0}
-                ms  = [{'pos':m['pos'],'vel':m['vel'],'type':1} for m in state['missiles']]
+                ms  = [{'pos':m['pos'],'vel':m['vel'],'type':1,
+                        'mtype':m.get('mtype',0)} for m in state['missiles']]
                 fs  = [{'pos':f['pos'],'vel':f['vel'],'type':2} for f in state['flares']]
                 if ms:
                     sgs  = build_candidate_sub_graphs(js, ms, fs)
@@ -286,7 +289,8 @@ def gnn_inference_worker():
 
         if state['missiles']:
             js_real = {'pos': state['jet']['pos'], 'vel': state['jet']['vel'], 'type': 0}
-            ms_real = [{'pos': m['pos'], 'vel': m['vel'], 'type': 1} for m in state['missiles']]
+            ms_real = [{'pos': m['pos'], 'vel': m['vel'], 'type': 1,
+                        'mtype': m.get('mtype', 0)} for m in state['missiles']]
             fs_real = [{'pos': f['pos'], 'vel': f['vel'], 'type': 2} for f in state['flares']]
             sgs_real = build_candidate_sub_graphs(js_real, ms_real, fs_real)
             if sgs_real:
@@ -407,6 +411,7 @@ class FlareParticle:
     def draw(self, s): pygame.draw.circle(s,FLARE_COLOR,(int(self.x),int(self.y)),self.radius)
 
 class HomingMissile:
+    mtype = 0            # guidance type reported to the network (0 = homing)
     def __init__(self, x, y, target, tx, ty):
         self.x, self.y   = float(x), float(y)
         self.target      = target
@@ -442,6 +447,7 @@ class HomingMissile:
         pygame.draw.circle(s,MISSILE_COLOR,(int(self.x),int(self.y)),self.radius)
 
 class BallisticMissile:
+    mtype = 1            # guidance type reported to the network (1 = ballistic)
     def __init__(self, x, y, tx, ty):
         self.x, self.y  = float(x), float(y)
         self.heading    = math.atan2(ty-y, tx-x)
@@ -996,7 +1002,7 @@ def run_game():
             if frame_count % 6 == 0 and state_queue.empty():
                 state_queue.put({
                     'jet':     {'pos':[jet.x,jet.y],'vel':[jet.vx,jet.vy],'heading':jet.heading},
-                    'missiles':[{'pos':[m.x,m.y],'vel':[m.vx,m.vy],'type':getattr(m,'mtype',0)} for m in missiles],
+                    'missiles':[{'pos':[m.x,m.y],'vel':[m.vx,m.vy],'mtype':getattr(m,'mtype',0)} for m in missiles],
                     'flares':  [{'pos':[f.x,f.y],'vel':[f.vx,f.vy]} for f in flares]
                 })
 

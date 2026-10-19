@@ -1,200 +1,131 @@
-# Neural Evasion: Real-Time Adversarial Evasion via Graph Neural Networks
+# DART: a jet that dodges missiles in real time
 
-**A complete pipeline** — from headless physics simulation through supervised GNN training to a real-time interactive game running at 60 fps on a commodity CPU with no GPU or cloud dependency.
+DART is a 2D game. You fire missiles at a jet, and an AI flies the jet. Everything runs live on
+one laptop CPU (Intel i5-8350U). No GPU is needed to play.
 
-An AI-controlled jet continuously evades a user-fired multi-missile barrage using a 198,872-parameter Graph Neural Network. The model encodes every active missile as an isolated interaction sub-graph, routes per-missile embeddings through a GRU-based cross-threat attention module that preserves trajectory memory across frames, and outputs both a collision danger score and a six-class tactical maneuver recommendation — all in ~4 ms on an Intel Core i5.
+The repo holds two generations of the AI.
 
-> **Report:** *Real-Time Adversarial Evasion via Graph Neural Networks with Temporal Threat Attention and Curriculum Learning* See [`paper/report.pdf`](paper/report.pdf).
+| | when | how the jet decides | where |
+|---|---|---|---|
+| **Spring build** | Apr to May 2026 | a graph neural network with GRU attention scores 12 candidate headings | `main3.py`, `simulation/`, `colab/`, `paper/report.pdf` |
+| **Current build (V3)** | Sep 2026 | a temporal graph network infers each missile's hidden settings, then a world model imagines 57 to 58 moves 1.2 s ahead before every frame | `neural_evasion/` |
 
----
+The spring code exactly as it was is kept at the tag
+[`spring-2026`](https://github.com/bukhari-hamzamukhtar/DART/tree/spring-2026).
 
-## Repository Structure
-
-```
-neural-evasion/
-│
-├── main/
-│   └── main3.py                    # V3 game — final system (play this one)
-│
-├── colab/
-│   └── architecture.ipynb          # Full training notebook — 5-stage curriculum
-│
-├── simulation/
-│   └── headless_sim3.py            # V3 data generator — 5-stage curriculum sim
-│
-├── paper/
-│   └── report.pdf                  # IEEE conference paper
-│   └── architecture.pdf            # visual flowchart
-│
-├── requirements.txt
-└── README.md
-
-# Legacy versions (see Version History below)
-# v1.0 — main.py + headless_sim2.py
-# v2.0 — main2.py + headless_sim2.py
-```
-
----
-
-## Quickstart — Play the Game
+## Play
 
 ```bash
-# 1. Install dependencies (read requirements.txt for PyG installation order)
-pip install pygame torch torch_geometric numpy
-
-# 2. Download trained weights  (jet_brain_v3.pt) from the notebook, after feeding .jsonl files to it - generated from headless_sim3.py.
-#    and place in the same directory as main3.py
-
-# 3. Run
-cd main
-python main3.py
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+pip install -r requirements.txt
+python play.py
 ```
 
-**Controls:**
+Pick a level, then a pilot. V1 and V2 are frozen earlier builds flown inside the same arena, so
+all three can be compared on the same missiles.
 
-| Key | Action |
-|-----|--------|
-| `H` | Fire homing missile (tracks the jet) |
-| `B` | Fire ballistic missile (fires at jet's current position) |
-| `C` | Fire cluster swarm — 5 micro-missiles in a V-spread (6 s cooldown) |
-| `ESC` | Return to menu |
+| level | what it adds |
+|---|---|
+| 1 Open sky | the original arena |
+| 2 Terrain masking | peaks hide missiles from the jet's radar and block seekers; a missile that loses the jet flies to where it last saw it |
+| 3 Pincer network | two batteries, west and east; salvo members share a datalink and lead the jet |
 
-**Objective:** Take down the AI jet before it obliterate the base.
+**Keys.** Levels 1 and 2: `H` missile, `C` cluster of five, `B` ballistic shot. Level 3: `H` / `C`
+west battery, `K` / `M` east battery, `S` pincer salvo. `G` shows the scene graph. A briefing screen
+shows the keys before each round.
 
-> The game runs without `jet_brain_v3.pt` — it will warn and use random weights, which still demonstrates the threading and FSM systems.
+## How V3 flies
 
----
+The jet's radar only sees where each missile is and how fast it moves. How each missile is
+guided (how hard it can turn, whether it flanks, weaves or shares a datalink) stays hidden.
 
-## How the AI Works
+1. **Scene graph.** Every 4 frames the scene becomes a graph. The jet, missile tracks, flares,
+   peaks and launch stations are nodes. Relations such as "this seeker can see the jet" or "this
+   peak blocks that missile's view" are edges. A missile keeps the same node from frame to frame,
+   also while it hides behind a peak.
+2. **Temporal graph network** (learned, 117k parameters). Every node keeps a GRU memory, and two
+   rounds of message passing let missiles inform each other. It estimates each missile's hidden
+   settings.
+3. **World model.** With those estimates it imagines 57 to 58 candidate actions (heading,
+   throttle, flare volley) 72 frames ahead. Its physics is hand-written and matches the arena
+   exactly (`neural_evasion/tests/test_worldmodel_v3.py`). Learning supplies what the radar cannot
+   see.
+4. **Planner.** The jet flies the cheapest imagined future, and fires flares only when a volley
+   makes that future cheaper.
 
-The GNN runs in a background daemon thread, completely decoupled from the 60 fps physics loop via a pair of `maxsize=1` queues. This is a hard real-time guarantee — the render thread never waits for the model.
+The full design, and the papers each part follows, is in
+[`neural_evasion/ARCHITECTURE_V3.md`](neural_evasion/ARCHITECTURE_V3.md).
 
-**Every ~100 ms, the GNN thread:**
-1. Samples 12 candidate heading deltas
-2. Projects the scene state forward 30 frames kinematically for each candidate
-3. Builds one isolated sub-graph per active missile per candidate (the per-missile decomposition prevents a distant slow missile from diluting the GNN signal about a nearby fast one)
-4. Runs a single **mega-batched** ThreatGNN forward pass over all sub-graphs simultaneously — one CPU call regardless of missile count
-5. Routes per-missile embeddings through a **GRU-based attention** module that preserves trajectory memory across ticks
-6. Picks the heading with the lowest danger score
-7. Returns attention weights to the HUD (the live bars in the top-right corner show which missile the model is currently focusing on)
+## Results
 
-When danger crosses geometric thresholds, the model also recommends one of six FSM maneuvers: **NORMAL, BARREL_ROLL, JINKING, FALLING_LEAF, COBRA, IMMELMANN** — each with distinct flare deployment patterns.
+16 matches per level per pilot, the same 16 seeds for every pilot, against a scripted opponent
+firing at the maximum rate for 30 seconds.
 
----
+| level | V1 | V2 | V3 | V3 given true missile settings |
+|---|---|---|---|---|
+| 1 Open sky | 0/16 | 10/16 | 10/16 | 16/16 |
+| 2 Terrain masking | 0/16 | 0/16 | **15/16** | 16/16 |
+| 3 Pincer network | 0/16 | 0/16 | 2/16 | 10/16 |
 
-## Training Your Own Weights
+- On levels 2 and 3, V1 and V2 survive none of 32 matches and last 2 to 4 seconds. V3 survives 17
+  and lasts 19 to 30 seconds.
+- On level 1, V3 ties V2. Given true missile settings it survives every match, so its six level-1
+  deaths are inference errors.
+- Level 3 is still too hard for the planner. Even with true settings, flanking salvos herd the
+  jet into walls.
+- The GNN cuts the world model's prediction error 48 frames ahead on every level (level 1: 15 to
+  19 px, against 50 px without it).
 
-### Step 1 — Generate curriculum data (run locally)
+Ablations (no message passing, no memory, no GNN), prediction error and inference accuracy are in
+section 6 of the architecture doc. The raw benchmark files are in `training_data_v3/`.
+
+## The spring build, and two bugs found later
+
+The spring build (`main3.py`) scores 12 candidate headings with a 198K-parameter GNN and GRU
+attention, trained on 330K simulated frames over a 5-stage curriculum. In its 50-trial benchmark
+it survived 84% of runs, against 34% for the same network without memory
+([`paper/report.pdf`](paper/report.pdf)).
+
+An audit in September ([`SIM_AUDIT.md`](SIM_AUDIT.md)) found two bugs in that code. Both are fixed
+in `main3.py` here:
+
+- The maneuver head was declared with three layers while the checkpoint stores two, so 630 weights
+  were re-randomised on every launch and the recommended maneuver was untrained.
+- Every homing missile was presented to the network as a ballistic one.
+
+The spring report's numbers were measured before these fixes.
+
+## Repo map
+
+| path | what it is |
+|---|---|
+| `neural_evasion/` | V3, the live build |
+| `neural_evasion_goated/`, `neural_evasion_v2/` | V1 and V2, frozen; nothing imports them, so work on V3 cannot change them |
+| `play.py`, `play_goated.py`, `play_v2.py` | launchers |
+| `jet_brain_v3.pt` | the spring network, used by V1 and V2 |
+| `jet_brain_tgn*.pt`, `*.calib.json` | V3's temporal GNN and its two ablations, with their conformal margins |
+| `main3.py`, `simulation/`, `colab/` | spring build: game, data generator, training notebook |
+| `SIM_AUDIT.md`, `benchmark_v2.py`, `headless_latency.py`, `param_count.py` | the September audit of the spring build |
+| `training_data_v3/` | benchmark and evaluation results (the training episodes are too big to commit) |
+| `paper/` | spring report (IEEE format) and architecture figure |
+
+## Test, train, benchmark
 
 ```bash
-cd simulation
-python headless_sim3.py
+python neural_evasion/tests/run_all.py
+python -m neural_evasion.training.generate --level 2 --episodes 40 --val 6
+python -m neural_evasion.training.train --variant full
+python -m neural_evasion.training.benchmark --levels 1 2 3 --pilots 1 2 3 3-oracle --seeds 16
 ```
 
-Generates five JSONL files (one per curriculum stage):
-- `data_slow_singles.jsonl` — 1–2 missiles, speed 2–4, low hot-spawn probability
-- `data_fast_homing.jsonl` — 1–3 missiles, speed 4–6, tighter turn rate
-- `data_multi_threat.jsonl` — 2–4 missiles
-- `data_cluster_swarm.jsonl` — 3–6 missiles
-- `data_adversarial.jsonl` — 4–8 missiles, speed 5.5–9, 60% close-spawn
+## Limits
 
-Each simulation runs 300 frames. Labels are assigned retroactively: `label=1` if any missile-jet collision occurs within the next 60 frames (one full second at 60 fps). Maneuver labels are assigned by a geometric oracle that classifies each frame into one of six FSM states purely from scene geometry. Total: ~330,000 training records across all five stages.
-
-### Step 2 — Train on Google Colab T4
-
-Upload all five JSONL files to Colab, then open and run `colab/architecture.ipynb` top to bottom.
-
-The notebook:
-- Builds per-missile PyTorch Geometric `Data` objects (sub-graphs) with 5-dim context vectors `[norm_dist, tti, closing_norm, aoa, mtype]`
-- Trains `NeuralEvasionBrain` (ThreatGNN + TemporalThreatAttention + ManeuverHead) with two-loss multi-task training: `L = BCE(danger, y) + 0.4 × CE(maneuver_logits, m_label)`
-- Advances to the next curriculum stage when validation AUC plateaus (patience=3, max 8 epochs per stage)
-- Saves best weights to `jet_brain_v3.pt`
-- Produces an attention visualization: each missile is plotted with size and line opacity proportional to its attention weight, with the GNN's maneuver recommendation displayed per scene
-
-Download `jet_brain_v3.pt` and place it next to `main3.py`.
-
-> **Expected training time:** ~140–170 minutes for all five stages on a Colab T4 GPU. Each stage processes between 40k–95k graph records. A `.pt` cache file is written after each stage so interrupted sessions can resume without rebuilding graphs.
-
----
-
-## Results (50-Trial Adversarial Benchmark)
-
-| Metric | Baseline (V2) | Proposed (V3) | Δ |
-|--------|:---:|:---:|:---:|
-| Survival rate | 34.0% | **84.0%** | +50.0 pp |
-| Avg. frames survived | 159 / 300 | 265 / 300 | +106 |
-| Median inference (ms) | 45.6 | **20.7** | −24.9 ms |
-| Val AUC | 0.9281 | **0.9384** | +0.0103 |
-| Parameters | 174,914 | 198,872 | +23,958 |
-
-The V3 system is both more accurate **and** faster than V2, despite having 24k more parameters. The latency drop comes from the mega-batch ThreatGNN design: all K missiles share a single batched forward pass rather than K sequential calls.
-
-Single-tick latency by missile count (12,342 iterations, CPU only):
-
-| K missiles | Avg (ms) | P95 (ms) |
-|:---:|:---:|:---:|
-| 1 | 3.86 | 5.76 |
-| 2 | 4.02 | 5.88 |
-| 3 | 4.14 | 5.92 |
-| 4 | 4.27 | 6.28 |
-
-P95 of 5.97 ms fits comfortably within a single 16.7 ms frame budget.
-
----
-
-## Version History
-
-### V1.0 — `main.py` + `headless_sim2.py` — *Legacy baseline*
-
-The initial deployment. Introduces the core per-missile sub-graph decomposition and cross-threat attention architecture.
-
-- **Model:** `ThreatGNN` + `CrossThreatAttention` (MLP-based, no temporal memory)
-- **Context vector:** 2-dim `[norm_dist, tti]` per missile
-- **Attention:** learned softmax over MLP scores, no GRU
-- **Candidates:** 9 heading deltas searched per tick
-- **Data:** single-stage, random-walk jet, 8,000 simulations
-- **Weights:** `jet_brain_v1.pt` (174,914 parameters)
-- **Survival rate:** 34% over 50 trials
-- **Median latency:** 45.6 ms
-
-### V2.0 — `main2.py` + `headless_sim2.py` — *Game polish, same architecture*
-
-Same GNN architecture as V1, but significant game-side improvements: 5 scripted maneuvers added to the FSM (COBRA, FALLING_LEAF, BARREL_ROLL, JINKING, IMMELMANN), cluster swarm weapon, live attention weight HUD bars, neon radar visual aesthetic, and start/game-over screens with animated buttons.
-
-- **Model:** identical to V1 — `ThreatGNN` + `CrossThreatAttention`, 2-dim context
-- **Changes:** game UI, all 5 maneuvers, cluster weapon, visual effects
-- **Weights:** `jet_brain_v2.pt`
-
-### V3.0 — `main3.py` + `headless_sim3.py` + `architecture.ipynb` — *Final system*
-
-Full architectural upgrade. Replaces the stateless attention module with a GRU-based temporal attention that maintains per-missile trajectory memory across inference frames. Adds a six-class maneuver head trained via multi-task learning. Expands the data pipeline to a five-stage curriculum.
-
-- **Model:** `ThreatGNN` + `TemporalThreatAttention` (GRU, hidden=64) + `ManeuverHead`
-- **Context vector:** 5-dim `[norm_dist, tti, closing_norm, aoa, mtype]`
-- **Candidates:** 12 heading deltas (expanded action space)
-- **Training:** 5-stage curriculum, 330,134 total frames, oracle-supervised maneuver labels
-- **Weights:** `jet_brain_v3.pt` (198,872 parameters)
-- **Survival rate:** 84% over 50 trials
-- **Median latency:** 20.7 ms
-
----
-
-## Notes on Infrastructure and Reproducibility
-
-**Compute:** Data generation runs on any CPU in ~15–20 minutes per stage. Training requires a CUDA GPU — a free Colab T4 is sufficient. Inference at game-time runs on CPU with no GPU required.
-
-**Threading:** The game uses Python's `threading` module with two `maxsize=1` `queue.Queue` objects — `state_queue` (game → GNN) and `decision_queue` (GNN → game). The maxsize=1 constraint acts as a natural rate limiter and prevents queue buildup. GNN inference latency spikes never affect the render thread.
-
-**Data versioning:** Three distinct data generations correspond to the three versions. V1/V2 share `headless_sim2.py` (random-walk jet, single stage, no curriculum). V3 uses `headless_sim3.py` (50/50 flee-or-random jet behavior, 5 curriculum stages with escalating missile speed and count, per-stage turn-rate alignment between sim and game engine). The corrected oracle (margin=45 px, down from the initial 110 px bug) is embedded directly in both `headless_sim3.py` and in the notebook's `build_record()` function, which re-computes maneuver labels on the fly and ignores any stale `maneuver` field in the JSONL.
-
-**Model packaging:** Weights are saved with `torch.save(model.state_dict(), 'jet_brain_v3.pt')`. Loading uses shape-filtered strict=False to handle minor architecture mismatches across experiments gracefully.
-
----
-
-## Future Works
-
-- **FSM–GNN gap:** The GNN maneuver head recommends FALLING_LEAF (≥2 missiles within 150 px) more often than the FSM executes it — the geometry gate is stricter than the model's learned intuition. End-to-end policy gradient training is the natural fix.
-- **2D only:** The simulator and game engine are 2D. Missile homing uses proportional navigation in the screen plane only.
-- **GRU resets on missile count change:** When a missile is destroyed, the GRU hidden state resets for all remaining missiles, losing accumulated trajectory memory at the moment it is most critical.
-
----
+- The opponent is scripted. It fires at the maximum rate, but it does not adapt.
+- The world model is exact because the simulator's rules are known. The learned part is each
+  missile's hidden state.
+- The network learned nothing about weaving: its swing estimate is no better than always
+  answering 0.
+- With 16 matches per cell, differences smaller than about 30 percentage points cannot be
+  resolved.
+- Seeker doctrine, datalinks and pincers are this simulator's rules. Nothing here claims anything
+  about real missiles.

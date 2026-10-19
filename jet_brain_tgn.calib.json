@@ -1,0 +1,33 @@
+{
+ "alpha": 0.01,
+ "method": "conformalized quantile regression on turn_hi",
+ "levels": {
+  "1": {
+   "margin": 0.011054128408432007,
+   "n": 6752,
+   "episodes": 6,
+   "cover_raw": 0.933649289099526,
+   "cover_calibrated": 0.9902251184834123,
+   "residual_p50": -0.0244741328060627,
+   "residual_max": 0.08461659401655197
+  },
+  "2": {
+   "margin": 0.013405829668045044,
+   "n": 5234,
+   "episodes": 6,
+   "cover_raw": 0.8834543370271303,
+   "cover_calibrated": 0.9902560183416126,
+   "residual_p50": -0.019722623750567436,
+   "residual_max": 0.055098939687013626
+  },
+  "3": {
+   "margin": 0.014218240976333618,
+   "n": 17243,
+   "episodes": 6,
+   "cover_raw": 0.8998434147190164,
+   "cover_calibrated": 0.9900829322043728,
+   "residual_p50": -0.02264145016670227,
+   "residual_max": 0.12204853445291519
+  }
+ }
+}

@@ -1,1 +1,6 @@
-*.pt
+__pycache__/
+*.pyc
+*.pkl
+*.jsonl
+dnn_env/
+.vscode/
