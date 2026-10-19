@@ -1,0 +1,442 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans, sans-serif); }
+  .gdd { padding: 1.5rem 0; max-width: 680px; }
+  .section { margin-bottom: 2rem; }
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0.6rem 1rem; margin-bottom: 1rem;
+    background: var(--color-background-secondary);
+    border-left: 3px solid var(--color-text-primary);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  }
+  .section-num { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; }
+  .section-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+  .card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.4rem; }
+  .card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+  .card-body code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; color: var(--color-text-primary); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 99px; margin-right: 4px; }
+  .badge-ok { background: var(--color-background-success); color: var(--color-text-success); }
+  .badge-warn { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .badge-no { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .badge-info { background: var(--color-background-info); color: var(--color-text-info); }
+  .verdict { border-left: 3px solid; padding: 0.75rem 1rem; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; margin-bottom: 0.75rem; font-size: 13px; line-height: 1.6; }
+  .verdict-ok { border-color: var(--color-border-success); background: var(--color-background-success); color: var(--color-text-success); }
+  .verdict-warn { border-color: var(--color-border-warning); background: var(--color-background-warning); color: var(--color-text-warning); }
+  .verdict-no { border-color: var(--color-border-danger); background: var(--color-background-danger); color: var(--color-text-danger); }
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: flex; gap: 12px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; min-width: 32px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-text-primary); flex-shrink: 0; margin-top: 4px; }
+  .tl-dot-warn { background: var(--color-text-warning); }
+  .tl-line { width: 1px; flex: 1; background: var(--color-border-tertiary); min-height: 16px; }
+  .tl-content { padding-bottom: 1rem; }
+  .tl-time { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); }
+  .tl-label { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .tl-detail { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin-top: 2px; }
+  .pipe-row { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin: 0.5rem 0; }
+  .pipe-box { font-size: 12px; font-weight: 500; padding: 5px 10px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-secondary); color: var(--color-text-primary); }
+  .pipe-arr { font-size: 14px; color: var(--color-text-tertiary); }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+  .glaze-tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 99px; background: var(--color-background-danger); color: var(--color-text-danger); font-weight: 500; margin-left: 6px; }
+  .real-tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 99px; background: var(--color-background-success); color: var(--color-text-success); font-weight: 500; margin-left: 6px; }
+  h3 { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 0.5rem; }
+  ul { padding-left: 1.2rem; }
+  li { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+  li strong { color: var(--color-text-primary); font-weight: 500; }
+</style>
+
+<div class="gdd">
+
+  <!-- SECTION 0: GLAZE AUDIT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">Glaze audit — what to drop before writing a single line of code</span>
+    </div>
+    <div class="verdict verdict-no">
+      <strong>ONNX + WebAssembly browser export</strong> — PyTorch Geometric uses dynamic graphs and custom <code>scatter</code> ops that don't export cleanly to ONNX. This is a multi-day debugging trap. Drop it.
+    </div>
+    <div class="verdict verdict-no">
+      <strong>Active learning CI/CD loop → GitHub Actions</strong> — With a toy dataset and a handful of flagged rounds, fine-tuning produces zero meaningful improvement. Pure resume theater. Drop it.
+    </div>
+    <div class="verdict verdict-no">
+      <strong>Hugging Face Spaces REST API for per-frame inference</strong> — 150ms+ round-trip at 60fps = game runs at 6fps. Even free Spaces cold-starts. Drop it.
+    </div>
+    <div class="verdict verdict-warn">
+      <strong>3D rendering / Unity</strong> — 60% of your 14 hours goes to engine glue code. Keep it 2D Python + Pygame. The radar aesthetic looks better in 2D anyway.
+    </div>
+    <div class="verdict verdict-ok">
+      <strong>What's actually feasible in 14 hours:</strong> Headless physics data logger → retrain GNN → Pygame game with GNN running in the same Python process via a lightweight socket between two threads. That's it. That's the whole stack.
+    </div>
+  </div>
+
+  <!-- SECTION 1: SYSTEM ARCHITECTURE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">System architecture — what runs where on your i5</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The core problem: GNN inference can't block the game loop</div>
+      <div class="card-body">
+        Your i5 8th gen has 4 cores. The solution is to split work across them cleanly. Pygame's game loop runs on the <strong>main thread</strong>. The GNN inference runs on a <strong>separate background thread</strong>. They communicate via a thread-safe queue — no sockets, no HTTP, no serialization overhead. Pure in-process Python threading.
+      </div>
+    </div>
+
+    <div class="pipe-row">
+      <div class="pipe-box">Pygame main thread<br><span style="font-size:11px;color:var(--color-text-secondary)">60fps render loop</span></div>
+      <div class="pipe-arr">⟷</div>
+      <div class="pipe-box">queue.Queue()<br><span style="font-size:11px;color:var(--color-text-secondary)">thread-safe, in-memory</span></div>
+      <div class="pipe-arr">⟷</div>
+      <div class="pipe-box">GNN inference thread<br><span style="font-size:11px;color:var(--color-text-secondary)">PyTorch CPU, ~2ms/call</span></div>
+    </div>
+
+    <div class="card" style="margin-top:0.75rem">
+      <div class="card-title">Why this doesn't melt your laptop</div>
+      <div class="card-body">
+        The GNN only gets called <strong>every 6 frames</strong> (10 times/second), not every frame. Between calls, the AI jet uses the <em>last cached prediction</em> to continue its move. This is called "inference on a sub-tick schedule." Result: GNN thread runs at ~10Hz, game renders at 60fps, your CPU sees ~15% load total. No melting.<br><br>
+        PyTorch on CPU for a 3-layer MLP with ~5 nodes takes <strong>1–3ms per forward pass</strong>. 10 calls/sec = 10–30ms of CPU per second. Completely fine.
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:0.75rem">
+      <div class="card">
+        <div class="card-title">Tech stack — final answer</div>
+        <div class="card-body">
+          <strong>Language:</strong> Python 3.10+<br>
+          <strong>Game:</strong> Pygame 2.x<br>
+          <strong>GNN:</strong> PyTorch + PyG (your existing notebook)<br>
+          <strong>Rendering:</strong> Pygame Surface + alpha blending<br>
+          <strong>Threading:</strong> Python <code>threading</code> + <code>queue.Queue</code><br>
+          <strong>Training:</strong> Google Colab T4 (offline, before game)
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">What the T4 / TPU are for</div>
+        <div class="card-body">
+          <strong>T4:</strong> Train the GNN on your simulated game data. Takes 10–20 mins. Export the model weights as a <code>.pt</code> file.<br><br>
+          <strong>TPU v5e:</strong> You don't need it. Don't waste time configuring it. T4 is plenty.<br><br>
+          After training, the <code>.pt</code> file lives on your laptop. Inference runs locally on CPU. No cloud calls during the game.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: GNN INTEGRATION -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">GNN integration — how the AI jet actually makes decisions</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The decision loop (Model Predictive Control, simplified)</div>
+      <div class="card-body">
+        Every 6 frames, the GNN thread does this:<br><br>
+        1. <strong>Sample 5 candidate moves</strong> for the jet: <code>[+30°, +15°, 0°, -15°, -30°]</code> heading deltas<br>
+        2. For each candidate, <strong>project positions forward 10 frames</strong> using simple velocity math (no GNN yet, just kinematics)<br>
+        3. Build a scene graph for each projected state: jet + all active missiles + flare particles as nodes<br>
+        4. Run the GNN on all 5 scene graphs <strong>in a single batched forward pass</strong><br>
+        5. Pick the move where the GNN's max edge collision probability is lowest<br>
+        6. Also check: if survival probability > 0.8 AND distance to target < threshold → switch to "attack mode"<br>
+        7. <strong>Push the chosen move</strong> back to the main thread via the queue<br><br>
+        Total: 5 forward passes per decision. At ~2ms each = ~10ms. Well within budget.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Scene graph structure (maps directly to your existing notebook)</div>
+      <div class="card-body">
+        <strong>Nodes:</strong> jet (1), active missiles (up to 8), flare particles (up to 12 per flare burst, max 2 bursts active)<br>
+        <strong>Node features:</strong> [pos_x, pos_y, vel_x, vel_y, obj_type, obj_size] — 6 features<br>
+        <strong>Edges:</strong> fully connected between all nodes<br>
+        <strong>Edge features:</strong> [rel_pos_x, rel_pos_y, rel_vel_x, rel_vel_y] — 4 features<br>
+        <strong>Edge labels (training):</strong> binary — did these two objects collide in the next N frames?<br><br>
+        Your existing notebook uses node_dim=9, edge_dim=6. You'll retrain with these new dimensions. The architecture stays identical.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Why your existing GNN data is broken — and the 10-line fix</div>
+      <div class="card-body">
+        Your current data generator assigns collision labels <strong>randomly</strong>. The model learns nothing real. Before running the game, replace the collision detection with actual physics:<br><br>
+        <code>dist = sqrt((pos_i[0]-pos_j[0])² + (pos_i[1]-pos_j[1])²)</code><br>
+        <code>is_collision = 1 if dist &lt; (radius_i + radius_j) else 0</code><br><br>
+        That's it. Two lines. Now the GNN learns real physics instead of noise.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: GAME PHYSICS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Game physics & logic — the exact math</span>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Fluid movement (all objects)</div>
+        <div class="card-body">
+          Every object has <code>(x, y, vx, vy, heading)</code>.<br><br>
+          <strong>Per frame update:</strong><br>
+          <code>heading += turn_rate * dt</code><br>
+          <code>thrust_x = cos(heading) * speed</code><br>
+          <code>thrust_y = sin(heading) * speed</code><br>
+          <code>vx = vx * drag + thrust_x * dt</code><br>
+          <code>vy = vy * drag + thrust_y * dt</code><br>
+          <code>x += vx * dt</code><br>
+          <code>y += vy * dt</code><br><br>
+          <strong>Jet drag:</strong> 0.92 (drifty, feels kinetic)<br>
+          <strong>Missile drag:</strong> 0.98 (tight, fast)<br>
+          <strong>Flare drag:</strong> 0.85 (spreads wide and slows)
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Missile → target homing</div>
+        <div class="card-body">
+          Standard proportional navigation. Each frame:<br><br>
+          <code>dx = target.x - missile.x</code><br>
+          <code>dy = target.y - missile.y</code><br>
+          <code>desired = atan2(dy, dx)</code><br>
+          <code>diff = normalize_angle(desired - missile.heading)</code><br>
+          <code>missile.heading += clamp(diff, -turn_rate, turn_rate)</code><br><br>
+          <strong>Homing missiles</strong> track the jet.<br>
+          <strong>Dumb missiles</strong> fly straight — player must aim.<br>
+          Mix both types to create different challenge layers.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:0.75rem">
+      <div class="card">
+        <div class="card-title">Flare cluster mechanic</div>
+        <div class="card-body">
+          When the AI fires a flare burst, spawn <strong>N=8 particles</strong> in a fan pattern:<br><br>
+          <code>for i in range(N):</code><br>
+          <code>&nbsp;&nbsp;angle = jet.heading + 90° + (i - N/2) * spread/N</code><br>
+          <code>&nbsp;&nbsp;angle += random(-jitter, +jitter)</code><br>
+          <code>&nbsp;&nbsp;speed = base_speed + random(-v, +v)</code><br><br>
+          <strong>spread = 60°, jitter = 8°</strong><br><br>
+          The gaps are real and random. Missiles that thread between particles pass through. Missiles that hit a particle trigger a collision. The GNN models each particle as its own node.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Collision detection</div>
+        <div class="card-body">
+          Pure circle-circle, checked every frame:<br><br>
+          <code>dist = hypot(a.x-b.x, a.y-b.y)</code><br>
+          <code>if dist &lt; a.r + b.r: collide(a, b)</code><br><br>
+          <strong>Jet radius:</strong> 12px<br>
+          <strong>Missile radius:</strong> 4px<br>
+          <strong>Flare particle radius:</strong> 6px<br><br>
+          Missile-missile collision: both explode, particle effects.<br>
+          Missile-flare collision: flare particle dies, missile dies.<br>
+          Missile-jet collision: jet dies, user wins.<br><br>
+          Broad phase: skip pairs farther than 80px to save CPU.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:0.75rem">
+      <div class="card-title">Win / loss conditions</div>
+      <div class="card-body">
+        <strong>User wins:</strong> missile hits jet before timer = 0.<br>
+        <strong>AI wins:</strong> timer reaches 0 AND jet is alive → jet fires payload at corner target. The payload is a large slow projectile with a 3-second travel time and a big explosion radius. Dramatic finish.<br>
+        <strong>Timer:</strong> 15 seconds, displayed as a glowing ring around the map edge that drains.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: VISUAL AESTHETIC -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Visual aesthetic — neon radar without frying your GPU</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The core trick: fake glow with Pygame alpha surfaces</div>
+      <div class="card-body">
+        Real glow requires a GPU blur pass. Instead, draw each glowing object <strong>3 times</strong>:<br><br>
+        1. Outer halo: large circle, color at 30 alpha → feels like diffuse glow<br>
+        2. Mid ring: medium circle, color at 80 alpha<br>
+        3. Core: small circle, color at 255 alpha (fully bright)<br><br>
+        This is 3 alpha-blended circles per object. Costs almost nothing on CPU. Looks like a real glow. This is how old-school retro games did it.
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <div class="card-title">Color palette</div>
+        <div class="card-body">
+          Background: <code>#050A14</code> (near-black blue)<br>
+          Grid lines: <code>#0A1F3A</code> (dark teal)<br>
+          Jet: <code>#00FFC8</code> (cyan)<br>
+          Player missiles: <code>#FF4444</code> (red)<br>
+          Flares: <code>#FFB020</code> (amber)<br>
+          Target: <code>#FF00AA</code> (magenta)<br>
+          Timer ring: fades from cyan → red
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Background radar grid</div>
+        <div class="card-body">
+          Draw once to a static surface on init:<br><br>
+          — Concentric circles at r = 80, 160, 240, 320<br>
+          — 8 radial lines at 45° intervals<br>
+          — All at alpha 40–60<br>
+          — Rotating sweep line: 1 bright line rotating at 1 rev/3 seconds, leaves a fading trail using decreasing alpha buffer<br><br>
+          This is the entire background. Render it once, blit every frame.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Particle trails</div>
+        <div class="card-body">
+          Each missile stores last <strong>12 positions</strong> in a deque.<br><br>
+          Draw trail segments from oldest to newest, with alpha decreasing from 20 → 180.<br><br>
+          Width tapers from 1px → 3px.<br><br>
+          Flare particles get shorter trails (6 positions) in amber.<br><br>
+          The jet gets a longer trail (20 positions) in cyan with slight width variation — makes it look like it's burning thrust.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:0.75rem">
+      <div class="card-title">Explosion effect (pure CPU, no shader)</div>
+      <div class="card-body">
+        On collision: spawn 16–24 "shrapnel" particles with random velocities in a full 360° spread. Each particle:<br>
+        — Starts bright (alpha 255), fades to 0 over 20 frames<br>
+        — Has a short 4-position trail<br>
+        — Has a random speed between 2–8 px/frame<br><br>
+        Additional: one large expanding circle that starts at radius 8, expands to 40 over 12 frames, alpha fades from 200 → 0. This gives the "shockwave" feel.<br><br>
+        Total cost: ~24 extra particles for ~20 frames each. Nothing on an i5.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: TRAINING DATA PIPELINE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Training data pipeline — what to build before the game</span>
+    </div>
+
+    <div class="pipe-row">
+      <div class="pipe-box">Headless simulator<br><span style="font-size:11px;color:var(--color-text-secondary)">Python, no pygame</span></div>
+      <div class="pipe-arr">→</div>
+      <div class="pipe-box">JSON logs<br><span style="font-size:11px;color:var(--color-text-secondary)">10k rounds, ~50MB</span></div>
+      <div class="pipe-arr">→</div>
+      <div class="pipe-box">Colab T4 training<br><span style="font-size:11px;color:var(--color-text-secondary)">your existing notebook</span></div>
+      <div class="pipe-arr">→</div>
+      <div class="pipe-box">weights.pt<br><span style="font-size:11px;color:var(--color-text-secondary)">~500KB, runs on CPU</span></div>
+      <div class="pipe-arr">→</div>
+      <div class="pipe-box">Game loads weights<br><span style="font-size:11px;color:var(--color-text-secondary)">on startup</span></div>
+    </div>
+
+    <div class="card" style="margin-top:0.75rem">
+      <div class="card-title">What the headless simulator does</div>
+      <div class="card-body">
+        Pure Python physics — no graphics, runs at 10,000x real-time speed. A "dumb jet" moves randomly. Random missiles fire at it. Flares deploy randomly. Every 2 frames, log all object positions, velocities, types, and which pairs collide within the next 8 frames. Save as JSON.<br><br>
+        Generate <strong>5,000 rounds × 15 seconds × 30Hz = ~2.25M frames</strong>. This trains in ~15 minutes on T4. You only need ~500k frames minimum — be conservative to stay on schedule.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: 14-HOUR TIMELINE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">14-hour execution plan</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-time">Hour 1–2</div>
+          <div class="tl-label">Fix data generator + headless simulator</div>
+          <div class="tl-detail">Add real physics collision detection to your notebook. Write the headless game simulator in Python. Generate 500k frames worth of data and upload to Colab.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-time">Hour 2–3</div>
+          <div class="tl-label">Retrain GNN on Colab T4</div>
+          <div class="tl-detail">Adapt your existing notebook to the new 6D node features, 4D edge features. Train for 30 epochs. Download weights.pt. This runs mostly unattended.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-time">Hour 3–6</div>
+          <div class="tl-label">Build Pygame core — physics + collision</div>
+          <div class="tl-detail">Game loop, all object classes (Jet, Missile, Flare, Particle), physics update per frame, circle-circle collision detection, win/loss logic. No GNN yet, no visuals yet. Just the math running headlessly.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-time">Hour 6–8</div>
+          <div class="tl-label">Wire in GNN inference thread</div>
+          <div class="tl-detail">Build the scene-graph builder that maps live game state → PyG Data object. Build the inference thread with queue. Connect GNN output back to jet steering. Test that the jet actually dodges.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-time">Hour 8–11</div>
+          <div class="tl-label">Visuals — radar aesthetic</div>
+          <div class="tl-detail">Background grid, sweep line, glow rendering, particle trails, explosion effect, HUD (timer ring, score, GNN confidence readout). This is where Cursor helps most — describe exactly what you want.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot tl-dot-warn"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-time">Hour 11–13</div>
+          <div class="tl-label">Playtest + difficulty tuning</div>
+          <div class="tl-detail">The GNN might be too easy or too hard. Tune missile speed, flare density, AI turn rate. Make the 15-second timer feel genuinely tense. Record a 30-second demo clip.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot tl-dot-warn"></div></div>
+        <div class="tl-content">
+          <div class="tl-time">Hour 13–14</div>
+          <div class="tl-label">Buffer / slides / README</div>
+          <div class="tl-detail">Document the architecture. One diagram of the GNN pipeline. If something broke in hour 12, this is the recovery window. Do not use this time to add features.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: WHAT MAKES THIS A DNN PROJECT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <span class="section-title">The DNN story — what to tell your professor</span>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        The game isn't the project. The GNN is. The game is just the most engaging possible demo environment. Your talking points:<br><br>
+        <strong>1. Graph Neural Network for multi-agent physics prediction</strong> — your Interaction Network models each object as a node, uses message passing to propagate physical interactions, and predicts future collision probabilities.<br><br>
+        <strong>2. Dual use of the same model</strong> — the GNN is used for evasion (choose the move with lowest collision probability) AND flare deployment timing (deploy when a missile's predicted trajectory intersects the jet's position).<br><br>
+        <strong>3. Synthetic data generation for a custom physical domain</strong> — you designed a physics simulator, generated training data, and trained the model to generalize to an unseen game environment.<br><br>
+        <strong>4. Real-time inference under latency constraints</strong> — the model runs at 10Hz in a separate thread, demonstrating inference optimization for resource-constrained environments.
+      </div>
+    </div>
+  </div>
+
+</div>

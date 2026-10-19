@@ -1,0 +1,49 @@
+pos_weight per stage (all used, curriculum-adaptive):
+
+| Stage | pos_weight |
+| :--- | :--- |
+| slow_singles | 22.93× |
+| fast_homing | 3.50× |
+| multi_threat | 1.49× |
+| cluster_swarm | 0.65× |
+| adversarial | 0.37× |
+
+Total training records: 330,134 (94194 + 73040 + 65312 + 54751 + 42837)
+
+Aggregate label distribution across all 5 stages:
+* Label 0 (safe): 219,307 — 66.4%
+* Label 1 (danger): 110,827 — 33.6%
+* Ratio safe:danger = 1.98:1
+
+Per-stage label distribution (this is the staircase):
+* Stage 1 (slow_singles):  95.8% safe / 4.2%  danger
+* Stage 2 (fast_homing):   77.8% safe / 22.2% danger
+* Stage 3 (multi_threat):  59.8% safe / 40.2% danger
+* Stage 4 (cluster_swarm): 39.4% safe / 60.6% danger
+* Stage 5 (adversarial):   27.1% safe / 72.9% danger
+
+---
+The Extras (Maneuvers & Epochs)
+
+Aggregate maneuver distribution across all 5 stages:
+* NORMAL: 163,018 — 49.4%
+* COBRA: 56,147 — 17.0%
+* FALLING_LEAF: 44,684 — 13.5%
+* IMMELMANN: 43,675 — 13.2%
+* JINKING: 18,962 — 5.7%
+* BARREL_ROLL: 3,648 — 1.1%
+
+Per-stage performance peak (Best Val AUC):
+* Stage 1 (slow_singles):  AUC 0.9384 (Epoch 07)
+* Stage 2 (fast_homing):   AUC 0.8758 (Epoch 08)
+* Stage 3 (multi_threat):  AUC 0.8688 (Epoch 07)
+* Stage 4 (cluster_swarm): AUC 0.8780 (Epoch 08)
+* Stage 5 (adversarial):   AUC 0.9381 (Epoch 08)
+
+Global Best Result: AUC 0.9384 (Saved to jet_brain_v3.pt)
+jet_brain_training_results.txt
+jet_brain_training_results.txt
+jet_brain_training_results.txt
+jet_brain_training_results.txt
+jet_brain_training_results.txt
+Displaying jet_brain_training_results.txt

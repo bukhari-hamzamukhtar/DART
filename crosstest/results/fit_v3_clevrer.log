@@ -1,0 +1,55 @@
+drag fitted on 15891 TRAIN free-motion segments (17s)
+   cube/metal       c=0.012/frame  train err@20 0.02493  (constant speed 0.03035)  n=2914
+   cube/rubber      c=0.012/frame  train err@20 0.02406  (constant speed 0.02939)  n=2761
+   cylinder/metal   c=0.011/frame  train err@20 0.02349  (constant speed 0.02925)  n=3041
+   cylinder/rubber  c=0.011/frame  train err@20 0.02336  (constant speed 0.02883)  n=2803
+   sphere/metal     c=0.003/frame  train err@20 0.03077  (constant speed 0.03138)  n=2218
+   sphere/rubber    c=0.002/frame  train err@20 0.02281  (constant speed 0.02316)  n=2154
+
+964 isolated TRAIN collisions from 500 clips (13s)
+   no push (straight lines + fitted drag): median 42.0 deg  p75 93.1  contact 95.5%
+   push dist  26.0 px  force 0.05: median 42.7 deg  p75 93.7  contact 95.5%
+   push dist  26.0 px  force 0.10: median 42.2 deg  p75 94.6  contact 95.5%
+   push dist  26.0 px  force 0.20: median 42.4 deg  p75 94.1  contact 95.5%
+   push dist  26.0 px  force 0.40: median 43.7 deg  p75 96.4  contact 95.5%
+   push dist  26.0 px  force 0.80: median 43.0 deg  p75 93.3  contact 95.5%
+   push dist  26.0 px  force 1.60: median 41.7 deg  p75 90.1  contact 95.5%
+   push dist  40.0 px  force 0.05: median 43.0 deg  p75 94.4  contact 95.5%
+   push dist  40.0 px  force 0.10: median 43.7 deg  p75 94.7  contact 95.5%
+   push dist  40.0 px  force 0.20: median 44.9 deg  p75 98.3  contact 95.5%
+   push dist  40.0 px  force 0.40: median 48.5 deg  p75 104.0  contact 95.5%
+   push dist  40.0 px  force 0.80: median 52.2 deg  p75 104.8  contact 95.5%
+   push dist  40.0 px  force 1.60: median 53.9 deg  p75 109.0  contact 95.5%
+   push dist  50.0 px  force 0.05: median 43.3 deg  p75 94.7  contact 95.5%
+   push dist  50.0 px  force 0.10: median 45.4 deg  p75 95.3  contact 95.5%
+   push dist  50.0 px  force 0.20: median 49.1 deg  p75 103.8  contact 95.5%
+   push dist  50.0 px  force 0.40: median 56.2 deg  p75 110.9  contact 95.5%
+   push dist  50.0 px  force 0.80: median 62.7 deg  p75 113.5  contact 95.5%
+   push dist  50.0 px  force 1.60: median 69.0 deg  p75 118.9  contact 95.5%
+   push dist  60.0 px  force 0.05: median 44.1 deg  p75 95.0  contact 95.5%
+   push dist  60.0 px  force 0.10: median 47.6 deg  p75 97.9  contact 95.5%
+   push dist  60.0 px  force 0.20: median 55.6 deg  p75 109.9  contact 95.5%
+   push dist  60.0 px  force 0.40: median 66.5 deg  p75 114.8  contact 95.6%
+   push dist  60.0 px  force 0.80: median 73.6 deg  p75 121.3  contact 95.6%
+   push dist  60.0 px  force 1.60: median 75.8 deg  p75 128.6  contact 95.5%
+   push dist  70.0 px  force 0.05: median 45.2 deg  p75 95.0  contact 95.6%
+   push dist  70.0 px  force 0.10: median 50.0 deg  p75 99.5  contact 95.6%
+   push dist  70.0 px  force 0.20: median 63.1 deg  p75 115.7  contact 95.5%
+   push dist  70.0 px  force 0.40: median 75.5 deg  p75 118.9  contact 95.3%
+   push dist  70.0 px  force 0.80: median 80.1 deg  p75 129.9  contact 94.7%
+   push dist  70.0 px  force 1.60: median 83.2 deg  p75 132.2  contact 92.8%
+   push dist  80.0 px  force 0.05: median 46.8 deg  p75 96.6  contact 95.6%
+   push dist  80.0 px  force 0.10: median 54.3 deg  p75 103.6  contact 95.2%
+   push dist  80.0 px  force 0.20: median 71.0 deg  p75 119.5  contact 94.9%
+   push dist  80.0 px  force 0.40: median 80.9 deg  p75 125.0  contact 93.3%
+   push dist  80.0 px  force 0.80: median 86.5 deg  p75 134.1  contact 89.8%
+   push dist  80.0 px  force 1.60: median 88.3 deg  p75 137.1  contact 74.3%
+   push dist 100.0 px  force 0.05: median 51.3 deg  p75 98.5  contact 94.7%
+   push dist 100.0 px  force 0.10: median 63.7 deg  p75 113.7  contact 94.1%
+   push dist 100.0 px  force 0.20: median 85.3 deg  p75 126.0  contact 90.2%
+   push dist 100.0 px  force 0.40: median 93.9 deg  p75 133.7  contact 77.6%
+   push dist 100.0 px  force 0.80: median 93.4 deg  p75 142.6  contact 37.0%
+   push dist 100.0 px  force 1.60: median 90.1 deg  p75 140.1  contact 10.9%
+
+chosen on TRAIN: dist 26.0 px (0.0617 table units), force 1.60 -> median 41.7 deg, p75 90.1   (99s)
+wrote C:/Users/Hamza Bukhari/Desktop/DNN\crosstest\v3_clevrer_fit.json

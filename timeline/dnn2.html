@@ -1,0 +1,218 @@
+<style>
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #121826;
+    --bg-card: #1a2235;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-accent: #38bdf8;
+    --border-color: #2dd4bf;
+    --border-light: #334155;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --font-sans: system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+  .gdd { padding: 2rem; max-width: 800px; margin: 0 auto; }
+  
+  .header-main { margin-bottom: 2rem; border-bottom: 2px solid var(--border-light); padding-bottom: 1rem; }
+  .header-main h1 { font-size: 24px; color: var(--text-accent); text-transform: uppercase; letter-spacing: 1px; }
+  .header-main p { color: var(--text-secondary); font-size: 14px; margin-top: 5px; }
+
+  .section { margin-bottom: 2.5rem; }
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 0.8rem 1.2rem; margin-bottom: 1.2rem;
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--border-color);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .section-num { font-size: 12px; font-weight: 700; color: var(--border-color); text-transform: uppercase; letter-spacing: 0.1em; }
+  .section-title { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+  
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  .card-title { font-size: 14px; font-weight: 600; color: var(--text-accent); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px;}
+  .card-body { font-size: 14px; color: var(--text-secondary); }
+  .card-body code { font-family: var(--font-mono); font-size: 12px; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; color: #f8fafc; border: 1px solid var(--border-light); }
+  .card-body strong { color: var(--text-primary); }
+  
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  
+  .pipe-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 1rem 0; padding: 1rem; background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border-light); }
+  .pipe-box { font-size: 13px; font-weight: 600; padding: 8px 12px; border-radius: var(--radius-md); background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border-light); text-align: center; }
+  .pipe-arr { font-size: 16px; color: var(--text-secondary); font-weight: bold; }
+  
+  ul.custom-list { padding-left: 1.5rem; margin-top: 0.5rem; }
+  ul.custom-list li { margin-bottom: 0.5rem; }
+  
+  .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tag-ai { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+  .tag-physics { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); }
+  .tag-web { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); }
+</style>
+
+<div class="gdd">
+
+  <div class="header-main">
+    <h1>Project Blueprint: V2 Ascension</h1>
+    <p>Transitioning from a 2D mathematical demo to a Web-Socket driven, Multi-Agent Tactical Engine with Hierarchical Graph Intelligence and React/Tailwind rendering.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">The Brain Upgrade — Ultra Instinct & Sub-Graphing</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Hierarchical Sub-Graphs (The "Random Forest" of GNNs) <span class="tag tag-ai">AI Arch</span></div>
+      <div class="card-body">
+        Currently, the AI lumps all missiles into one giant graph(i believe). If a new missile appears, it skews the math for the entire calculation. <br><br>
+        <strong>V2 Upgrade:</strong> We implement an <strong>Ensemble Graph Network(or dynamic graphs or whatever they are called)</strong>. The main AI acts as the "Stem." When multiple threats appear, the AI spawns <em>isolated sub-graphs (branches)</em> for each distinct threat (e.g., Sub-graph A evaluates 1 Homing Missile; Sub-graph B evaluates 2nd Homing Missile; Sub-graph C evaluates a Ballistic). <br><br>
+        The AI then runs a weighted aggregation (Attention Mechanism) across these sub-graphs. This ensures a slow ballistic missile 800px away doesn't distract the AI from a homing missile 50px away. It allows the AI to process layered threats dynamically without graph pollution.
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Multi-Step Time Horizons</div>
+        <div class="card-body">
+          To stop the jet from dodging into walls, we replace the flat 10-frame lookahead with a <strong>Multi-Horizon Lookahead</strong>. The GNN now simulates 3 distinct futures per candidate move: <code>t+10</code> (Immediate), <code>t+30</code> (Mid), and <code>t+60</code> (Strategic). It calculates a combined risk score, guaranteeing that an evasive maneuver doesn't leave it trapped in a corner 1 second later.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Continuous Local Learning</div>
+        <div class="card-body">
+          <strong>The Tesla Autopilot Approach:</strong> Every time you destroy the jet, the engine saves the last 300 frames of telemetry as a JSON log. A background Python script parses these "death logs," labels the AI's final moves as <code>fatal</code>, and fine-tunes the GNN weights. The longer you play, the more the AI learns to counter your specific playstyle.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Physics & Capabilities — Fluidity & Real Maneuvers</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Expanded Action Space (Throttle & Triggers) <span class="tag tag-physics">Engine</span></div>
+      <div class="card-body">
+        The AI's action space expands from a 1D output <code>[heading]</code> to a 3D tactical output: <code>[heading_delta, throttle_delta, maneuver_trigger]</code>.<br><br>
+        <ul class="custom-list">
+          <li><strong>Dynamic Throttle:</strong> The jet can now slam the brakes (drop to 20% speed to let a missile fly past) or hit the afterburners (150% speed but massively increased turn radius).</li>
+          <li><strong>Time-To-Impact (TTI) Flares:</strong> Flares are no longer deployed randomly. The AI calculates the exact frame the missile will intercept its hull and executes a "Parry"—deploying flares at the absolute last millisecond to guarantee the missile bites the decoy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Hard-Coded Famous Maneuvers</div>
+      <div class="card-body">
+        If the GNN detects a highly specific threat vector (e.g., two homing missiles closing from the rear), it can trigger specialized macro-animations:<br><br>
+        <strong>1. Su-57 Falling Leaf:</strong> Jet kills throttle, rapidly oscillates heading left and right while dropping altitude, ejecting 3 flares per second. Missiles lose track due to sudden speed drop.<br>
+        <strong>2. Vertical Stall (Cobra variation):</strong> Jet pulls 180 degrees, hits 0 speed, and drops a massive wall of flares before boosting in the opposite direction.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">The Tactical Arsenal — Upgraded Player Weapons</span>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Predictive Ballistic Launcher</div>
+        <div class="card-body">
+          <strong>The Sniper Logic:</strong> Instead of holding to aim, a single right-click captures the jet's <em>exact (x,y) coordinates at that millisecond</em>. The ballistic missile is fired at that static point at extreme velocity. It forces the player to predict where the jet will be, and punishes the jet if it hovers or stalls too long.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Cluster-Homing Swarm</div>
+        <div class="card-body">
+          <strong>The Area Denial Weapon:</strong> A new launcher type. On click, it ejects <strong>5 to 6 micro-missiles</strong> in a flush, 45-degree V-shape spread (mirroring the flare logic). <br>
+          <em>Stats:</em> 30% slower than standard homing missiles, but they fan out and slowly collapse around the jet, cutting off its escape routes and forcing it to use complex maneuvers to survive.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Visuals & UI — The Tailwind / WebSocket Pivot</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Decoupling the Brain from the Body <span class="tag tag-web">Full Stack</span></div>
+      <div class="card-body">
+        We abandon Pygame's rendering. Pygame is now purely a "Headless Physics Server." We spin up an <code>asyncio</code> WebSocket server that broadcasts the <code>(x,y,heading,speed)</code> of every object at 60Hz. <br><br>
+        A <strong>React + Vite + Tailwind CSS</strong> frontend catches this stream and renders it using HTML5 Canvas or WebGL (Pixi.js). This unlocks AAA-level UI without lagging the AI math.
+      </div>
+    </div>
+
+    <div class="pipe-row">
+      <div class="pipe-box">Python Headless Engine<br><span style="font-size:11px;color:var(--text-secondary)">Physics + GNN Inference</span></div>
+      <div class="pipe-arr">→ WebSocket →</div>
+      <div class="pipe-box">React Canvas Frontend<br><span style="font-size:11px;color:var(--text-secondary)">60fps Render + Sprites</span></div>
+      <div class="pipe-arr">← WebSocket ←</div>
+      <div class="pipe-box">Tailwind UI Overlay<br><span style="font-size:11px;color:var(--text-secondary)">Clicks, Play Again, Menus</span></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">2D Faking 3D (Rotation & Tilt)</div>
+        <div class="card-body">
+          Because we are moving to WebGL/Canvas, we replace the cyan circles with actual high-res top-down jet sprites (PNGs). <br>
+          <strong>The Math:</strong> The sprite rotates based on <code>heading</code>. To fake a "bank" or "tilt" during sharp turns, the web engine applies a CSS/Canvas Skew/Scale transform along the X-axis based on the <code>turn_rate</code>. The harder the AI turns, the more the wing dips visually.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Tailwind HUD & Menus</div>
+        <div class="card-body">
+          HTML/CSS overlay on top of the game canvas provides beautiful, glowing neon UI. <br>
+          Includes: A live "Threat Level" graph, dynamic crosshairs that follow the mouse, and smooth blur-backdrop modal menus for <strong>"Play Again"</strong>, <strong>"Exit"</strong>, and <strong>"View Last Death Log"</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">V2 Implementation Roadmap</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-body">
+        <strong>Phase 1: The Physics Extension (Python)</strong><br>
+        Refactor the existing Pygame script. Add Throttle logic to the Jet class. Implement the new Ballistic Sniper and Cluster-Homing swarm math. Test headlessly.<br><br>
+        
+        <strong>Phase 2: The Brain Surgery (PyTorch)</strong><br>
+        Update the scene-graph builder to handle Sub-graphs. Expand the GNN action space to output <code>[heading, throttle, maneuver_id]</code>. Add the 3-tier time horizon projection.<br><br>
+        
+        <strong>Phase 3: The Web Bridge (Sockets)</strong><br>
+        Strip out <code>pygame.display</code> entirely. Add the <code>websockets</code> library. Broadcast a JSON dictionary of the game state every 16ms (60fps). Catch player click inputs from the socket and feed them to the launchers.<br><br>
+        
+        <strong>Phase 4: The Canvas/Tailwind Frontend (Node.js/React)</strong><br>
+        Build the React app. Implement HTML5 Canvas drawing loop. Load Jet and Missile PNG assets. Apply the rotation and skew transforms. Build the Tailwind UI overlays (Play Again, Scoreboard).
+      </div>
+    </div>
+  </div>
+
+</div>

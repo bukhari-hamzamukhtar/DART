@@ -1,0 +1,34 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Temporal graph brain online (jet_brain_tgn.pt, 116803 parameters).
+L2 pilot 3           seed 0: SURVIVED at frame 1800  fired  55  flares  60  4.6 ms/frame
+L2 pilot 3           seed 1: SURVIVED at frame 1800  fired  55  flares 111  4.7 ms/frame
+L2 pilot 3           seed 2: SURVIVED at frame 1800  fired  55  flares  57  3.9 ms/frame
+L2 pilot 3           seed 3: SURVIVED at frame 1800  fired  55  flares  54  3.6 ms/frame
+L2 pilot 3           seed 4: SURVIVED at frame 1800  fired  55  flares  93  4.0 ms/frame
+L2 pilot 3           seed 5: SURVIVED at frame 1800  fired  55  flares  48  4.2 ms/frame
+L2 pilot 3           seed 6: SURVIVED at frame 1800  fired  55  flares   0  6.2 ms/frame
+L2 pilot 3           seed 7: SURVIVED at frame 1800  fired  55  flares  66  6.5 ms/frame
+L2 pilot 3-no_edges  seed 0: SURVIVED at frame 1800  fired  55  flares  60  5.0 ms/frame
+L2 pilot 3-no_edges  seed 1: SURVIVED at frame 1800  fired  55  flares 132  6.3 ms/frame
+L2 pilot 3-no_edges  seed 2: SURVIVED at frame 1800  fired  55  flares  33  5.5 ms/frame
+L2 pilot 3-no_edges  seed 3: SURVIVED at frame 1800  fired  55  flares  72  5.6 ms/frame
+L2 pilot 3-no_edges  seed 4: SURVIVED at frame 1800  fired  55  flares 147  7.5 ms/frame
+L2 pilot 3-no_edges  seed 5: SURVIVED at frame 1800  fired  55  flares  45  6.2 ms/frame
+L2 pilot 3-no_edges  seed 6: SURVIVED at frame 1800  fired  55  flares  57  6.3 ms/frame
+L2 pilot 3-no_edges  seed 7: SURVIVED at frame 1800  fired  55  flares   3  4.8 ms/frame
+L2 pilot 3-no_memory seed 0: SURVIVED at frame 1800  fired  55  flares  60  5.9 ms/frame
+L2 pilot 3-no_memory seed 1: SURVIVED at frame 1800  fired  55  flares 111  6.6 ms/frame
+L2 pilot 3-no_memory seed 2: SURVIVED at frame 1800  fired  55  flares  78  5.6 ms/frame
+L2 pilot 3-no_memory seed 3: SURVIVED at frame 1800  fired  55  flares  63  5.5 ms/frame
+L2 pilot 3-no_memory seed 4: SURVIVED at frame 1800  fired  55  flares  90  5.4 ms/frame
+L2 pilot 3-no_memory seed 5: SURVIVED at frame 1800  fired  55  flares  39  4.9 ms/frame
+L2 pilot 3-no_memory seed 6: SURVIVED at frame 1800  fired  55  flares   0  4.6 ms/frame
+L2 pilot 3-no_memory seed 7: SURVIVED at frame 1800  fired  55  flares   6  4.6 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L2     3                8/8         30.0 s       4.7   -
+L2     3-no_edges       8/8         30.0 s       5.9   -
+L2     3-no_memory      8/8         30.0 s       5.4   -
+
+wrote C:\Users\Hamza Bukhari\Desktop\DNN\training_data_v3\bench_L2_3_3-no_edges_3-no_memory.json

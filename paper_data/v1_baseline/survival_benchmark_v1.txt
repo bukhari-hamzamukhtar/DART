@@ -1,0 +1,64 @@
+============================================================
+BASELINE v1  —  ThreatGNN + CrossThreatAttention (stateless)
+============================================================
+Trials:              50
+Hit rate:            66.0%
+Survival rate:       34.0%
+Avg frames survived: 159.0 / 300
+Avg flares/trial:    0.00
+Avg inference (ms):  48.60
+Median latency (ms): 45.60
+Maneuver triggers:   0  (hardcoded FSM, no learned maneuver head)
+
+Per-trial log:
+ Trial    Hit   Frames   Flares   Lat(ms)   Missiles
+     1    YES      123        0     50.42          3
+     2    YES       21        0     65.39          4
+     3     NO      300        0     22.59          2
+     4    YES      122        0     34.86          2
+     5     NO      300        0     50.85          2
+     6     NO      300        0     42.09          1
+     7     NO      300        0     23.01          1
+     8    YES      122        0     41.40          1
+     9    YES      114        0     53.26          3
+    10     NO      300        0     38.74          2
+    11     NO      300        0     35.94          1
+    12    YES       38        0     41.16          1
+    13    YES       42        0     44.19          4
+    14     NO      300        0     18.90          1
+    15    YES       60        0     48.20          4
+    16    YES      112        0     36.34          2
+    17    YES      153        0     48.66          2
+    18    YES      101        0     41.09          3
+    19    YES      122        0     51.67          4
+    20    YES       66        0     41.18          4
+    21    YES      148        0     47.67          4
+    22    YES      112        0     45.04          2
+    23    YES       56        0     36.82          3
+    24     NO      300        0     42.74          1
+    25    YES       16        0     62.44          2
+    26    YES       49        0     43.08          2
+    27     NO      300        0     33.88          2
+    28    YES       80        0     45.82          5
+    29     NO      300        0     15.66          1
+    30    YES       83        0     36.98          5
+    31    YES       38        0     52.86          2
+    32     NO      300        0     18.20          2
+    33    YES      105        0     53.89          5
+    34    YES       75        0     49.30          5
+    35    YES       71        0     54.13          5
+    36     NO      300        0     45.37          1
+    37    YES       13        0    109.85          5
+    38     NO      300        0     70.05          1
+    39    YES      147        0     57.56          1
+    40     NO      300        0     27.06          1
+    41    YES       90        0     62.92          3
+    42     NO      300        0     27.39          1
+    43    YES      170        0     57.10          2
+    44    YES       91        0     78.78          5
+    45    YES      126        0     61.19          3
+    46    YES       85        0     68.63          4
+    47    YES       23        0     96.95          2
+    48     NO      300        0     86.02          1
+    49    YES       75        0     75.43          5
+    50     NO      300        0     37.23          1

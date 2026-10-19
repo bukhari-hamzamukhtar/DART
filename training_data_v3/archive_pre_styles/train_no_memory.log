@@ -1,0 +1,64 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+train episodes 120 (72000 ticks), val episodes 18
+variant no_memory, 116803 parameters
+step 50  27s  bias 0.112  guided 0.642  lead 0.188  link 0.723  pursuit 0.236  side 0.181  threat 0.987  turn 0.120  turn_hi 0.038
+step 100  54s  bias 0.117  guided 0.594  lead 0.093  link 0.607  pursuit 0.089  side 0.219  threat 1.054  turn 0.090  turn_hi 0.032
+step 150  81s  bias 0.128  guided 0.582  lead 0.070  link 0.532  pursuit 0.071  side 0.219  threat 1.047  turn 0.087  turn_hi 0.029
+step 200  109s  bias 0.133  guided 0.460  lead 0.079  link 0.533  pursuit 0.030  side 0.208  threat 0.886  turn 0.071  turn_hi 0.024
+step 250  137s  bias 0.118  guided 0.423  lead 0.038  link 0.250  pursuit 0.029  side 0.132  threat 0.930  turn 0.083  turn_hi 0.024
+step 300  162s  bias 0.145  guided 0.583  lead 0.060  link 0.357  pursuit 0.040  side 0.197  threat 1.087  turn 0.088  turn_hi 0.024
+step 350  189s  bias 0.087  guided 0.533  lead 0.080  link 0.424  pursuit 0.022  side 0.240  threat 0.987  turn 0.081  turn_hi 0.021
+step 400  214s  bias 0.110  guided 0.475  lead 0.055  link 0.193  pursuit 0.033  side 0.140  threat 0.807  turn 0.074  turn_hi 0.021
+step 450  241s  bias 0.094  guided 0.520  lead 0.058  link 0.214  pursuit 0.027  side 0.217  threat 1.047  turn 0.081  turn_hi 0.023
+step 500  267s  bias 0.086  guided 0.424  lead 0.094  link 0.229  pursuit 0.014  side 0.223  threat 0.891  turn 0.085  turn_hi 0.020
+VAL step 500: pursuit_acc 0.995  turn_mae 0.020  turn_hi_cover 0.945  bias_mae 0.005  lead_mae 0.076  side_acc 0.778  guided_acc 0.629  threat_acc 0.681  threat_recall 0.609  link_acc 0.878 link_f1 0.876
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn_no_memory.pt (score 1.1105)
+step 550  323s  bias 0.098  guided 0.458  lead 0.042  link 0.228  pursuit 0.019  side 0.177  threat 0.988  turn 0.078  turn_hi 0.020
+step 600  344s  bias 0.133  guided 0.371  lead 0.043  link 0.156  pursuit 0.014  side 0.100  threat 0.841  turn 0.080  turn_hi 0.024
+step 650  365s  bias 0.091  guided 0.443  lead 0.051  link 0.215  pursuit 0.021  side 0.231  threat 0.863  turn 0.072  turn_hi 0.021
+step 700  386s  bias 0.109  guided 0.277  lead 0.030  link 0.221  pursuit 0.006  side 0.117  threat 0.930  turn 0.081  turn_hi 0.023
+step 750  408s  bias 0.100  guided 0.501  lead 0.044  link 0.184  pursuit 0.014  side 0.194  threat 0.969  turn 0.070  turn_hi 0.023
+step 800  438s  bias 0.093  guided 0.319  lead 0.035  link 0.164  pursuit 0.016  side 0.161  threat 1.002  turn 0.062  turn_hi 0.020
+step 850  469s  bias 0.093  guided 0.414  lead 0.056  link 0.326  pursuit 0.011  side 0.166  threat 0.861  turn 0.077  turn_hi 0.021
+step 900  500s  bias 0.091  guided 0.347  lead 0.078  link 0.155  pursuit 0.013  side 0.157  threat 0.760  turn 0.062  turn_hi 0.021
+step 950  529s  bias 0.066  guided 0.339  lead 0.069  link 0.265  pursuit 0.008  side 0.219  threat 0.777  turn 0.089  turn_hi 0.022
+step 1000  560s  bias 0.093  guided 0.353  lead 0.038  link 0.222  pursuit 0.006  side 0.184  threat 0.912  turn 0.084  turn_hi 0.022
+VAL step 1000: pursuit_acc 0.999  turn_mae 0.019  turn_hi_cover 0.938  bias_mae 0.004  lead_mae 0.063  side_acc 0.778  guided_acc 0.754  threat_acc 0.706  threat_recall 0.599  link_acc 0.899 link_f1 0.897
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn_no_memory.pt (score 0.9571)
+step 1050  642s  bias 0.085  guided 0.389  lead 0.040  link 0.229  pursuit 0.017  side 0.192  threat 0.903  turn 0.075  turn_hi 0.021
+step 1100  674s  bias 0.087  guided 0.328  lead 0.045  link 0.216  pursuit 0.012  side 0.239  threat 1.203  turn 0.089  turn_hi 0.023
+step 1150  705s  bias 0.084  guided 0.307  lead 0.072  link 0.196  pursuit 0.018  side 0.154  threat 0.810  turn 0.080  turn_hi 0.022
+step 1200  736s  bias 0.104  guided 0.306  lead 0.041  link 0.147  pursuit 0.019  side 0.179  threat 0.862  turn 0.060  turn_hi 0.022
+step 1250  767s  bias 0.106  guided 0.186  lead 0.057  link 0.077  pursuit 0.019  side 0.086  threat 0.779  turn 0.069  turn_hi 0.019
+step 1300  797s  bias 0.075  guided 0.303  lead 0.051  link 0.218  pursuit 0.009  side 0.153  threat 1.045  turn 0.062  turn_hi 0.017
+step 1350  826s  bias 0.096  guided 0.279  lead 0.047  link 0.367  pursuit 0.009  side 0.131  threat 0.908  turn 0.078  turn_hi 0.022
+step 1400  854s  bias 0.075  guided 0.370  lead 0.052  link 0.165  pursuit 0.021  side 0.201  threat 1.078  turn 0.072  turn_hi 0.019
+step 1450  882s  bias 0.087  guided 0.179  lead 0.026  link 0.155  pursuit 0.004  side 0.147  threat 1.010  turn 0.069  turn_hi 0.017
+step 1500  910s  bias 0.077  guided 0.243  lead 0.040  link 0.212  pursuit 0.010  side 0.120  threat 0.971  turn 0.082  turn_hi 0.023
+VAL step 1500: pursuit_acc 0.999  turn_mae 0.018  turn_hi_cover 0.937  bias_mae 0.004  lead_mae 0.051  side_acc 0.778  guided_acc 0.836  threat_acc 0.636  threat_recall 0.777  link_acc 0.926 link_f1 0.926
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn_no_memory.pt (score 0.8395)
+step 1550  983s  bias 0.077  guided 0.239  lead 0.048  link 0.383  pursuit 0.004  side 0.215  threat 0.976  turn 0.101  turn_hi 0.020
+step 1600  1011s  bias 0.076  guided 0.238  lead 0.034  link 0.220  pursuit 0.006  side 0.223  threat 0.833  turn 0.072  turn_hi 0.018
+step 1650  1039s  bias 0.073  guided 0.256  lead 0.038  link 0.136  pursuit 0.002  side 0.104  threat 0.828  turn 0.072  turn_hi 0.020
+step 1700  1066s  bias 0.080  guided 0.266  lead 0.046  link 0.176  pursuit 0.006  side 0.152  threat 0.906  turn 0.069  turn_hi 0.021
+step 1750  1095s  bias 0.084  guided 0.194  lead 0.034  link 0.103  pursuit 0.015  side 0.177  threat 0.903  turn 0.072  turn_hi 0.019
+step 1800  1123s  bias 0.049  guided 0.215  lead 0.041  link 0.215  pursuit 0.001  side 0.214  threat 0.984  turn 0.076  turn_hi 0.018
+step 1850  1151s  bias 0.059  guided 0.178  lead 0.033  link 0.177  pursuit 0.006  side 0.134  threat 0.885  turn 0.069  turn_hi 0.019
+step 1900  1179s  bias 0.069  guided 0.160  lead 0.032  link 0.204  pursuit 0.004  side 0.187  threat 0.841  turn 0.070  turn_hi 0.024
+step 1950  1206s  bias 0.057  guided 0.162  lead 0.048  link 0.074  pursuit 0.006  side 0.206  threat 0.830  turn 0.084  turn_hi 0.019
+step 2000  1235s  bias 0.065  guided 0.203  lead 0.032  link 0.168  pursuit 0.003  side 0.124  threat 0.825  turn 0.067  turn_hi 0.021
+VAL step 2000: pursuit_acc 0.998  turn_mae 0.018  turn_hi_cover 0.945  bias_mae 0.003  lead_mae 0.049  side_acc 0.778  guided_acc 0.855  threat_acc 0.667  threat_recall 0.766  link_acc 0.937 link_f1 0.936
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn_no_memory.pt (score 0.8273)
+step 2050  1308s  bias 0.063  guided 0.171  lead 0.037  link 0.147  pursuit 0.002  side 0.174  threat 0.714  turn 0.082  turn_hi 0.023
+step 2100  1336s  bias 0.061  guided 0.273  lead 0.041  link 0.125  pursuit 0.002  side 0.161  threat 1.003  turn 0.076  turn_hi 0.019
+step 2150  1364s  bias 0.050  guided 0.222  lead 0.074  link 0.072  pursuit 0.009  side 0.117  threat 0.865  turn 0.067  turn_hi 0.019
+step 2200  1391s  bias 0.073  guided 0.157  lead 0.037  link 0.085  pursuit 0.005  side 0.200  threat 0.853  turn 0.063  turn_hi 0.018
+step 2250  1418s  bias 0.067  guided 0.245  lead 0.041  link 0.186  pursuit 0.004  side 0.222  threat 0.830  turn 0.078  turn_hi 0.019
+step 2300  1444s  bias 0.057  guided 0.181  lead 0.039  link 0.030  pursuit 0.006  side 0.159  threat 0.835  turn 0.061  turn_hi 0.018
+step 2350  1470s  bias 0.058  guided 0.187  lead 0.041  link 0.068  pursuit 0.008  side 0.083  threat 0.934  turn 0.081  turn_hi 0.018
+step 2400  1497s  bias 0.054  guided 0.226  lead 0.035  link 0.094  pursuit 0.016  side 0.127  threat 0.810  turn 0.077  turn_hi 0.021
+step 2450  1524s  bias 0.064  guided 0.206  lead 0.042  link 0.152  pursuit 0.004  side 0.166  threat 0.827  turn 0.070  turn_hi 0.020
+step 2500  1550s  bias 0.052  guided 0.138  lead 0.040  link 0.282  pursuit 0.005  side 0.229  threat 0.963  turn 0.067  turn_hi 0.020
+VAL step 2500: pursuit_acc 0.999  turn_mae 0.018  turn_hi_cover 0.924  bias_mae 0.003  lead_mae 0.050  side_acc 0.778  guided_acc 0.865  threat_acc 0.674  threat_recall 0.759  link_acc 0.940 link_f1 0.939
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn_no_memory.pt (score 0.7943)

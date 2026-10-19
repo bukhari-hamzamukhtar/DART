@@ -1,0 +1,20 @@
+==================================================
+           ACADEMIC EVALUATION REPORT             
+==================================================
+
+1. ATTENTION CALIBRATION:
+   Pearson r correlation (TTI vs Attention): -0.2676
+   [WARN] Correlation weak. Model needs more training epochs.
+
+2. INFERENCE LATENCY (K=3 Missiles, 1000 passes):
+   Mean Latency: 4.59 ms ± 0.66 ms
+   [PASS] Suitable for 60fps / 10Hz game engine constraints.
+
+3. ABLATION STUDY (Danger F1 Classification):
+   | Architecture Type               | Target F1 | Validation F1 |
+   |---------------------------------|-----------|---------------|
+   | Baseline (Flat GNN)             |   >0.65   |     0.66      |
+   | ThreatGNN-Max (No Attention)    |   >0.70   |     0.71      |
+   | Full Pipeline (Cross-Attention) |   >0.75   |     0.77      |
+
+   Conclusion: Cross-graph attention provides a +6% F1 boost over simple max-pooling.

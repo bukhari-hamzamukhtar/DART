@@ -1,0 +1,21 @@
+run crosstest/runs/clevrer/kinematic_test   choices 3332
+detector cal  extension +30
+PER-CHOICE    86.8% (2891/3332)
+PER-QUESTION  64.4% (599/930)
+
+BY TRUTH
+   pair really collides                                  84.5% (1292/1529)   missed  237  invented   0
+   pair really does not                                  88.7% (1599/1803)   missed    0  invented 204
+
+BY WHAT THE WORLD MODEL DID WITH THE PAIR
+   both followed the recording throughout                93.0% (1493/1605)   missed   39  invented  73
+   at least one was simulated                            80.9% (1398/1727)   missed  198  invented 131
+
+THE THREE v6 FAILURE BUCKETS, NOW (annotations used only to find them)
+   pair collided in video before being simulated         95.7% (242/253)     missed   10  invented   1
+   no video collision, truth collides                    67.1% (331/493)     missed  162  invented   0
+   collision after the video ends (event frame >= T)     89.5% (170/190)     missed   20  invented   0
+
+BY POLARITY
+   will happen                                           86.9% (1421/1636)   missed  113  invented 102
+   will NOT happen                                       86.7% (1470/1696)   missed  124  invented 102

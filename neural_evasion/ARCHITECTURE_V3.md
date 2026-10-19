@@ -7,6 +7,16 @@ python play_v2.py     # V2 exactly as it was
 python neural_evasion/tests/run_all.py
 ```
 
+In a browser, with no install: **https://neural-evasion.vercel.app**
+
+That build is the whole v3 stack ported to JavaScript — arena, dynamic scene
+graph, trained network and graph world model all run on the visitor's own CPU,
+since torch and numba cannot ship to a browser. Two tests hold the port to the
+Python one: the network reproduces the torch model on real scene-graph ticks
+(5e-7 with float32 weights, 9e-4 with the float16 weights the page ships), and
+the world model still reproduces the arena exactly (0.00e+0 px). See
+`web/README.md`.
+
 ## 1. What "dynamic graph" means in the literature
 
 Two formal definitions are standard (Kazemi et al., *Representation Learning for

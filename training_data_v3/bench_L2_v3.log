@@ -1,0 +1,24 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Temporal graph brain online (jet_brain_tgn.pt, 117190 parameters).
+L2 pilot 3           seed 0: SURVIVED at frame 1800  fired  55  flares  84  10.9 ms/frame
+L2 pilot 3           seed 1: SURVIVED at frame 1800  fired  55  flares  69  10.2 ms/frame
+L2 pilot 3           seed 2: SURVIVED at frame 1800  fired  55  flares  75  8.1 ms/frame
+L2 pilot 3           seed 3: SURVIVED at frame 1800  fired  55  flares  90  10.2 ms/frame
+L2 pilot 3           seed 4: SURVIVED at frame 1800  fired  55  flares  72  9.0 ms/frame
+L2 pilot 3           seed 5: SURVIVED at frame 1800  fired  55  flares  90  10.1 ms/frame
+L2 pilot 3           seed 6: SURVIVED at frame 1800  fired  55  flares  60  8.7 ms/frame
+L2 pilot 3           seed 7: SURVIVED at frame 1800  fired  55  flares  81  9.2 ms/frame
+L2 pilot 3           seed 8: SURVIVED at frame 1800  fired  55  flares  78  7.5 ms/frame
+L2 pilot 3           seed 9: SURVIVED at frame 1800  fired  55  flares  87  7.8 ms/frame
+L2 pilot 3           seed 10: SURVIVED at frame 1800  fired  55  flares  69  7.6 ms/frame
+L2 pilot 3           seed 11: SURVIVED at frame 1800  fired  55  flares  78  7.1 ms/frame
+L2 pilot 3           seed 12: died (missile) at frame 1790  fired  55  flares  75  8.2 ms/frame
+L2 pilot 3           seed 13: SURVIVED at frame 1800  fired  55  flares  90  7.2 ms/frame
+L2 pilot 3           seed 14: SURVIVED at frame 1800  fired  55  flares  87  6.0 ms/frame
+L2 pilot 3           seed 15: SURVIVED at frame 1800  fired  55  flares  66  7.2 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L2     3               15/16        30.0 s       8.4   missile 1
+
+wrote training_data_v3/bench_L2_v3.json

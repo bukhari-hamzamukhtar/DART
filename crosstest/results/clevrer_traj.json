@@ -1,0 +1,183 @@
+{
+ "refit_constants": {
+  "drag": {
+   "cube/metal": 0.012,
+   "cube/rubber": 0.012,
+   "cylinder/metal": 0.011,
+   "cylinder/rubber": 0.011,
+   "sphere/metal": 0.003,
+   "sphere/rubber": 0.002
+  },
+  "repulse_dist_px": 26.0,
+  "repulse_force": 1.6
+ },
+ "A_free_motion": {
+  "segments": 7417,
+  "v3": {
+   "v3_kinematic": {
+    "err20": 0.02837274612670183,
+    "err40": 0.07271753414114347
+   },
+   "v3_swarm": {
+    "err20": 0.02837274612670183,
+    "err40": 0.07271753414114347
+   },
+   "v3_refit": {
+    "err20": 0.024560673561197843,
+    "err40": 0.05399021993921113
+   }
+  }
+ },
+ "C_head_to_head": {
+  "v3_kinematic": {
+   "contact": 0.9620817843866171,
+   "median_deg": 44.58304955493401,
+   "p75_deg": 97.87306528183221,
+   "n_collisions": 1345
+  },
+  "v3_swarm": {
+   "contact": 0.9620817843866171,
+   "median_deg": 44.053217307856016,
+   "p75_deg": 98.18246115347533,
+   "n_collisions": 1345
+  },
+  "v3_refit": {
+   "contact": 0.9568773234200744,
+   "median_deg": 42.42606963476361,
+   "p75_deg": 92.92094976370583,
+   "n_collisions": 1345
+  }
+ },
+ "R_shadow_replay": {
+  "v7 (CausalVis record)": {
+   "12": {
+    "n": 478,
+    "reproduced": 0.9665271966527197,
+    "seen_on_recording": 0.9790794979079498,
+    "miss_causes": {
+     "slow drift": 5,
+     "bad entry": 5,
+     "wrong bounce": 3,
+     "missed collision": 2,
+     "never diverged": 1
+    }
+   },
+   "30": {
+    "n": 418,
+    "reproduced": 0.5502392344497608,
+    "seen_on_recording": 0.9784688995215312,
+    "miss_causes": {
+     "bad entry": 110,
+     "slow drift": 46,
+     "wrong bounce": 24,
+     "invented contact": 5,
+     "missed collision": 2,
+     "never diverged": 1
+    }
+   }
+  },
+  "v8 (CausalVis record)": {
+   "12": {
+    "n": 478,
+    "reproduced": 0.9602510460251046,
+    "seen_on_recording": 0.9790794979079498,
+    "miss_causes": {
+     "slow drift": 6,
+     "bad entry": 6,
+     "wrong bounce": 5,
+     "never diverged": 2
+    }
+   },
+   "30": {
+    "n": 418,
+    "reproduced": 0.5741626794258373,
+    "seen_on_recording": 0.9784688995215312,
+    "miss_causes": {
+     "bad entry": 107,
+     "slow drift": 42,
+     "wrong bounce": 22,
+     "missed collision": 3,
+     "invented contact": 3,
+     "never diverged": 1
+    }
+   }
+  },
+  "v3_kinematic": {
+   "12": {
+    "n": 478,
+    "reproduced": 0.9539748953974896,
+    "seen_on_recording": 0.9790794979079498,
+    "miss_causes": {
+     "wrong bounce": 10,
+     "bad entry": 5,
+     "slow drift": 5,
+     "never diverged": 2
+    }
+   },
+   "30": {
+    "n": 418,
+    "reproduced": 0.47129186602870815,
+    "seen_on_recording": 0.9784688995215312,
+    "miss_causes": {
+     "bad entry": 90,
+     "wrong bounce": 75,
+     "slow drift": 48,
+     "invented contact": 7,
+     "never diverged": 1
+    }
+   }
+  },
+  "v3_swarm": {
+   "12": {
+    "n": 478,
+    "reproduced": 0.9560669456066946,
+    "seen_on_recording": 0.9790794979079498,
+    "miss_causes": {
+     "wrong bounce": 9,
+     "bad entry": 5,
+     "slow drift": 5,
+     "never diverged": 2
+    }
+   },
+   "30": {
+    "n": 418,
+    "reproduced": 0.49521531100478466,
+    "seen_on_recording": 0.9784688995215312,
+    "miss_causes": {
+     "bad entry": 90,
+     "wrong bounce": 67,
+     "slow drift": 47,
+     "invented contact": 6,
+     "never diverged": 1
+    }
+   }
+  },
+  "v3_refit": {
+   "12": {
+    "n": 478,
+    "reproduced": 0.9560669456066946,
+    "seen_on_recording": 0.9790794979079498,
+    "miss_causes": {
+     "wrong bounce": 7,
+     "bad entry": 6,
+     "slow drift": 5,
+     "never diverged": 2,
+     "missed collision": 1
+    }
+   },
+   "30": {
+    "n": 418,
+    "reproduced": 0.47368421052631576,
+    "seen_on_recording": 0.9784688995215312,
+    "miss_causes": {
+     "bad entry": 105,
+     "wrong bounce": 62,
+     "slow drift": 46,
+     "invented contact": 4,
+     "missed collision": 2,
+     "never diverged": 1
+    }
+   }
+  }
+ }
+}

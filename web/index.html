@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Neural Evasion — you fire, the network dodges</title>
+<meta name="description" content="Launch missiles at a jet flown by a temporal graph neural network and a graph world model. You are the missile battery; the AI has to survive.">
+<meta property="og:title" content="Neural Evasion">
+<meta property="og:description" content="You command the missiles. A temporal graph network flies the jet and tries to survive.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="stage">
+    <canvas id="game" width="800" height="600"></canvas>
+
+    <!-- title -->
+    <section class="panel show" id="menu">
+      <h1>NEURAL EVASION</h1>
+      <p class="tag">You command the missile batteries. A neural network flies the jet.</p>
+      <div class="rows">
+        <div class="row">
+          <span class="lbl">THEATRE</span>
+          <div class="opts" id="levelOpts"></div>
+        </div>
+        <div class="row">
+          <span class="lbl">JET BRAIN</span>
+          <div class="opts" id="pilotOpts"></div>
+        </div>
+        <div class="row">
+          <span class="lbl">PLANNER</span>
+          <div class="opts" id="qualityOpts"></div>
+        </div>
+      </div>
+      <p class="brainNote" id="brainNote"></p>
+      <button class="primary" id="startBtn" disabled>LOADING BRAIN…</button>
+      <details class="about">
+        <summary>What am I playing?</summary>
+        <p>The jet is flown by the <b>v3</b> build of a research project: a dynamic scene
+        graph of everything in the air, a <b>temporal graph neural network</b> (117k parameters)
+        that infers each missile&rsquo;s hidden guidance from radar tracks alone, and a
+        <b>graph world model</b> that rolls 58 candidate manoeuvres 72 frames into the future
+        every frame and flies the cheapest one.</p>
+        <p>Your missiles fly in four styles — straight pursuit, flanking, weaving and
+        erratic darts — and seeker missiles steer around terrain. The jet starts each life
+        with <b>no flares</b> and earns one volley per cluster you launch, so dumping clusters
+        arms its countermeasures.</p>
+        <p>The jet shoots back every 4 seconds. Lose every battery and you lose.</p>
+      </details>
+    </section>
+
+    <!-- briefing -->
+    <section class="panel" id="briefing">
+      <h2 id="brName">LEVEL</h2>
+      <p class="tag" id="brTag"></p>
+      <div class="brGrid">
+        <div class="card">
+          <h3>LAUNCH KEYS</h3>
+          <ul id="brKeys"></ul>
+        </div>
+        <div class="card">
+          <h3>MISSILE STYLES</h3>
+          <ul>
+            <li><b>Pursuit</b> — straight at the jet</li>
+            <li><b>Flanker</b> — closes from one side, 24–42&deg; off</li>
+            <li><b>Weaver</b> — swings its aim across the line</li>
+            <li><b>Erratic</b> — darts to a new side every 10–26 frames</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>FLARE MAGAZINE</h3>
+          <ul>
+            <li>The jet starts with <b>zero</b> flares</li>
+            <li>Every <b>cluster</b> you launch gives it one volley</li>
+            <li>One volley costs one charge, however many flares</li>
+          </ul>
+        </div>
+        <div class="card" id="brLevelCard">
+          <h3>THIS THEATRE</h3>
+          <ul id="brBlurb"></ul>
+        </div>
+      </div>
+      <div class="btnRow">
+        <button class="ghost" id="brBack">BACK</button>
+        <button class="primary" id="brGo">ENGAGE</button>
+      </div>
+    </section>
+
+    <!-- game over -->
+    <section class="panel" id="over">
+      <h2 id="ovTitle">—</h2>
+      <p class="tag" id="ovSub"></p>
+      <div class="statGrid" id="ovStats"></div>
+      <div class="btnRow">
+        <button class="primary" id="ovRetry">AGAIN</button>
+        <button class="ghost" id="ovNext">NEXT THEATRE</button>
+        <button class="ghost" id="ovMenu">MENU</button>
+      </div>
+    </section>
+
+    <div id="paused" class="badge">PAUSED — press P</div>
+  </div>
+
+  <div id="controls">
+    <div id="touch"></div>
+    <div id="hints">
+      <span><b id="keyHints">H</b> fire</span>
+      <span><b>G</b> graph overlay</span>
+      <span><b>P</b> pause</span>
+      <span><b>Esc</b> menu</span>
+    </div>
+  </div>
+  <footer>
+    <span id="ticker"></span>
+  </footer>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

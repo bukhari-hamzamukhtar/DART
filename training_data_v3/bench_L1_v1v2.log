@@ -1,0 +1,44 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+L1 pilot 1           seed 0: died (wall) at frame  743  fired  23  flares  51  15.3 ms/frame
+L1 pilot 1           seed 1: died (wall) at frame  540  fired  20  flares  21  18.1 ms/frame
+L1 pilot 1           seed 2: died (wall) at frame 1339  fired  42  flares 111  24.4 ms/frame
+L1 pilot 1           seed 3: died (wall) at frame 1334  fired  43  flares  81  23.6 ms/frame
+L1 pilot 1           seed 4: died (wall) at frame  219  fired   9  flares  21  23.4 ms/frame
+L1 pilot 1           seed 5: died (wall) at frame 1375  fired  44  flares 111  18.9 ms/frame
+L1 pilot 1           seed 6: died (wall) at frame  517  fired  19  flares  21  18.1 ms/frame
+L1 pilot 1           seed 7: died (wall) at frame 1746  fired  55  flares 147  18.5 ms/frame
+L1 pilot 1           seed 8: died (wall) at frame 1132  fired  34  flares  84  17.1 ms/frame
+L1 pilot 1           seed 9: died (wall) at frame  815  fired  29  flares  36  15.1 ms/frame
+L1 pilot 1           seed 10: died (wall) at frame  332  fired  11  flares  18  15.5 ms/frame
+L1 pilot 1           seed 11: died (wall) at frame  743  fired  28  flares  39  14.9 ms/frame
+L1 pilot 1           seed 12: died (wall) at frame  217  fired   9  flares   0  14.1 ms/frame
+L1 pilot 1           seed 13: died (wall) at frame  779  fired  23  flares  42  15.9 ms/frame
+L1 pilot 1           seed 14: died (wall) at frame  328  fired  11  flares  15  16.3 ms/frame
+L1 pilot 1           seed 15: died (wall) at frame  224  fired   9  flares   0  15.7 ms/frame
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+L1 pilot 2           seed 0: died (wall) at frame  488  fired  18  flares  18  17.5 ms/frame
+L1 pilot 2           seed 1: SURVIVED at frame 1800  fired  55  flares 135  19.0 ms/frame
+L1 pilot 2           seed 2: SURVIVED at frame 1800  fired  55  flares 117  17.3 ms/frame
+L1 pilot 2           seed 3: SURVIVED at frame 1800  fired  55  flares 129  18.1 ms/frame
+L1 pilot 2           seed 4: died (wall) at frame  592  fired  20  flares  45  18.0 ms/frame
+L1 pilot 2           seed 5: died (wall) at frame 1617  fired  53  flares 114  19.6 ms/frame
+L1 pilot 2           seed 6: SURVIVED at frame 1800  fired  55  flares 129  19.9 ms/frame
+L1 pilot 2           seed 7: SURVIVED at frame 1800  fired  55  flares 144  19.0 ms/frame
+L1 pilot 2           seed 8: SURVIVED at frame 1800  fired  55  flares 126  17.1 ms/frame
+L1 pilot 2           seed 9: SURVIVED at frame 1800  fired  55  flares 105  16.5 ms/frame
+L1 pilot 2           seed 10: SURVIVED at frame 1800  fired  55  flares 132  17.6 ms/frame
+L1 pilot 2           seed 11: died (missile) at frame 1603  fired  53  flares 123  19.3 ms/frame
+L1 pilot 2           seed 12: SURVIVED at frame 1800  fired  55  flares 123  16.1 ms/frame
+L1 pilot 2           seed 13: SURVIVED at frame 1800  fired  55  flares 108  11.1 ms/frame
+L1 pilot 2           seed 14: died (wall) at frame 1770  fired  55  flares 126  12.9 ms/frame
+L1 pilot 2           seed 15: died (missile) at frame 1432  fired  44  flares 105  18.0 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L1     1                0/16        12.9 s      17.8   wall 16
+L1     2               10/16        26.6 s      17.3   missile 2, wall 4
+
+wrote training_data_v3/bench_L1_v1v2.json

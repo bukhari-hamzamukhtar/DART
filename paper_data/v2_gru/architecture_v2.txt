@@ -1,0 +1,1 @@
+"ThreatGNN + TemporalThreatAttention (GRU hidden_dim=64) + ManeuverHead, curriculum 5-stage, 2-queue threading"

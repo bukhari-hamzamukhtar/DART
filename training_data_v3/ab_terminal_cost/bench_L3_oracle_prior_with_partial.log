@@ -1,0 +1,13 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+L3 pilot 3-oracle    seed 0: SURVIVED at frame 1800  fired 100  flares 162  11.5 ms/frame
+L3 pilot 3-oracle    seed 1: died (wall) at frame 1020  fired  60  flares 108  10.9 ms/frame
+L3 pilot 3-oracle    seed 2: SURVIVED at frame 1800  fired 100  flares 177  9.7 ms/frame
+L3 pilot 3-oracle    seed 3: died (wall) at frame 1468  fired  81  flares 135  9.0 ms/frame
+L3 pilot 3-oracle    seed 4: died (wall) at frame 1065  fired  60  flares 108  9.1 ms/frame
+L3 pilot 3-oracle    seed 5: died (wall) at frame 1400  fired  80  flares 135  8.7 ms/frame
+L3 pilot 3-oracle    seed 6: died (wall) at frame 1425  fired  80  flares 141  8.4 ms/frame
+L3 pilot 3-oracle    seed 7: died (wall) at frame 1013  fired  59  flares 108  9.0 ms/frame
+L3 pilot 3-oracle    seed 8: died (wall) at frame 1434  fired  80  flares 144  8.8 ms/frame
+L3 pilot 3-oracle    seed 9: SURVIVED at frame 1800  fired 100  flares 180  9.0 ms/frame
+L3 pilot 3-oracle    seed 10: SURVIVED at frame 1800  fired 100  flares 177  10.4 ms/frame

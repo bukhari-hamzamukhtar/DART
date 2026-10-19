@@ -1,0 +1,34 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Temporal graph brain online (jet_brain_tgn.pt, 116803 parameters).
+L3 pilot 3           seed 0: died (wall) at frame 1781  fired  75  flares 210  5.2 ms/frame
+L3 pilot 3           seed 1: died (wall) at frame  575  fired  28  flares  69  5.1 ms/frame
+L3 pilot 3           seed 2: SURVIVED at frame 1800  fired  75  flares 195  4.9 ms/frame
+L3 pilot 3           seed 3: died (wall) at frame  474  fired  26  flares  78  4.7 ms/frame
+L3 pilot 3           seed 4: died (wall) at frame  176  fired  13  flares  21  6.0 ms/frame
+L3 pilot 3           seed 5: SURVIVED at frame 1800  fired  75  flares 224  4.8 ms/frame
+L3 pilot 3           seed 6: died (wall) at frame  585  fired  28  flares  63  5.0 ms/frame
+L3 pilot 3           seed 7: died (wall) at frame  625  fired  29  flares  72  5.2 ms/frame
+L3 pilot 3-no_edges  seed 0: died (wall) at frame  957  fired  43  flares 135  5.8 ms/frame
+L3 pilot 3-no_edges  seed 1: died (wall) at frame  580  fired  28  flares  75  7.8 ms/frame
+L3 pilot 3-no_edges  seed 2: died (wall) at frame  955  fired  43  flares 105  7.4 ms/frame
+L3 pilot 3-no_edges  seed 3: died (wall) at frame  974  fired  44  flares 120  6.8 ms/frame
+L3 pilot 3-no_edges  seed 4: died (wall) at frame  164  fired  13  flares  33  8.7 ms/frame
+L3 pilot 3-no_edges  seed 5: SURVIVED at frame 1800  fired  75  flares 207  6.9 ms/frame
+L3 pilot 3-no_edges  seed 6: SURVIVED at frame 1800  fired  75  flares 201  6.6 ms/frame
+L3 pilot 3-no_edges  seed 7: SURVIVED at frame 1800  fired  75  flares 222  7.1 ms/frame
+L3 pilot 3-no_memory seed 0: died (wall) at frame  531  fired  26  flares  72  7.8 ms/frame
+L3 pilot 3-no_memory seed 1: died (wall) at frame  574  fired  28  flares  69  8.9 ms/frame
+L3 pilot 3-no_memory seed 2: died (wall) at frame  740  fired  30  flares  72  8.7 ms/frame
+L3 pilot 3-no_memory seed 3: died (wall) at frame  536  fired  27  flares  75  8.4 ms/frame
+L3 pilot 3-no_memory seed 4: died (wall) at frame  164  fired  13  flares  33  10.1 ms/frame
+L3 pilot 3-no_memory seed 5: died (wall) at frame  549  fired  28  flares  78  8.2 ms/frame
+L3 pilot 3-no_memory seed 6: died (wall) at frame  589  fired  28  flares  66  8.5 ms/frame
+L3 pilot 3-no_memory seed 7: died (wall) at frame  983  fired  44  flares  99  8.9 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L3     3                2/8         16.3 s       5.1   wall 6
+L3     3-no_edges       3/8         18.8 s       7.1   wall 5
+L3     3-no_memory      0/8          9.7 s       8.7   wall 8
+
+wrote C:\Users\Hamza Bukhari\Desktop\DNN\training_data_v3\bench_L3_3_3-no_edges_3-no_memory.json

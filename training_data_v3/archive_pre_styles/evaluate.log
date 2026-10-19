@@ -1,0 +1,43 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+
+LEVEL 1  (6 held-out episodes)
+estimator    pursuit_acc      turn_mae turn_hi_cover turn_hi_excess      bias_mae      lead_mae      side_acc    guided_acc hidden_guided_acc threat_recall threat_precision       link_f1
+rule               0.986         0.149         1.000         0.168         0.005         0.000         1.000             -             -         0.365         0.841             -
+no_edges           0.998         0.016         0.943         0.029         0.003         0.043         1.000             -             -         0.847         0.477             -
+no_memory          1.000         0.018         0.957         0.033         0.004         0.024         1.000             -             -         0.832         0.506             -
+full               1.000         0.016         0.972         0.032         0.003         0.005         1.000             -             -         0.860         0.487             -
+
+LEVEL 2  (6 held-out episodes)
+estimator    pursuit_acc      turn_mae turn_hi_cover turn_hi_excess      bias_mae      lead_mae      side_acc    guided_acc hidden_guided_acc threat_recall threat_precision       link_f1
+rule               0.938         0.035         1.000         0.097         0.006         0.046         0.874         0.808         0.998         0.434         0.427             -
+no_edges           0.999         0.020         0.895         0.031         0.003         0.194         0.877         0.742         0.986         0.738         0.262             -
+no_memory          0.997         0.018         0.942         0.026         0.004         0.063         0.874         0.897         0.994         0.649         0.302             -
+full               0.999         0.018         0.963         0.028         0.003         0.053         0.874         0.894         0.994         0.650         0.264             -
+
+LEVEL 3  (6 held-out episodes)
+estimator    pursuit_acc      turn_mae turn_hi_cover turn_hi_excess      bias_mae      lead_mae      side_acc    guided_acc hidden_guided_acc threat_recall threat_precision       link_f1
+rule               1.000         0.020         1.000         0.086         0.004         0.537         0.673         0.759             -         0.414         0.650         0.861
+no_edges           0.999         0.016         0.932         0.030         0.002         0.199         0.698         0.722             -         0.758         0.351         0.961
+no_memory          1.000         0.018         0.917         0.027         0.003         0.065         0.673         0.860             -         0.726         0.395         0.920
+full               1.000         0.017         0.948         0.028         0.002         0.059         0.673         0.866             -         0.732         0.392         0.964
+
+WORLD MODEL ERROR, level 1  (median px / mean px, n)
+  const_vel  +24:   20.9 /   29.6 (n=404)   +48:   72.9 /   95.8 (n=318)   +72:  189.8 /  199.1 (n=238)
+  prior      +24:    8.2 /   38.0 (n=404)   +48:   17.9 /   66.1 (n=318)   +72:   44.2 /   82.8 (n=238)
+  gnn        +24:    0.6 /   11.4 (n=404)   +48:    3.3 /   28.1 (n=318)   +72:   15.0 /   51.2 (n=238)
+  oracle     +24:    0.0 /    4.7 (n=404)   +48:    0.0 /   10.6 (n=318)   +72:    0.0 /   19.4 (n=238)
+
+WORLD MODEL ERROR, level 2  (median px / mean px, n)
+  const_vel  +24:    5.6 /   14.4 (n=271)   +48:   22.9 /   42.1 (n=178)   +72:   55.9 /   87.5 (n=120)
+  prior      +24:   17.2 /   42.9 (n=271)   +48:   56.4 /   86.3 (n=178)   +72:   95.0 /  127.9 (n=120)
+  gnn        +24:    4.4 /   16.2 (n=271)   +48:   16.9 /   46.8 (n=178)   +72:   43.3 /   87.5 (n=120)
+  oracle     +24:    0.0 /    6.8 (n=271)   +48:    0.6 /   20.2 (n=178)   +72:    6.1 /   39.7 (n=120)
+
+WORLD MODEL ERROR, level 3  (median px / mean px, n)
+  const_vel  +24:   14.7 /   23.7 (n=416)   +48:   56.7 /   75.0 (n=286)   +72:   91.3 /  128.1 (n=177)
+  prior      +24:   13.8 /   22.0 (n=416)   +48:   23.8 /   39.1 (n=286)   +72:   26.4 /   53.3 (n=177)
+  gnn        +24:   10.3 /   17.7 (n=416)   +48:   18.3 /   31.4 (n=286)   +72:   25.6 /   45.4 (n=177)
+  oracle     +24:    0.0 /    7.5 (n=416)   +48:    1.4 /   13.2 (n=286)   +72:    3.8 /   19.3 (n=177)
+
+wrote C:\Users\Hamza Bukhari\Desktop\DNN\training_data_v3\evaluation.json

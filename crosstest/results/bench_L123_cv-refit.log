@@ -1,0 +1,55 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+L1 pilot cv-refit   seed  0: died (missile) at frame  122  fired   7  flares   0  242.5 ms/frame
+L1 pilot cv-refit   seed  1: died (missile) at frame  108  fired   7  flares   0  4.8 ms/frame
+L1 pilot cv-refit   seed  2: died (missile) at frame  209  fired   9  flares   0  3.9 ms/frame
+L1 pilot cv-refit   seed  3: died (missile) at frame  184  fired   8  flares   0  4.1 ms/frame
+L1 pilot cv-refit   seed  4: died (missile) at frame  162  fired   8  flares   0  5.0 ms/frame
+L1 pilot cv-refit   seed  5: died (missile) at frame  181  fired   9  flares   0  6.4 ms/frame
+L1 pilot cv-refit   seed  6: died (missile) at frame   94  fired   7  flares   0  5.6 ms/frame
+L1 pilot cv-refit   seed  7: died (missile) at frame  120  fired   7  flares   0  5.0 ms/frame
+L1 pilot cv-refit   seed  8: died (missile) at frame  130  fired   7  flares   0  4.8 ms/frame
+L1 pilot cv-refit   seed  9: died (missile) at frame  153  fired   8  flares   0  4.9 ms/frame
+L1 pilot cv-refit   seed 10: died (missile) at frame  126  fired   7  flares   0  4.4 ms/frame
+L1 pilot cv-refit   seed 11: died (missile) at frame  156  fired   8  flares   0  5.0 ms/frame
+L1 pilot cv-refit   seed 12: died (missile) at frame  106  fired   7  flares   0  4.1 ms/frame
+L1 pilot cv-refit   seed 13: died (missile) at frame  131  fired   7  flares   0  4.8 ms/frame
+L1 pilot cv-refit   seed 14: died (missile) at frame  194  fired   9  flares   0  6.2 ms/frame
+L1 pilot cv-refit   seed 15: died (missile) at frame  178  fired   9  flares   0  6.6 ms/frame
+L2 pilot cv-refit   seed  0: died (missile) at frame  159  fired   8  flares   0  342.8 ms/frame
+L2 pilot cv-refit   seed  1: died (missile) at frame  211  fired   9  flares   0  7.7 ms/frame
+L2 pilot cv-refit   seed  2: died (missile) at frame   88  fired   7  flares   0  6.3 ms/frame
+L2 pilot cv-refit   seed  3: died (missile) at frame  177  fired   9  flares   0  6.8 ms/frame
+L2 pilot cv-refit   seed  4: died (missile) at frame  180  fired   9  flares   0  5.9 ms/frame
+L2 pilot cv-refit   seed  5: died (missile) at frame  138  fired   8  flares   0  5.8 ms/frame
+L2 pilot cv-refit   seed  6: died (missile) at frame  173  fired   7  flares   0  7.3 ms/frame
+L2 pilot cv-refit   seed  7: died (missile) at frame  153  fired   7  flares   0  6.1 ms/frame
+L2 pilot cv-refit   seed  8: died (missile) at frame  208  fired   9  flares   0  5.9 ms/frame
+L2 pilot cv-refit   seed  9: died (missile) at frame  205  fired   9  flares   0  6.0 ms/frame
+L2 pilot cv-refit   seed 10: died (missile) at frame  167  fired   8  flares   0  5.2 ms/frame
+L2 pilot cv-refit   seed 11: died (missile) at frame  155  fired   7  flares   0  5.8 ms/frame
+L2 pilot cv-refit   seed 12: died (missile) at frame  130  fired   8  flares   0  4.1 ms/frame
+L2 pilot cv-refit   seed 13: died (missile) at frame  130  fired   8  flares   0  4.4 ms/frame
+L2 pilot cv-refit   seed 14: died (missile) at frame  175  fired   8  flares   0  5.2 ms/frame
+L2 pilot cv-refit   seed 15: died (missile) at frame  158  fired   8  flares   0  6.1 ms/frame
+L3 pilot cv-refit   seed  0: died (missile) at frame  145  fired  16  flares   0  10.7 ms/frame
+L3 pilot cv-refit   seed  1: died (missile) at frame   85  fired  16  flares   0  6.8 ms/frame
+L3 pilot cv-refit   seed  2: died (missile) at frame  125  fired  16  flares   0  8.3 ms/frame
+L3 pilot cv-refit   seed  3: died (missile) at frame  125  fired  16  flares   0  9.3 ms/frame
+L3 pilot cv-refit   seed  4: died (missile) at frame  154  fired  18  flares   0  9.5 ms/frame
+L3 pilot cv-refit   seed  5: died (missile) at frame  139  fired  16  flares   0  11.2 ms/frame
+L3 pilot cv-refit   seed  6: died (missile) at frame  178  fired  17  flares   0  13.3 ms/frame
+L3 pilot cv-refit   seed  7: died (missile) at frame  123  fired  16  flares   0  15.0 ms/frame
+L3 pilot cv-refit   seed  8: died (missile) at frame  105  fired  16  flares   0  14.5 ms/frame
+L3 pilot cv-refit   seed  9: died (missile) at frame   96  fired  16  flares   0  7.4 ms/frame
+L3 pilot cv-refit   seed 10: died (missile) at frame  146  fired  16  flares   0  10.3 ms/frame
+L3 pilot cv-refit   seed 11: died (missile) at frame  126  fired  16  flares   0  13.3 ms/frame
+L3 pilot cv-refit   seed 12: died (missile) at frame   99  fired  16  flares   0  12.4 ms/frame
+L3 pilot cv-refit   seed 13: died (missile) at frame  132  fired  16  flares   0  11.7 ms/frame
+L3 pilot cv-refit   seed 14: died (missile) at frame  123  fired  16  flares   0  10.5 ms/frame
+L3 pilot cv-refit   seed 15: died (missile) at frame   74  fired  11  flares   0  5.0 ms/frame
+
+L1 cv-refit    0/16 survived  mean alive 2.5 s  missile 16
+L2 cv-refit    0/16 survived  mean alive 2.7 s  missile 16
+L3 cv-refit    0/16 survived  mean alive 2.1 s  missile 16
+wrote crosstest/results/bench_L123_cv-refit.json

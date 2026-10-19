@@ -1,0 +1,872 @@
+{
+  "version": "v2_gru",
+  "architecture": "ThreatGNN + TemporalThreatAttention (GRU, hidden=64) + ManeuverHead",
+  "training": "5-stage curriculum, jet_brain_v3.pt",
+  "trials": 50,
+  "hit_rate_pct": 16.0,
+  "survival_rate_pct": 84.0,
+  "avg_survived_frames": 265.44,
+  "avg_flares_per_trial": 6.12,
+  "avg_inference_ms": 20.19,
+  "median_inference_ms": 20.73,
+  "maneuver_distribution": {
+    "NORMAL": 1357,
+    "BARREL_ROLL": 755,
+    "JINKING": 0,
+    "FALLING_LEAF": 0,
+    "COBRA": 0,
+    "IMMELMANN": 105
+  },
+  "per_trial": [
+    {
+      "trial": 1,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 4,
+      "avg_latency_ms": 7.596943999999883,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 46,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 1
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 2,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 6.175420000000056,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 47,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 3,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 6,
+      "avg_latency_ms": 7.4704760000000725,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 44,
+        "BARREL_ROLL": 4,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 4,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 5,
+      "avg_latency_ms": 5.1377059999999375,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 45,
+        "BARREL_ROLL": 5,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 5,
+      "hit": true,
+      "survived_frames": 69,
+      "flares_deployed": 2,
+      "avg_latency_ms": 40.5520416666667,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 12,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 6,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 6,
+      "avg_latency_ms": 20.13876200000002,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 28,
+        "BARREL_ROLL": 20,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 7,
+      "hit": true,
+      "survived_frames": 62,
+      "flares_deployed": 2,
+      "avg_latency_ms": 47.535572727273006,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 10,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 1
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 8,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 9,
+      "avg_latency_ms": 23.365548000000107,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 21,
+        "BARREL_ROLL": 25,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 4
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 9,
+      "hit": true,
+      "survived_frames": 58,
+      "flares_deployed": 0,
+      "avg_latency_ms": 49.493900000000224,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 10,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 10,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 4,
+      "avg_latency_ms": 5.651991999999915,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 46,
+        "BARREL_ROLL": 4,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 11,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 5,
+      "avg_latency_ms": 13.846335999999901,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 29,
+        "BARREL_ROLL": 19,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 12,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 4,
+      "avg_latency_ms": 25.36156000000002,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 20,
+        "BARREL_ROLL": 23,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 7
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 13,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 8,
+      "avg_latency_ms": 25.361778000000115,
+      "num_missiles": 2,
+      "maneuver_counts": {
+        "NORMAL": 18,
+        "BARREL_ROLL": 30,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 14,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 12,
+      "avg_latency_ms": 32.89363199999993,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 14,
+        "BARREL_ROLL": 26,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 10
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 15,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 14,
+      "avg_latency_ms": 27.527127999999976,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 20,
+        "BARREL_ROLL": 24,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 6
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 16,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 7,
+      "avg_latency_ms": 21.324319999999943,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 21,
+        "BARREL_ROLL": 27,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 17,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 3.866128000000373,
+      "num_missiles": 2,
+      "maneuver_counts": {
+        "NORMAL": 47,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 18,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 5,
+      "avg_latency_ms": 8.210623999999811,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 45,
+        "BARREL_ROLL": 5,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 19,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 6,
+      "avg_latency_ms": 8.137117999999575,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 44,
+        "BARREL_ROLL": 6,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 20,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 8,
+      "avg_latency_ms": 24.70544600000025,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 20,
+        "BARREL_ROLL": 25,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 5
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 21,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 4,
+      "avg_latency_ms": 6.166019999999719,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 46,
+        "BARREL_ROLL": 4,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 22,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 13,
+      "avg_latency_ms": 21.682886000000394,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 22,
+        "BARREL_ROLL": 27,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 1
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 23,
+      "hit": true,
+      "survived_frames": 12,
+      "flares_deployed": 3,
+      "avg_latency_ms": 56.69683333333234,
+      "num_missiles": 2,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 24,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 11,
+      "avg_latency_ms": 24.9024739999998,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 20,
+        "BARREL_ROLL": 28,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 25,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 5.142378000000107,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 47,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 26,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 24.29123799999992,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 24,
+        "BARREL_ROLL": 19,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 7
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 27,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 5,
+      "avg_latency_ms": 19.56706600000004,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 28,
+        "BARREL_ROLL": 22,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 28,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 3.0123559999998406,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 47,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 29,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 4,
+      "avg_latency_ms": 7.829497999999688,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 46,
+        "BARREL_ROLL": 4,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 30,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 6,
+      "avg_latency_ms": 8.510948000000198,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 44,
+        "BARREL_ROLL": 4,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 31,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 5,
+      "avg_latency_ms": 16.46823999999981,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 30,
+        "BARREL_ROLL": 18,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 32,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 6,
+      "avg_latency_ms": 26.058939999999637,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 18,
+        "BARREL_ROLL": 30,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 33,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 3.340096000000017,
+      "num_missiles": 2,
+      "maneuver_counts": {
+        "NORMAL": 47,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 34,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 11,
+      "avg_latency_ms": 26.325522000000063,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 23,
+        "BARREL_ROLL": 19,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 8
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 35,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 7,
+      "avg_latency_ms": 16.779930000000363,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 31,
+        "BARREL_ROLL": 19,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 36,
+      "hit": true,
+      "survived_frames": 91,
+      "flares_deployed": 5,
+      "avg_latency_ms": 44.95122499999993,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 13,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 3
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 37,
+      "hit": true,
+      "survived_frames": 146,
+      "flares_deployed": 9,
+      "avg_latency_ms": 36.0602879999999,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 22,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 3
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 38,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 21.992879999999815,
+      "num_missiles": 2,
+      "maneuver_counts": {
+        "NORMAL": 19,
+        "BARREL_ROLL": 31,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 39,
+      "hit": true,
+      "survived_frames": 176,
+      "flares_deployed": 15,
+      "avg_latency_ms": 45.0223300000007,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 25,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 5
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 40,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 17,
+      "avg_latency_ms": 26.040100000000024,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 20,
+        "BARREL_ROLL": 21,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 9
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 41,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 4.626040000000131,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 46,
+        "BARREL_ROLL": 4,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 42,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 2,
+      "avg_latency_ms": 2.0801259999997512,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 48,
+        "BARREL_ROLL": 1,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 1
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 43,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 3,
+      "avg_latency_ms": 3.8762959999996838,
+      "num_missiles": 2,
+      "maneuver_counts": {
+        "NORMAL": 47,
+        "BARREL_ROLL": 3,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 0
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 44,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 6,
+      "avg_latency_ms": 19.09223800000035,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 25,
+        "BARREL_ROLL": 23,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 45,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 7,
+      "avg_latency_ms": 22.409763999999797,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 22,
+        "BARREL_ROLL": 26,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 46,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 9,
+      "avg_latency_ms": 19.925115999999292,
+      "num_missiles": 5,
+      "maneuver_counts": {
+        "NORMAL": 25,
+        "BARREL_ROLL": 23,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 47,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 17,
+      "avg_latency_ms": 24.478068000000093,
+      "num_missiles": 3,
+      "maneuver_counts": {
+        "NORMAL": 18,
+        "BARREL_ROLL": 26,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 6
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 48,
+      "hit": true,
+      "survived_frames": 58,
+      "flares_deployed": 2,
+      "avg_latency_ms": 34.330129999998604,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 0,
+        "BARREL_ROLL": 9,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 1
+      },
+      "top_maneuver": "BARREL_ROLL"
+    },
+    {
+      "trial": 49,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 6,
+      "avg_latency_ms": 6.932695999999368,
+      "num_missiles": 4,
+      "maneuver_counts": {
+        "NORMAL": 44,
+        "BARREL_ROLL": 4,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 2
+      },
+      "top_maneuver": "NORMAL"
+    },
+    {
+      "trial": 50,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 2,
+      "avg_latency_ms": 26.65226999999959,
+      "num_missiles": 1,
+      "maneuver_counts": {
+        "NORMAL": 15,
+        "BARREL_ROLL": 34,
+        "JINKING": 0,
+        "FALLING_LEAF": 0,
+        "COBRA": 0,
+        "IMMELMANN": 1
+      },
+      "top_maneuver": "BARREL_ROLL"
+    }
+  ]
+}

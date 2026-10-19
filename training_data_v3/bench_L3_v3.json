@@ -1,0 +1,178 @@
+[
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 0,
+  "survived": false,
+  "frames": 1423,
+  "cause": "wall",
+  "fired": 80,
+  "flares": 135,
+  "ms_per_frame": 11.585171257905834
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 1,
+  "survived": false,
+  "frames": 1000,
+  "cause": "wall",
+  "fired": 58,
+  "flares": 108,
+  "ms_per_frame": 11.312738400000004
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 2,
+  "survived": false,
+  "frames": 1011,
+  "cause": "wall",
+  "fired": 59,
+  "flares": 108,
+  "ms_per_frame": 12.519169732937687
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 3,
+  "survived": false,
+  "frames": 650,
+  "cause": "wall",
+  "fired": 39,
+  "flares": 69,
+  "ms_per_frame": 11.615116615384617
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 4,
+  "survived": false,
+  "frames": 1041,
+  "cause": "wall",
+  "fired": 60,
+  "flares": 108,
+  "ms_per_frame": 11.668651969260324
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 5,
+  "survived": false,
+  "frames": 1398,
+  "cause": "wall",
+  "fired": 80,
+  "flares": 135,
+  "ms_per_frame": 11.039781831187412
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 6,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 100,
+  "flares": 177,
+  "ms_per_frame": 10.858939444444447
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 7,
+  "survived": false,
+  "frames": 401,
+  "cause": "wall",
+  "fired": 26,
+  "flares": 27,
+  "ms_per_frame": 9.54230274314213
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 8,
+  "survived": false,
+  "frames": 959,
+  "cause": "wall",
+  "fired": 58,
+  "flares": 108,
+  "ms_per_frame": 12.544087069864446
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 9,
+  "survived": false,
+  "frames": 1462,
+  "cause": "wall",
+  "fired": 80,
+  "flares": 144,
+  "ms_per_frame": 11.06376381668946
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 10,
+  "survived": false,
+  "frames": 1131,
+  "cause": "wall",
+  "fired": 66,
+  "flares": 99,
+  "ms_per_frame": 10.158750928381961
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 11,
+  "survived": false,
+  "frames": 968,
+  "cause": "wall",
+  "fired": 58,
+  "flares": 108,
+  "ms_per_frame": 11.142853512396682
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 12,
+  "survived": false,
+  "frames": 1413,
+  "cause": "wall",
+  "fired": 80,
+  "flares": 144,
+  "ms_per_frame": 10.431699858457167
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 13,
+  "survived": false,
+  "frames": 1034,
+  "cause": "wall",
+  "fired": 60,
+  "flares": 108,
+  "ms_per_frame": 9.611585880077376
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 14,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 100,
+  "flares": 180,
+  "ms_per_frame": 9.596440000000005
+ },
+ {
+  "pilot": "3",
+  "level": 3,
+  "seed": 15,
+  "survived": false,
+  "frames": 773,
+  "cause": "missile",
+  "fired": 42,
+  "flares": 72,
+  "ms_per_frame": 9.34256403622254
+ }
+]

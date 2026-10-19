@@ -1,0 +1,28 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+train episodes {1: 24, 2: 24, 3: 24}, val episodes {1: 4, 2: 4, 3: 4}, up to 8 missiles per window, batch 8
+before fine-tuning (v6_voxel.pt, refit attributes): val err@20 21.65 px   straight lines 18.15 px
+epoch  0  horizon  3  loss 1.213e-06  val err@20 19.56 px  (28s, 0.47 s/batch)  <- best, saved
+epoch  1  horizon  4  loss 2.768e-06  val err@20 19.72 px  (33s, 0.55 s/batch)
+epoch  2  horizon  5  loss 2.619e-06  val err@20 19.88 px  (204s, 3.40 s/batch)
+epoch  3  horizon  6  loss 4.836e-06  val err@20 19.75 px  (59s, 0.98 s/batch)
+epoch  4  horizon  7  loss 9.779e-06  val err@20 19.11 px  (284s, 4.73 s/batch)  <- best, saved
+epoch  5  horizon  8  loss 1.210e-05  val err@20 19.31 px  (160s, 2.67 s/batch)
+epoch  6  horizon  9  loss 1.330e-05  val err@20 18.88 px  (48s, 0.81 s/batch)  <- best, saved
+epoch  7  horizon 10  loss 2.405e-05  val err@20 18.68 px  (32s, 0.53 s/batch)  <- best, saved
+epoch  8  horizon 11  loss 2.468e-05  val err@20 18.71 px  (34s, 0.56 s/batch)
+epoch  9  horizon 12  loss 2.983e-05  val err@20 18.57 px  (48s, 0.81 s/batch)  <- best, saved
+epoch 10  horizon 13  loss 4.163e-05  val err@20 19.20 px  (34s, 0.56 s/batch)
+epoch 11  horizon 14  loss 6.665e-05  val err@20 18.79 px  (33s, 0.55 s/batch)
+epoch 12  horizon 15  loss 6.327e-05  val err@20 18.41 px  (54s, 0.91 s/batch)  <- best, saved
+epoch 13  horizon 16  loss 8.882e-05  val err@20 18.79 px  (41s, 0.68 s/batch)
+epoch 14  horizon 17  loss 9.818e-05  val err@20 18.64 px  (38s, 0.64 s/batch)
+epoch 15  horizon 18  loss 1.188e-04  val err@20 19.16 px  (42s, 0.70 s/batch)
+epoch 16  horizon 19  loss 1.397e-04  val err@20 19.15 px  (80s, 1.33 s/batch)
+epoch 17  horizon 20  loss 1.515e-04  val err@20 18.69 px  (63s, 1.04 s/batch)
+epoch 18  horizon 20  loss 1.527e-04  val err@20 18.59 px  (62s, 1.03 s/batch)
+epoch 19  horizon 20  loss 1.773e-04  val err@20 18.40 px  (39s, 0.66 s/batch)  <- best, saved
+epoch 20  horizon 20  loss 1.532e-04  val err@20 19.39 px  (43s, 0.72 s/batch)
+epoch 21  horizon 20  loss 1.700e-04  val err@20 18.34 px  (60s, 1.01 s/batch)  <- best, saved
+
+best val err@20 18.34 px (straight lines 18.15 px) -> crosstest/cv_refit.pt   total 25 min, 1320 batches of 8 windows

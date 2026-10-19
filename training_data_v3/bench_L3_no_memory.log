@@ -1,0 +1,23 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+L3 pilot 3-no_memory seed 0: died (wall) at frame 1397  fired  80  flares 129  14.6 ms/frame
+L3 pilot 3-no_memory seed 1: died (wall) at frame 1730  fired  99  flares 180  11.1 ms/frame
+L3 pilot 3-no_memory seed 2: died (missile) at frame 1036  fired  60  flares 105  10.0 ms/frame
+L3 pilot 3-no_memory seed 3: died (wall) at frame 1429  fired  80  flares 144  10.5 ms/frame
+L3 pilot 3-no_memory seed 4: died (wall) at frame 1455  fired  80  flares 144  10.3 ms/frame
+L3 pilot 3-no_memory seed 5: died (missile) at frame 1002  fired  60  flares  99  10.1 ms/frame
+L3 pilot 3-no_memory seed 6: died (wall) at frame  662  fired  40  flares  60  9.3 ms/frame
+L3 pilot 3-no_memory seed 7: died (wall) at frame  403  fired  26  flares  30  8.3 ms/frame
+L3 pilot 3-no_memory seed 8: died (wall) at frame  985  fired  60  flares 108  9.9 ms/frame
+L3 pilot 3-no_memory seed 9: died (missile) at frame 1124  fired  61  flares 108  9.0 ms/frame
+L3 pilot 3-no_memory seed 10: died (missile) at frame  679  fired  40  flares  69  9.2 ms/frame
+L3 pilot 3-no_memory seed 11: died (wall) at frame  988  fired  60  flares 108  9.1 ms/frame
+L3 pilot 3-no_memory seed 12: died (wall) at frame  627  fired  38  flares  72  10.3 ms/frame
+L3 pilot 3-no_memory seed 13: died (missile) at frame 1056  fired  60  flares 102  8.9 ms/frame
+L3 pilot 3-no_memory seed 14: SURVIVED at frame 1800  fired 100  flares 177  8.2 ms/frame
+L3 pilot 3-no_memory seed 15: died (missile) at frame  408  fired  22  flares  36  7.8 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L3     3-no_memory      1/16        17.5 s       9.8   missile 6, wall 9
+
+wrote training_data_v3/bench_L3_no_memory.json

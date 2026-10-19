@@ -1,0 +1,55 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+L1 pilot straight   seed  0: died (missile) at frame  120  fired   7  flares   0  8.9 ms/frame
+L1 pilot straight   seed  1: died (missile) at frame  106  fired   7  flares   0  2.5 ms/frame
+L1 pilot straight   seed  2: died (missile) at frame  202  fired   9  flares   0  2.5 ms/frame
+L1 pilot straight   seed  3: died (missile) at frame  187  fired   8  flares   0  2.7 ms/frame
+L1 pilot straight   seed  4: died (missile) at frame  166  fired   8  flares   0  3.2 ms/frame
+L1 pilot straight   seed  5: died (missile) at frame  163  fired   7  flares   0  6.3 ms/frame
+L1 pilot straight   seed  6: died (missile) at frame   96  fired   7  flares   0  3.2 ms/frame
+L1 pilot straight   seed  7: died (missile) at frame  140  fired   8  flares   0  3.1 ms/frame
+L1 pilot straight   seed  8: died (missile) at frame  114  fired   7  flares   0  3.0 ms/frame
+L1 pilot straight   seed  9: died (missile) at frame  183  fired   9  flares   0  3.3 ms/frame
+L1 pilot straight   seed 10: died (missile) at frame  130  fired   7  flares   0  2.9 ms/frame
+L1 pilot straight   seed 11: died (missile) at frame  129  fired   7  flares   0  2.9 ms/frame
+L1 pilot straight   seed 12: died (missile) at frame  155  fired   8  flares   0  2.7 ms/frame
+L1 pilot straight   seed 13: died (missile) at frame  161  fired   7  flares   0  2.6 ms/frame
+L1 pilot straight   seed 14: died (missile) at frame  181  fired   9  flares   0  3.3 ms/frame
+L1 pilot straight   seed 15: died (missile) at frame  217  fired   9  flares   0  3.0 ms/frame
+L2 pilot straight   seed  0: died (missile) at frame  116  fired   7  flares   0  3.7 ms/frame
+L2 pilot straight   seed  1: died (missile) at frame  188  fired   9  flares   0  5.8 ms/frame
+L2 pilot straight   seed  2: died (missile) at frame  203  fired   9  flares   0  6.4 ms/frame
+L2 pilot straight   seed  3: died (missile) at frame  147  fired   8  flares   0  7.2 ms/frame
+L2 pilot straight   seed  4: died (missile) at frame  187  fired   9  flares   0  6.0 ms/frame
+L2 pilot straight   seed  5: died (missile) at frame  137  fired   8  flares   0  5.5 ms/frame
+L2 pilot straight   seed  6: died (missile) at frame  190  fired   8  flares   0  5.7 ms/frame
+L2 pilot straight   seed  7: died (missile) at frame  234  fired   9  flares   0  6.0 ms/frame
+L2 pilot straight   seed  8: died (missile) at frame  287  fired  10  flares   0  7.6 ms/frame
+L2 pilot straight   seed  9: died (missile) at frame  181  fired   7  flares   0  5.6 ms/frame
+L2 pilot straight   seed 10: died (missile) at frame  169  fired   9  flares   0  5.3 ms/frame
+L2 pilot straight   seed 11: died (missile) at frame  160  fired   7  flares   0  5.2 ms/frame
+L2 pilot straight   seed 12: died (missile) at frame  218  fired   9  flares   0  5.3 ms/frame
+L2 pilot straight   seed 13: died (missile) at frame  132  fired   8  flares   0  4.8 ms/frame
+L2 pilot straight   seed 14: died (missile) at frame  151  fired   8  flares   0  5.1 ms/frame
+L2 pilot straight   seed 15: died (missile) at frame  155  fired   8  flares   0  4.5 ms/frame
+L3 pilot straight   seed  0: died (missile) at frame  114  fired  16  flares   0  4.5 ms/frame
+L3 pilot straight   seed  1: died (missile) at frame   81  fired  16  flares   0  4.7 ms/frame
+L3 pilot straight   seed  2: died (missile) at frame  119  fired  16  flares   0  4.7 ms/frame
+L3 pilot straight   seed  3: died (missile) at frame  104  fired  16  flares   0  5.1 ms/frame
+L3 pilot straight   seed  4: died (missile) at frame  145  fired  16  flares   0  4.5 ms/frame
+L3 pilot straight   seed  5: died (missile) at frame  124  fired  16  flares   0  4.0 ms/frame
+L3 pilot straight   seed  6: died (missile) at frame  149  fired  16  flares   0  3.2 ms/frame
+L3 pilot straight   seed  7: died (missile) at frame  129  fired  16  flares   0  3.3 ms/frame
+L3 pilot straight   seed  8: died (missile) at frame  126  fired  16  flares   0  3.6 ms/frame
+L3 pilot straight   seed  9: died (missile) at frame   91  fired  16  flares   0  2.8 ms/frame
+L3 pilot straight   seed 10: died (missile) at frame  146  fired  16  flares   0  3.4 ms/frame
+L3 pilot straight   seed 11: died (missile) at frame  119  fired  16  flares   0  3.4 ms/frame
+L3 pilot straight   seed 12: died (missile) at frame   96  fired  16  flares   0  3.4 ms/frame
+L3 pilot straight   seed 13: died (missile) at frame  137  fired  17  flares   0  3.7 ms/frame
+L3 pilot straight   seed 14: died (missile) at frame  116  fired  16  flares   0  3.2 ms/frame
+L3 pilot straight   seed 15: died (missile) at frame   75  fired  11  flares   0  2.8 ms/frame
+
+L1 straight    0/16 survived  mean alive 2.6 s  missile 16
+L2 straight    0/16 survived  mean alive 3.0 s  missile 16
+L3 straight    0/16 survived  mean alive 1.9 s  missile 16
+wrote crosstest/results/bench_L123_straight.json

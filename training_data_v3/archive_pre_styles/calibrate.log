@@ -1,0 +1,12 @@
+jet_brain_tgn.pt             L1  n=  6688  coverage 0.948 -> 0.990  margin +0.0118 rad/frame  (max miss 0.0640)
+jet_brain_tgn.pt             L2  n=  4289  coverage 0.912 -> 0.990  margin +0.0109 rad/frame  (max miss 0.0576)
+jet_brain_tgn.pt             L3  n= 12581  coverage 0.904 -> 0.990  margin +0.0152 rad/frame  (max miss 0.0459)
+wrote jet_brain_tgn.calib.json
+jet_brain_tgn_no_edges.pt    L1  n=  6688  coverage 0.914 -> 0.990  margin +0.0465 rad/frame  (max miss 0.0803)
+jet_brain_tgn_no_edges.pt    L2  n=  4289  coverage 0.850 -> 0.990  margin +0.0395 rad/frame  (max miss 0.0760)
+jet_brain_tgn_no_edges.pt    L3  n= 12581  coverage 0.896 -> 0.990  margin +0.0391 rad/frame  (max miss 0.0884)
+wrote jet_brain_tgn_no_edges.calib.json
+jet_brain_tgn_no_memory.pt   L1  n=  6688  coverage 0.926 -> 0.990  margin +0.0523 rad/frame  (max miss 0.0802)
+jet_brain_tgn_no_memory.pt   L2  n=  4289  coverage 0.873 -> 0.990  margin +0.0132 rad/frame  (max miss 0.0839)
+jet_brain_tgn_no_memory.pt   L3  n= 12581  coverage 0.876 -> 0.990  margin +0.0255 rad/frame  (max miss 0.0857)
+wrote jet_brain_tgn_no_memory.calib.json

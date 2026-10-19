@@ -1,0 +1,61 @@
+
+==========================================================================================
+A. FREE MOTION, VAL (CausalVis's protocol)
+==========================================================================================
+
+=== A. FREE MOTION (no collision in the window)   train segments 15891, val segments 7417   (196s)
+   law chosen per object kind (fitted on train):
+      cube/metal         chosen coul   (damping c=0.0120/frame, friction a=0.000080/frame, n=2914)
+      cube/rubber        chosen coul   (damping c=0.0120/frame, friction a=0.000080/frame, n=2761)
+      cylinder/metal     chosen coul   (damping c=0.0110/frame, friction a=0.000080/frame, n=3041)
+      cylinder/rubber    chosen coul   (damping c=0.0110/frame, friction a=0.000080/frame, n=2803)
+      sphere/metal       chosen exp    (damping c=0.0030/frame, friction a=0.000015/frame, n=2218)
+      sphere/rubber      chosen exp    (damping c=0.0020/frame, friction a=0.000015/frame, n=2154)
+   VAL mean position error      @20 frames   @40 frames
+      constant velocity               0.02837      0.07272
+      damping law (fitted)            0.02456      0.05399
+      friction law (fitted)           0.02395      0.05041
+      LAW CHOSEN PER KIND             0.02392      0.05018
+      learned world model (v6_voxel)  0.02496      0.05656
+      v3_kinematic                    0.02837      0.07272   (V3 kernel, 87s)
+      v3_swarm                        0.02837      0.07272   (V3 kernel, 95s)
+      v3_refit                        0.02456      0.05399   (V3 kernel, 90s)
+
+==========================================================================================
+B/C. COLLISIONS, VAL (CausalVis's protocol)
+==========================================================================================
+
+=== B. BOUNCE GIVEN THE CONTACT   isolated two-object collisions: train 2932, val 1345   (113s)
+   fitted on train (normal = line between centres): metal/rubber mass ratio 1.00, bounciness {'mm': 0.2, 'mr': 0.2, 'rr': 0.2}, contact friction 0.05
+   fitted on train (normal = voxel contact patch): metal/rubber mass ratio 1.00, bounciness {'mm': 0.2, 'mr': 0.2, 'rr': 0.2}, contact friction 0.10
+   VAL outgoing direction error (degrees)        median   p75    speed ratio (median)
+      no collision at all (keep going)           36.6    86.6   1.26
+      C1 bounce, centres normal                   9.9    21.1   1.04
+      C2 bounce + contact friction, centres normal   10.0    20.9   1.03
+      C1 bounce, voxel normal                    11.7    23.8   1.04
+      C2 bounce + contact friction, voxel normal   11.3    23.0   1.02
+
+=== C. FAIR HEAD-TO-HEAD: start 8 frames before the recorded collision, each system runs 16 frames   (597s)
+                                                  contact made   direction error median   p75
+   law engine (chosen motion laws + C2 bounce)     95.5%          12.1°                 23.8°
+   learned world model v6_voxel (voxel bounces)    93.6%          17.6°                 34.7°
+                                                  contact made   direction error median   p75
+   v3_kinematic (V3 kernel)                        96.2%          44.6°                 97.9°
+   v3_swarm (V3 kernel)                            96.2%          44.1°                 98.2°
+   v3_refit (V3 kernel)                            95.7%          42.4°                 92.9°
+
+==========================================================================================
+R. SHADOW REPLAY, first 200 VAL clips (CausalVis's protocol)
+==========================================================================================
+   v3_kinematic replayed (79s)
+   v3_swarm replayed (78s)
+   v3_refit replayed (92s)
+
+   engine                         reproduced from 12     reproduced from 30   top miss causes at L=30
+   v7 (CausalVis record)           96.7% (n= 478)        55.0% (n= 418)   bad entry 110, slow drift 46, wrong bounce 24
+   v8 (CausalVis record)           96.0% (n= 478)        57.4% (n= 418)   bad entry 107, slow drift 42, wrong bounce 22
+   v3_kinematic                    95.4% (n= 478)        47.1% (n= 418)   bad entry 90, wrong bounce 75, slow drift 48
+   v3_swarm                        95.6% (n= 478)        49.5% (n= 418)   bad entry 90, wrong bounce 67, slow drift 47
+   v3_refit                        95.6% (n= 478)        47.4% (n= 418)   bad entry 105, wrong bounce 62, slow drift 46
+
+wrote C:/Users/Hamza Bukhari/Desktop/DNN\crosstest\results\clevrer_traj.json

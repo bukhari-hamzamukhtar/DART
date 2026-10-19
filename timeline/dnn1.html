@@ -1,0 +1,154 @@
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans, sans-serif); }
+  .gdd { padding: 1.5rem 0; max-width: 680px; }
+  .section { margin-bottom: 2rem; }
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0.6rem 1rem; margin-bottom: 1rem;
+    background: var(--color-background-secondary);
+    border-left: 3px solid var(--color-text-primary);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  }
+  .section-num { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; }
+  .section-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+  .card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.4rem; }
+  .card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+  .card-body code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; color: var(--color-text-primary); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+  .verdict { border-left: 3px solid; padding: 0.75rem 1rem; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; margin-bottom: 0.75rem; font-size: 13px; line-height: 1.6; }
+  .verdict-ok { border-color: var(--color-border-success); background: var(--color-background-success); color: var(--color-text-success); }
+  .verdict-warn { border-color: var(--color-border-warning); background: var(--color-background-warning); color: var(--color-text-warning); }
+  .pipe-row { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin: 0.5rem 0; }
+  .pipe-box { font-size: 12px; font-weight: 500; padding: 5px 10px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-secondary); color: var(--color-text-primary); }
+  .pipe-arr { font-size: 14px; color: var(--color-text-tertiary); }
+</style>
+
+<div class="gdd">
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">System Architecture — Local-First Edge Inference</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The Async Engine Hack</div>
+      <div class="card-body">
+        To keep things buttery smooth without burning out the hardware, the architecture relies on a strict split. The 60fps Pygame loop runs on the main thread, acting solely as the renderer and physics simulator. A background daemon thread handles the heavy lifting, running the PyTorch CPU-only GNN. This setup totally nips any frame-drop issues in the bud. It is the ultimate local-first software solution—no cloud pings, no latency, zero internet required.
+      </div>
+    </div>
+
+    <div class="pipe-row">
+      <div class="pipe-box">Pygame Main Thread<br><span style="font-size:11px;color:var(--color-text-secondary)">60fps Render & Physics</span></div>
+      <div class="pipe-arr">⟷</div>
+      <div class="pipe-box">queue.Queue(maxsize=1)<br><span style="font-size:11px;color:var(--color-text-secondary)">Thread-safe lock</span></div>
+      <div class="pipe-arr">⟷</div>
+      <div class="pipe-box">GNN Worker Thread<br><span style="font-size:11px;color:var(--color-text-secondary)">PyTorch Edge Inference</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">GNN Integration — How the "Brain" Actually Thinks</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Model Predictive Control (The 9-Move Lookahead)</div>
+      <div class="card-body">
+        Every 6 frames, the background thread wakes up and samples <strong>9 candidate moves</strong> (ranging from 0 to ±1.2 radians for sharp 70-degree banks). For each move, it mathematically projects where the jet, missiles, and flares will be 10 frames into the future using pure kinematics.<br><br>
+        It then passes these 9 hypothetical futures to the Graph Neural Network (Interaction Network). The network spits out a predicted crash probability. The move with the lowest probability wins.
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">The "Lava" Borders</div>
+        <div class="card-body">
+          To stop the AI from cheating by phasing through walls, a massive mathematical penalty is baked in. A 40-pixel padding acts as a "lava zone." If a projected move touches this zone, the crash probability skyrockets to <code>10.0</code>, forcing the AI to bank hard away from the concrete.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Center Gravity</div>
+        <div class="card-body">
+          When no threats are present, the GNN used to just headbutt walls because all crash probabilities were <code>0.0</code>. Now, a micro-penalty <code>(distance/800 * 0.1)</code> is applied the further the jet drifts from the center. It acts as an instinctual tether, keeping it circling the middle.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Physics & Mechanics — The 1v1 Tactical Deathmatch</span>
+    </div>
+
+    <div class="verdict verdict-warn">
+      <strong>Real Talk on Assets:</strong> There is no 3D model. There is no high-res sprite. The "Highly Advanced AI Jet" is literally an 11-pixel cyan circle (<code>pygame.draw.circle</code>). The "Missile Launchers" are just grey rectangles with a dot in the center. The gameplay is 100% reliant on raw geometry and fluid math.
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Weapon Systems</div>
+        <div class="card-body">
+          <strong>Homing Missiles (Red):</strong> Track the target using Proportional Navigation (<code>math.atan2</code>). Last for 5 seconds.<br>
+          <strong>Ballistic Missiles (Magenta):</strong> Dumb-fire rockets. Require drag-to-aim via right-click.<br>
+          <strong>AI Counter-Strikes:</strong> The AI isn't just surviving anymore. Every 4 seconds, it locks onto a surviving ground launcher and fires a high-speed cyan payload to blow it up.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Tactical Flares (The 270° Shield)</div>
+        <div class="card-body">
+          When the GNN's lowest calculated danger probability still exceeds <code>0.35</code>, it hits the panic button. It deploys 8 equidistant flare particles (amber) in a massive 270-degree arc behind it, leaving exactly a 90-degree blind spot at the nose so it doesn't fly into its own countermeasures.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Visual Aesthetic — Neon CRT Vibes</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Fake Glows & Particle Deques</div>
+      <div class="card-body">
+        Everything looks cinematic without needing a dedicated GPU. The "glow" effect is faked by stacking three Pygame circles on top of each other with decreasing alpha levels (30, 80, 255).<br><br>
+        Movement feels kinetic because every object pushes its coordinates into a <code>collections.deque</code> buffer. The jet stores its last 20 frames, while missiles store 12, drawing a fading, tapering trail that looks exactly like burning thrust.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The Michael Bay Physics</div>
+      <div class="card-body">
+        Collisions aren't just a <code>running = False</code> statement anymore. Impacts trigger two pure CPU visual systems:<br>
+        1. <strong>Shrapnel:</strong> 20-50 high-velocity particles that shoot out in 360 degrees and slow down using simulated air friction.<br>
+        2. <strong>Shockwaves:</strong> A geometric circle that rapidly expands its radius while dropping its alpha channel, giving that heavy, concussive "oomph" to every mid-air intercept or base destruction.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">The DNN Story — Wrapping Your Head Around The Pitch</span>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        If asked what this project actually is, the game is totally secondary. This is a <strong>Multi-Agent Graph Neural Network driving Real-Time Edge Inference</strong>. <br><br>
+        It proves that a complex scene (jets, multiple missiles, and spreading flare clusters) can be mathematically graphed as nodes and edges. By passing those relationships through an Interaction Network locally (bypassing massive VRAM requirements), the engine can run Model Predictive Control fast enough to play a 60fps game seamlessly on a standard CPU. It is a flex in data structuring, thread management, and neuro-symbolic-adjacent constraints (mixing deep learning with hard physical boundaries).
+      </div>
+    </div>
+  </div>
+
+</div>

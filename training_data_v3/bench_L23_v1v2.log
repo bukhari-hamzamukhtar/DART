@@ -1,0 +1,78 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+L2 pilot 1           seed 0: died (terrain) at frame  170  fired   9  flares  15  9.9 ms/frame
+L2 pilot 1           seed 1: died (terrain) at frame  130  fired   7  flares   0  12.0 ms/frame
+L2 pilot 1           seed 2: died (terrain) at frame  118  fired   7  flares   0  13.1 ms/frame
+L2 pilot 1           seed 3: died (wall) at frame  195  fired   9  flares   0  12.9 ms/frame
+L2 pilot 1           seed 4: died (terrain) at frame   18  fired   0  flares   0  0.1 ms/frame
+L2 pilot 1           seed 5: died (terrain) at frame   95  fired   7  flares   0  15.8 ms/frame
+L2 pilot 1           seed 6: died (terrain) at frame  116  fired   7  flares   0  15.7 ms/frame
+L2 pilot 1           seed 7: died (terrain) at frame   87  fired   7  flares   0  5.4 ms/frame
+L2 pilot 1           seed 8: died (terrain) at frame  125  fired   7  flares   0  14.3 ms/frame
+L2 pilot 1           seed 9: died (terrain) at frame  132  fired   7  flares   0  13.6 ms/frame
+L2 pilot 1           seed 10: died (terrain) at frame   86  fired   7  flares   0  5.3 ms/frame
+L2 pilot 1           seed 11: died (terrain) at frame   26  fired   0  flares   0  0.2 ms/frame
+L2 pilot 1           seed 12: died (terrain) at frame  164  fired   8  flares  15  17.3 ms/frame
+L2 pilot 1           seed 13: died (terrain) at frame  130  fired   8  flares  18  18.7 ms/frame
+L2 pilot 1           seed 14: died (terrain) at frame  139  fired   8  flares  15  19.1 ms/frame
+L2 pilot 1           seed 15: died (terrain) at frame  214  fired   9  flares  18  24.0 ms/frame
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+L2 pilot 2           seed 0: died (terrain) at frame  170  fired   9  flares  15  21.5 ms/frame
+L2 pilot 2           seed 1: died (terrain) at frame  130  fired   7  flares   0  29.6 ms/frame
+L2 pilot 2           seed 2: died (terrain) at frame  118  fired   7  flares   0  29.4 ms/frame
+L2 pilot 2           seed 3: died (terrain) at frame  168  fired   9  flares  24  24.4 ms/frame
+L2 pilot 2           seed 4: died (terrain) at frame   18  fired   0  flares   0  0.2 ms/frame
+L2 pilot 2           seed 5: died (terrain) at frame  130  fired   7  flares   0  18.9 ms/frame
+L2 pilot 2           seed 6: died (terrain) at frame  116  fired   7  flares   0  20.9 ms/frame
+L2 pilot 2           seed 7: died (terrain) at frame   87  fired   7  flares   0  8.4 ms/frame
+L2 pilot 2           seed 8: died (terrain) at frame  125  fired   7  flares   0  23.7 ms/frame
+L2 pilot 2           seed 9: died (terrain) at frame  132  fired   7  flares   0  33.1 ms/frame
+L2 pilot 2           seed 10: died (terrain) at frame   86  fired   7  flares   0  15.1 ms/frame
+L2 pilot 2           seed 11: died (terrain) at frame   26  fired   0  flares   0  0.2 ms/frame
+L2 pilot 2           seed 12: died (terrain) at frame  149  fired   8  flares  18  25.8 ms/frame
+L2 pilot 2           seed 13: died (terrain) at frame  147  fired   8  flares  18  25.0 ms/frame
+L2 pilot 2           seed 14: died (terrain) at frame  122  fired   7  flares   0  20.7 ms/frame
+L2 pilot 2           seed 15: died (terrain) at frame  214  fired   9  flares  18  20.7 ms/frame
+L3 pilot 1           seed 0: died (wall) at frame  159  fired  16  flares   0  39.5 ms/frame
+L3 pilot 1           seed 1: died (wall) at frame  118  fired  16  flares   0  36.9 ms/frame
+L3 pilot 1           seed 2: died (wall) at frame  161  fired  16  flares   0  32.2 ms/frame
+L3 pilot 1           seed 3: died (wall) at frame  153  fired  17  flares   0  32.4 ms/frame
+L3 pilot 1           seed 4: died (wall) at frame  177  fired  18  flares  48  29.1 ms/frame
+L3 pilot 1           seed 5: died (wall) at frame  159  fired  18  flares   0  28.2 ms/frame
+L3 pilot 1           seed 6: died (wall) at frame  178  fired  17  flares   0  22.9 ms/frame
+L3 pilot 1           seed 7: died (missile) at frame  158  fired  17  flares  51  24.0 ms/frame
+L3 pilot 1           seed 8: died (missile) at frame  146  fired  18  flares   0  26.4 ms/frame
+L3 pilot 1           seed 9: died (missile) at frame  103  fired  16  flares   0  21.1 ms/frame
+L3 pilot 1           seed 10: died (missile) at frame  168  fired  17  flares   0  22.0 ms/frame
+L3 pilot 1           seed 11: died (missile) at frame  131  fired  17  flares  48  22.2 ms/frame
+L3 pilot 1           seed 12: died (missile) at frame  119  fired  16  flares   0  24.3 ms/frame
+L3 pilot 1           seed 13: died (missile) at frame  135  fired  17  flares  48  26.2 ms/frame
+L3 pilot 1           seed 14: died (missile) at frame  137  fired  16  flares  48  21.4 ms/frame
+L3 pilot 1           seed 15: died (wall) at frame   94  fired  16  flares   0  20.6 ms/frame
+L3 pilot 2           seed 0: died (missile) at frame  286  fired  18  flares  48  24.0 ms/frame
+L3 pilot 2           seed 1: died (missile) at frame  519  fired  36  flares  60  23.7 ms/frame
+L3 pilot 2           seed 2: died (missile) at frame  446  fired  32  flares  66  25.3 ms/frame
+L3 pilot 2           seed 3: died (wall) at frame  151  fired  17  flares   0  29.1 ms/frame
+L3 pilot 2           seed 4: died (missile) at frame  146  fired  16  flares  48  25.0 ms/frame
+L3 pilot 2           seed 5: died (missile) at frame  133  fired  16  flares   0  27.2 ms/frame
+L3 pilot 2           seed 6: died (missile) at frame  156  fired  16  flares   0  22.5 ms/frame
+L3 pilot 2           seed 7: died (missile) at frame  158  fired  17  flares  51  32.6 ms/frame
+L3 pilot 2           seed 8: died (wall) at frame  121  fired  16  flares   0  29.5 ms/frame
+L3 pilot 2           seed 9: died (missile) at frame  467  fired  36  flares  66  24.0 ms/frame
+L3 pilot 2           seed 10: died (missile) at frame  169  fired  17  flares   0  24.8 ms/frame
+L3 pilot 2           seed 11: died (missile) at frame  194  fired  18  flares  48  29.0 ms/frame
+L3 pilot 2           seed 12: died (missile) at frame  117  fired  16  flares   0  27.8 ms/frame
+L3 pilot 2           seed 13: died (missile) at frame  130  fired  16  flares   0  25.4 ms/frame
+L3 pilot 2           seed 14: died (missile) at frame  140  fired  17  flares  48  25.7 ms/frame
+L3 pilot 2           seed 15: died (missile) at frame  104  fired  16  flares   0  28.9 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L2     1                0/16         2.0 s      12.3   terrain 15, wall 1
+L2     2                0/16         2.0 s      19.8   terrain 16
+L3     1                0/16         2.4 s      26.8   missile 8, wall 8
+L3     2                0/16         3.6 s      26.5   missile 14, wall 2
+
+wrote training_data_v3/bench_L23_v1v2.json

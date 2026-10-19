@@ -1,0 +1,24 @@
+[
+ {
+  "pilot": "v3-oracle",
+  "level": 1,
+  "seed": 0,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 87,
+  "ms_per_frame": 7.795329944444444
+ },
+ {
+  "pilot": "v3-oracle",
+  "level": 1,
+  "seed": 1,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 90,
+  "ms_per_frame": 6.400658444444445
+ }
+]

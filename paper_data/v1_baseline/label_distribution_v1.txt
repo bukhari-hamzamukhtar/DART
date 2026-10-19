@@ -1,0 +1,7 @@
+Label Distribution:
+  Label 0 (safe): 107036 (63.0%)
+  Label 1 (danger): 62964 (37.0%)
+
+Positive Weight (pos_weight) used: 1.70x
+
+Total Number of Training Records: 170000

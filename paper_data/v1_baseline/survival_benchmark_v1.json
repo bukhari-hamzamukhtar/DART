@@ -1,0 +1,414 @@
+{
+  "version": "v1_baseline",
+  "architecture": "ThreatGNN + CrossThreatAttention (stateless)",
+  "trials": 50,
+  "hit_rate_pct": 66.0,
+  "survival_rate_pct": 34.0,
+  "avg_survived_frames": 158.98,
+  "avg_flares_per_trial": 0,
+  "avg_inference_ms": 48.6,
+  "median_inference_ms": 45.6,
+  "maneuver_triggers": 0,
+  "per_trial": [
+    {
+      "trial": 1,
+      "hit": true,
+      "survived_frames": 123,
+      "flares_deployed": 0,
+      "avg_latency_ms": 50.420885714285866,
+      "num_missiles": 3
+    },
+    {
+      "trial": 2,
+      "hit": true,
+      "survived_frames": 21,
+      "flares_deployed": 0,
+      "avg_latency_ms": 65.3930499999995,
+      "num_missiles": 4
+    },
+    {
+      "trial": 3,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 22.594162000000146,
+      "num_missiles": 2
+    },
+    {
+      "trial": 4,
+      "hit": true,
+      "survived_frames": 122,
+      "flares_deployed": 0,
+      "avg_latency_ms": 34.855747619047435,
+      "num_missiles": 2
+    },
+    {
+      "trial": 5,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 50.84865600000008,
+      "num_missiles": 2
+    },
+    {
+      "trial": 6,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 42.087558000000236,
+      "num_missiles": 1
+    },
+    {
+      "trial": 7,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 23.013179999999593,
+      "num_missiles": 1
+    },
+    {
+      "trial": 8,
+      "hit": true,
+      "survived_frames": 122,
+      "flares_deployed": 0,
+      "avg_latency_ms": 41.40145714285737,
+      "num_missiles": 1
+    },
+    {
+      "trial": 9,
+      "hit": true,
+      "survived_frames": 114,
+      "flares_deployed": 0,
+      "avg_latency_ms": 53.257440000000145,
+      "num_missiles": 3
+    },
+    {
+      "trial": 10,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 38.738424000000364,
+      "num_missiles": 2
+    },
+    {
+      "trial": 11,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 35.93560400000001,
+      "num_missiles": 1
+    },
+    {
+      "trial": 12,
+      "hit": true,
+      "survived_frames": 38,
+      "flares_deployed": 0,
+      "avg_latency_ms": 41.15614285714285,
+      "num_missiles": 1
+    },
+    {
+      "trial": 13,
+      "hit": true,
+      "survived_frames": 42,
+      "flares_deployed": 0,
+      "avg_latency_ms": 44.18922500000022,
+      "num_missiles": 4
+    },
+    {
+      "trial": 14,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 18.89686399999995,
+      "num_missiles": 1
+    },
+    {
+      "trial": 15,
+      "hit": true,
+      "survived_frames": 60,
+      "flares_deployed": 0,
+      "avg_latency_ms": 48.20102727272707,
+      "num_missiles": 4
+    },
+    {
+      "trial": 16,
+      "hit": true,
+      "survived_frames": 112,
+      "flares_deployed": 0,
+      "avg_latency_ms": 36.336442105262805,
+      "num_missiles": 2
+    },
+    {
+      "trial": 17,
+      "hit": true,
+      "survived_frames": 153,
+      "flares_deployed": 0,
+      "avg_latency_ms": 48.6598038461538,
+      "num_missiles": 2
+    },
+    {
+      "trial": 18,
+      "hit": true,
+      "survived_frames": 101,
+      "flares_deployed": 0,
+      "avg_latency_ms": 41.09220000000052,
+      "num_missiles": 3
+    },
+    {
+      "trial": 19,
+      "hit": true,
+      "survived_frames": 122,
+      "flares_deployed": 0,
+      "avg_latency_ms": 51.6731190476187,
+      "num_missiles": 4
+    },
+    {
+      "trial": 20,
+      "hit": true,
+      "survived_frames": 66,
+      "flares_deployed": 0,
+      "avg_latency_ms": 41.18148333333357,
+      "num_missiles": 4
+    },
+    {
+      "trial": 21,
+      "hit": true,
+      "survived_frames": 148,
+      "flares_deployed": 0,
+      "avg_latency_ms": 47.674547999999675,
+      "num_missiles": 4
+    },
+    {
+      "trial": 22,
+      "hit": true,
+      "survived_frames": 112,
+      "flares_deployed": 0,
+      "avg_latency_ms": 45.042942105264636,
+      "num_missiles": 2
+    },
+    {
+      "trial": 23,
+      "hit": true,
+      "survived_frames": 56,
+      "flares_deployed": 0,
+      "avg_latency_ms": 36.82370000000148,
+      "num_missiles": 3
+    },
+    {
+      "trial": 24,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 42.7364039999992,
+      "num_missiles": 1
+    },
+    {
+      "trial": 25,
+      "hit": true,
+      "survived_frames": 16,
+      "flares_deployed": 0,
+      "avg_latency_ms": 62.44126666666716,
+      "num_missiles": 2
+    },
+    {
+      "trial": 26,
+      "hit": true,
+      "survived_frames": 49,
+      "flares_deployed": 0,
+      "avg_latency_ms": 43.07721111111186,
+      "num_missiles": 2
+    },
+    {
+      "trial": 27,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 33.881302000000204,
+      "num_missiles": 2
+    },
+    {
+      "trial": 28,
+      "hit": true,
+      "survived_frames": 80,
+      "flares_deployed": 0,
+      "avg_latency_ms": 45.82330714285782,
+      "num_missiles": 5
+    },
+    {
+      "trial": 29,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 15.664715999999714,
+      "num_missiles": 1
+    },
+    {
+      "trial": 30,
+      "hit": true,
+      "survived_frames": 83,
+      "flares_deployed": 0,
+      "avg_latency_ms": 36.978221428571246,
+      "num_missiles": 5
+    },
+    {
+      "trial": 31,
+      "hit": true,
+      "survived_frames": 38,
+      "flares_deployed": 0,
+      "avg_latency_ms": 52.86077142857185,
+      "num_missiles": 2
+    },
+    {
+      "trial": 32,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 18.198861999999707,
+      "num_missiles": 2
+    },
+    {
+      "trial": 33,
+      "hit": true,
+      "survived_frames": 105,
+      "flares_deployed": 0,
+      "avg_latency_ms": 53.88921111111008,
+      "num_missiles": 5
+    },
+    {
+      "trial": 34,
+      "hit": true,
+      "survived_frames": 75,
+      "flares_deployed": 0,
+      "avg_latency_ms": 49.30269230769277,
+      "num_missiles": 5
+    },
+    {
+      "trial": 35,
+      "hit": true,
+      "survived_frames": 71,
+      "flares_deployed": 0,
+      "avg_latency_ms": 54.12890833333428,
+      "num_missiles": 5
+    },
+    {
+      "trial": 36,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 45.374063999999805,
+      "num_missiles": 1
+    },
+    {
+      "trial": 37,
+      "hit": true,
+      "survived_frames": 13,
+      "flares_deployed": 0,
+      "avg_latency_ms": 109.8533666666673,
+      "num_missiles": 5
+    },
+    {
+      "trial": 38,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 70.0534659999991,
+      "num_missiles": 1
+    },
+    {
+      "trial": 39,
+      "hit": true,
+      "survived_frames": 147,
+      "flares_deployed": 0,
+      "avg_latency_ms": 57.55891999999932,
+      "num_missiles": 1
+    },
+    {
+      "trial": 40,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 27.057047999999924,
+      "num_missiles": 1
+    },
+    {
+      "trial": 41,
+      "hit": true,
+      "survived_frames": 90,
+      "flares_deployed": 0,
+      "avg_latency_ms": 62.92350624999932,
+      "num_missiles": 3
+    },
+    {
+      "trial": 42,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 27.39208599999955,
+      "num_missiles": 1
+    },
+    {
+      "trial": 43,
+      "hit": true,
+      "survived_frames": 170,
+      "flares_deployed": 0,
+      "avg_latency_ms": 57.098013793103604,
+      "num_missiles": 2
+    },
+    {
+      "trial": 44,
+      "hit": true,
+      "survived_frames": 91,
+      "flares_deployed": 0,
+      "avg_latency_ms": 78.7772874999999,
+      "num_missiles": 5
+    },
+    {
+      "trial": 45,
+      "hit": true,
+      "survived_frames": 126,
+      "flares_deployed": 0,
+      "avg_latency_ms": 61.19360454545454,
+      "num_missiles": 3
+    },
+    {
+      "trial": 46,
+      "hit": true,
+      "survived_frames": 85,
+      "flares_deployed": 0,
+      "avg_latency_ms": 68.63222666666502,
+      "num_missiles": 4
+    },
+    {
+      "trial": 47,
+      "hit": true,
+      "survived_frames": 23,
+      "flares_deployed": 0,
+      "avg_latency_ms": 96.94965000000089,
+      "num_missiles": 2
+    },
+    {
+      "trial": 48,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 86.01737400000005,
+      "num_missiles": 1
+    },
+    {
+      "trial": 49,
+      "hit": true,
+      "survived_frames": 75,
+      "flares_deployed": 0,
+      "avg_latency_ms": 75.43247692307685,
+      "num_missiles": 5
+    },
+    {
+      "trial": 50,
+      "hit": false,
+      "survived_frames": 300,
+      "flares_deployed": 0,
+      "avg_latency_ms": 37.23420599999798,
+      "num_missiles": 1
+    }
+  ]
+}

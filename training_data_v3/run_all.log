@@ -1,0 +1,169 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+PASS  A1 same parameter names   104 tensors
+PASS  A2 every weight loads from the checkpoint   104/104 tensors identical (no layer falls back to random init)
+PASS  B  graph builder tensors identical (25 scenes)
+PASS  C  brain outputs identical over 40 scenes   max diffs danger 0.0e+00 attn 0.0e+00 logits 0.0e+00
+PASS  D  batched evaluation matches per-scene calls   max diffs danger 4.2e-07 attn 3.3e-07 logits 9.5e-07 (float32 tolerance 1e-05)
+
+RESULT: MODEL PATH UNCHANGED
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+PASS  A  jet path matches the real Jet over 40 frames   max divergence 3.60e-13 px
+PASS  B  missile paths match the real missiles   max divergence 1.27e-13 px
+PASS  C  head-on collision predicted for the closing heading   impact at frame 17, closest 0.3 px
+PASS  D  turning away is predicted to miss   closest 61.2 px vs 0.3 px head-on
+
+RESULT: WORLD MODEL MATCHES THE GAME
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+PASS  [numba] A  open sky: classic missiles match the arena   max divergence 0.00e+00 px, alive mismatches 0
+PASS  [numba] B  terrain: seeker missiles match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0
+PASS  [numba] B' terrain scenarios exercise lock loss, memory flight and removals   lock losses 34, modes seen ['CUE', 'LOCK', 'MEMORY', 'SEARCH'], missiles removed 35
+PASS  [numba] C  datalink pincer: networked missiles match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0
+PASS  [numba] C' pincer scenarios exercise datalink guidance   modes seen ['LINK', 'LOCK', 'MEMORY', 'SEARCH']
+PASS  [numba] D  flying into a peak is predicted on the frame it happens   predicted frame 14, arena frame 14
+PASS  [numba] D' turning away from the peak is predicted to survive   closest terrain clearance 49.1 px
+PASS  [numba] E  flares: seekers, decoys and flare kills match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0, flare mismatches 0
+PASS  [numba] E' flare scenarios exercise decoys and flare kills   modes seen ['DECOY', 'LOCK', 'MEMORY', 'SEARCH'], flares used up 112
+PASS  [numba] F  classic swarm: repulsion, burn-out and flare kills match the arena   max divergence 2.75e-12 px, alive mismatches 0, flare mismatches 0
+PASS  [numba] F' swarm scenarios exercise repulsion, burn-out and flare kills   frames with repulsion 479, missiles burnt out 28, flares used up 28
+PASS  [numba] G  flight styles and terrain avoidance match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0
+PASS  [numba] G' style scenarios exercise flankers, weavers, erratic darts and avoidance   styles ['ERRATIC', 'FLANKER', 'PURSUIT', 'WEAVER'], missile-frames spent steering around a peak 612
+PASS  [numba] H  a margin brings a predicted hit forward and nothing else   hit frame 27 -> 24
+INFO  [numba] suite took 3.3s (includes compiling on first use)
+PASS  [python] A  open sky: classic missiles match the arena   max divergence 0.00e+00 px, alive mismatches 0
+PASS  [python] B  terrain: seeker missiles match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0
+PASS  [python] B' terrain scenarios exercise lock loss, memory flight and removals   lock losses 34, modes seen ['CUE', 'LOCK', 'MEMORY', 'SEARCH'], missiles removed 35
+PASS  [python] C  datalink pincer: networked missiles match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0
+PASS  [python] C' pincer scenarios exercise datalink guidance   modes seen ['LINK', 'LOCK', 'MEMORY', 'SEARCH']
+PASS  [python] D  flying into a peak is predicted on the frame it happens   predicted frame 14, arena frame 14
+PASS  [python] D' turning away from the peak is predicted to survive   closest terrain clearance 49.1 px
+PASS  [python] E  flares: seekers, decoys and flare kills match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0, flare mismatches 0
+PASS  [python] E' flare scenarios exercise decoys and flare kills   modes seen ['DECOY', 'LOCK', 'MEMORY', 'SEARCH'], flares used up 112
+PASS  [python] F  classic swarm: repulsion, burn-out and flare kills match the arena   max divergence 0.00e+00 px, alive mismatches 0, flare mismatches 0
+PASS  [python] F' swarm scenarios exercise repulsion, burn-out and flare kills   frames with repulsion 479, missiles burnt out 28, flares used up 28
+PASS  [python] G  flight styles and terrain avoidance match the arena   max divergence 0.00e+00 px, alive mismatches 0, lock-state mismatches 0
+PASS  [python] G' style scenarios exercise flankers, weavers, erratic darts and avoidance   styles ['ERRATIC', 'FLANKER', 'PURSUIT', 'WEAVER'], missile-frames spent steering around a peak 612
+PASS  [python] H  a margin brings a predicted hit forward and nothing else   hit frame 27 -> 24
+INFO  [python] suite took 4.7s (includes compiling on first use)
+INFO  [numba] rollout cost, 57 actions x 72 frames x 6 styled missiles:  L1 5.8 ms   L2 5.7 ms   L3 5.2 ms   L3 + 24 flares 6.2 ms
+
+RESULT: V3 WORLD MODEL MATCHES THE ARENA (numba, python)
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+PASS  A  one missile, one node key for its whole life   keys [1000001]
+PASS  B  behind the peak it coasts, then is reacquired   visibility V--------------------VVVVVVVVV
+PASS  B' while hidden, the peak that hides it has an OCCLUDE edge to it   20 hidden frames
+PASS  C  tracker reports born, occluded, reacquired   events ['born', 'occluded', 'reacquired']
+PASS  C' the edge insertion shows up in the graph diff
+PASS  D  a new node has no memory; after one tick it has some   had memory before first tick: False, |memory| after: 13.214
+PASS  D' a surviving node carries memory forward
+PASS  D'' a deleted node's memory is gone
+PASS  E  level 3 builds LINK edges between tracks in datalink range   link rows 1
+
+RESULT: DYNAMIC GRAPH BEHAVES AS ONE EVOLVING GRAPH
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+PASS  A  a life starts with an empty magazine
+PASS  A' with no charge, ejected flares never leave the jet   flares in the air 0, denied 3
+PASS  A'' a cluster launch earns one volley
+PASS  A''' a volley costs one charge, however many flares it holds
+PASS  A'''' the next frame's flares are refused again
+PASS  A''''' a pilot that pays for its own volley is charged once, not twice   charges 0, flares 7, volleys 2
+PASS  B  level 3: H/C fire the west battery, K/M the east, S the pincer
+PASS  B' levels 1-2: H/C the homing battery, B the ballistic one, no pincer key
+PASS  B'' each level-3 battery launches its own cluster, and each earns a volley   missiles 10, charges 2
+PASS  C  all four flight styles are drawn   {'PURSUIT': 506, 'FLANKER': 608, 'WEAVER': 399, 'ERRATIC': 487}
+PASS  C' a cluster flies mixed styles   ['ERRATIC', 'FLANKER', 'FLANKER', 'PURSUIT', 'WEAVER']
+PASS  C'' ...and spreads out wider than the same cluster flying pure pursuit   mean distance between members 146 px vs 93 px
+PASS  C''' erratic darts are deterministic and spread over [-1, 1]
+PASS  D  a seeker flying at a peak steers around it   reached the jet after 55 frames, 15 frames spent steering around
+PASS  D' the same seeker blind to terrain flies into the peak   destroyed after 19 frames
+
+RESULT: GAME RULES HOLD
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+PASS  IMMELMANN      ran  55 frames -> ended in COBRA        flares=0 maneuvers=1
+PASS  COBRA          ran  60 frames -> ended in NORMAL       flares=0 maneuvers=0
+PASS  FALLING_LEAF   ran 110 frames -> ended in NORMAL       flares=0 maneuvers=1
+PASS  JINKING        ran 140 frames -> ended in NORMAL       flares=0 maneuvers=1
+PASS  BARREL_ROLL    ran  92 frames -> ended in COBRA        flares=0 maneuvers=1
+PASS  NORMAL         ran  25 frames -> ended in COBRA        flares=0 maneuvers=1
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+PASS  L1 V1  205 frames   18.7 ms/frame (incl. render)  fired   9  peak missiles  7  maneuver NORMAL       outcome wall
+Loading Neural Engine...
+Engine Online. Weights loaded (Mismatched shapes skipped!).
+PASS  L1 V2  500 frames   21.3 ms/frame (incl. render)  fired  13  peak missiles  7  maneuver NORMAL       outcome alive
+Temporal graph brain online (jet_brain_tgn.pt, 117190 parameters).
+PASS  L1 V3  358 frames   17.6 ms/frame (incl. render)  fired  11  peak missiles  7  maneuver NORMAL       outcome missile
+PASS  L2 V1  129 frames   23.2 ms/frame (incl. render)  fired   9  peak missiles  7  maneuver NORMAL       outcome terrain
+PASS  L2 V2  164 frames   24.1 ms/frame (incl. render)  fired   9  peak missiles  8  maneuver NORMAL       outcome terrain
+PASS  L2 V3  500 frames   21.3 ms/frame (incl. render)  fired  20  peak missiles 11  maneuver NORMAL       outcome alive
+PASS  L3 V1   97 frames   32.3 ms/frame (incl. render)  fired  16  peak missiles 16  maneuver NORMAL       outcome missile
+PASS  L3 V2   97 frames   36.7 ms/frame (incl. render)  fired  16  peak missiles 16  maneuver NORMAL       outcome missile
+PASS  L3 V3  500 frames   19.9 ms/frame (incl. render)  fired  29  peak missiles 16  maneuver NORMAL       outcome alive
+
+PASS - every level x version ran without exceptions
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+PASS  run_start_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_setup_screen       rendered 5 frames
+PASS  run_briefing_screen    rendered 5 frames
+PASS  run_briefing_screen    rendered 5 frames
+PASS  run_briefing_screen    rendered 5 frames
+PASS  run_briefing_screen    rendered 5 frames
+PASS  run_briefing_screen    rendered 5 frames
+PASS  run_briefing_screen    rendered 5 frames
+PASS  run_gameover_screen    rendered 5 frames
+PASS  run_gameover_screen    rendered 5 frames
+
+==============================================================
+  test_equivalence.py
+==============================================================
+
+==============================================================
+  test_worldmodel.py
+==============================================================
+
+==============================================================
+  test_worldmodel_v3.py
+==============================================================
+
+==============================================================
+  test_dynamic_graph.py
+==============================================================
+
+==============================================================
+  test_rules.py
+==============================================================
+
+==============================================================
+  test_maneuvers.py
+==============================================================
+
+==============================================================
+  test_game_smoke.py
+==============================================================
+
+==============================================================
+  test_screens.py
+==============================================================
+
+==============================================================
+ALL CHECKS PASSED

@@ -1,0 +1,200 @@
+{
+ "val_choices": {
+  "kinematic": {
+   "det": "cal",
+   "ext": 30,
+   "val_ok": 2966,
+   "val_n": 3391
+  },
+  "swarm": {
+   "det": "cal",
+   "ext": 30,
+   "val_ok": 2979,
+   "val_n": 3391
+  },
+  "refit": {
+   "det": "cal",
+   "ext": 45,
+   "val_ok": 3011,
+   "val_n": 3391
+  }
+ },
+ "systems": {
+  "no simulation: delete the object, keep the recording": {
+   "options_ok": 2704,
+   "options": 3332,
+   "questions_ok": 453,
+   "questions": 930,
+   "simulated_ok": 0,
+   "simulated": 0,
+   "missed": 465,
+   "invented": 163,
+   "setting": [
+    "cal",
+    0
+   ]
+  },
+  "CausalVis v7: learned world model (v6_voxel)": {
+   "options_ok": 2936,
+   "options": 3332,
+   "questions_ok": 619,
+   "questions": 930,
+   "simulated_ok": 1435,
+   "simulated": 1716,
+   "missed": 207,
+   "invented": 189,
+   "setting": [
+    "cal",
+    30
+   ]
+  },
+  "CausalVis v8: textbook laws fitted on TRAIN": {
+   "options_ok": 2980,
+   "options": 3332,
+   "questions_ok": 649,
+   "questions": 930,
+   "simulated_ok": 1477,
+   "simulated": 1715,
+   "missed": 199,
+   "invented": 153,
+   "setting": [
+    "cal",
+    30
+   ]
+  },
+  "V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391)": {
+   "options_ok": 2891,
+   "options": 3332,
+   "questions_ok": 599,
+   "questions": 930,
+   "simulated_ok": 1398,
+   "simulated": 1727,
+   "missed": 237,
+   "invented": 204,
+   "setting": [
+    "cal",
+    30
+   ]
+  },
+  "V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391)": {
+   "options_ok": 2902,
+   "options": 3332,
+   "questions_ok": 598,
+   "questions": 930,
+   "simulated_ok": 1407,
+   "simulated": 1724,
+   "missed": 237,
+   "invented": 193,
+   "setting": [
+    "cal",
+    30
+   ]
+  },
+  "V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391)": {
+   "options_ok": 2932,
+   "options": 3332,
+   "questions_ok": 619,
+   "questions": 930,
+   "simulated_ok": 1427,
+   "simulated": 1716,
+   "missed": 209,
+   "invented": 191,
+   "setting": [
+    "cal",
+    45
+   ]
+  }
+ },
+ "paired": {
+  "V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391) | no simulation: delete the object, keep the recording": {
+   "matched": 3325,
+   "a_only": 368,
+   "b_only": 181,
+   "z": 7.980965515817183
+  },
+  "V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391) | CausalVis v7: learned world model (v6_voxel)": {
+   "matched": 3325,
+   "a_only": 97,
+   "b_only": 140,
+   "z": -2.793150150585013
+  },
+  "V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391) | CausalVis v8: textbook laws fitted on TRAIN": {
+   "matched": 3325,
+   "a_only": 55,
+   "b_only": 141,
+   "z": -6.142857142857143
+  },
+  "V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391) | V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391)": {
+   "matched": 3325,
+   "a_only": 25,
+   "b_only": 36,
+   "z": -1.4084056792618558
+  },
+  "V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391) | V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391)": {
+   "matched": 3325,
+   "a_only": 54,
+   "b_only": 91,
+   "z": -3.072682754588379
+  },
+  "V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391) | no simulation: delete the object, keep the recording": {
+   "matched": 3325,
+   "a_only": 366,
+   "b_only": 168,
+   "z": 8.568297983676725
+  },
+  "V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391) | CausalVis v7: learned world model (v6_voxel)": {
+   "matched": 3325,
+   "a_only": 99,
+   "b_only": 131,
+   "z": -2.1100175148665183
+  },
+  "V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391) | CausalVis v8: textbook laws fitted on TRAIN": {
+   "matched": 3325,
+   "a_only": 50,
+   "b_only": 125,
+   "z": -5.669467095138408
+  },
+  "V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391) | V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391)": {
+   "matched": 3325,
+   "a_only": 36,
+   "b_only": 25,
+   "z": 1.4084056792618558
+  },
+  "V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391) | V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391)": {
+   "matched": 3325,
+   "a_only": 48,
+   "b_only": 74,
+   "z": -2.3539293971054818
+  },
+  "V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391) | no simulation: delete the object, keep the recording": {
+   "matched": 3325,
+   "a_only": 379,
+   "b_only": 155,
+   "z": 9.693428021937306
+  },
+  "V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391) | CausalVis v7: learned world model (v6_voxel)": {
+   "matched": 3325,
+   "a_only": 89,
+   "b_only": 95,
+   "z": -0.4423258684646914
+  },
+  "V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391) | CausalVis v8: textbook laws fitted on TRAIN": {
+   "matched": 3325,
+   "a_only": 59,
+   "b_only": 108,
+   "z": -3.7917338394172706
+  },
+  "V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391) | V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391)": {
+   "matched": 3325,
+   "a_only": 91,
+   "b_only": 54,
+   "z": 3.072682754588379
+  },
+  "V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391) | V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391)": {
+   "matched": 3325,
+   "a_only": 74,
+   "b_only": 48,
+   "z": 2.3539293971054818
+  }
+ }
+}

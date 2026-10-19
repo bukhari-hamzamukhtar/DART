@@ -1,0 +1,92 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Temporal graph brain online (jet_brain_tgn.pt, 116803 parameters).
+L2 pilot 3           seed 0: SURVIVED at frame 1800  fired  55  flares  81  8.2 ms/frame
+L2 pilot 3           seed 1: SURVIVED at frame 1800  fired  55  flares  84  10.7 ms/frame
+L2 pilot 3           seed 2: SURVIVED at frame 1800  fired  55  flares  54  8.8 ms/frame
+L2 pilot 3           seed 3: SURVIVED at frame 1800  fired  55  flares  81  8.5 ms/frame
+L2 pilot 3           seed 4: died (missile) at frame  558  fired  20  flares  48  10.0 ms/frame
+L2 pilot 3           seed 5: SURVIVED at frame 1800  fired  55  flares  51  7.1 ms/frame
+L2 pilot 3           seed 6: SURVIVED at frame 1800  fired  55  flares 117  9.0 ms/frame
+L2 pilot 3           seed 7: SURVIVED at frame 1800  fired  55  flares  54  7.3 ms/frame
+L2 pilot 3           seed 8: SURVIVED at frame 1800  fired  55  flares  96  6.8 ms/frame
+L2 pilot 3           seed 9: SURVIVED at frame 1800  fired  55  flares 111  9.7 ms/frame
+L2 pilot 3           seed 10: SURVIVED at frame 1800  fired  55  flares 105  9.8 ms/frame
+L2 pilot 3           seed 11: SURVIVED at frame 1800  fired  55  flares  78  9.7 ms/frame
+L2 pilot 3           seed 12: SURVIVED at frame 1800  fired  55  flares  87  7.4 ms/frame
+L2 pilot 3           seed 13: SURVIVED at frame 1800  fired  55  flares 120  8.9 ms/frame
+L2 pilot 3           seed 14: SURVIVED at frame 1800  fired  55  flares 105  7.5 ms/frame
+L2 pilot 3           seed 15: SURVIVED at frame 1800  fired  55  flares  39  7.5 ms/frame
+L2 pilot 3-oracle    seed 0: SURVIVED at frame 1800  fired  55  flares  42  7.1 ms/frame
+L2 pilot 3-oracle    seed 1: SURVIVED at frame 1800  fired  55  flares 105  7.2 ms/frame
+L2 pilot 3-oracle    seed 2: SURVIVED at frame 1800  fired  55  flares 102  7.1 ms/frame
+L2 pilot 3-oracle    seed 3: SURVIVED at frame 1800  fired  55  flares  90  8.0 ms/frame
+L2 pilot 3-oracle    seed 4: SURVIVED at frame 1800  fired  55  flares  54  7.0 ms/frame
+L2 pilot 3-oracle    seed 5: SURVIVED at frame 1800  fired  55  flares  69  6.7 ms/frame
+L2 pilot 3-oracle    seed 6: SURVIVED at frame 1800  fired  55  flares  78  8.6 ms/frame
+L2 pilot 3-oracle    seed 7: SURVIVED at frame 1800  fired  55  flares  87  7.3 ms/frame
+L2 pilot 3-oracle    seed 8: SURVIVED at frame 1800  fired  55  flares  90  7.0 ms/frame
+L2 pilot 3-oracle    seed 9: SURVIVED at frame 1800  fired  55  flares  96  7.3 ms/frame
+L2 pilot 3-oracle    seed 10: SURVIVED at frame 1800  fired  55  flares  69  6.7 ms/frame
+L2 pilot 3-oracle    seed 11: SURVIVED at frame 1800  fired  55  flares  63  6.1 ms/frame
+L2 pilot 3-oracle    seed 12: SURVIVED at frame 1800  fired  55  flares 102  7.1 ms/frame
+L2 pilot 3-oracle    seed 13: SURVIVED at frame 1800  fired  55  flares  78  6.9 ms/frame
+L2 pilot 3-oracle    seed 14: SURVIVED at frame 1800  fired  55  flares 108  7.4 ms/frame
+L2 pilot 3-oracle    seed 15: SURVIVED at frame 1800  fired  55  flares  45  7.2 ms/frame
+L2 pilot 3-prior     seed 0: SURVIVED at frame 1800  fired  55  flares  66  5.5 ms/frame
+L2 pilot 3-prior     seed 1: SURVIVED at frame 1800  fired  55  flares  69  5.8 ms/frame
+L2 pilot 3-prior     seed 2: SURVIVED at frame 1800  fired  55  flares  87  7.6 ms/frame
+L2 pilot 3-prior     seed 3: SURVIVED at frame 1800  fired  55  flares 114  7.8 ms/frame
+L2 pilot 3-prior     seed 4: died (missile) at frame  233  fired   9  flares   9  4.7 ms/frame
+L2 pilot 3-prior     seed 5: SURVIVED at frame 1800  fired  55  flares 120  8.8 ms/frame
+L2 pilot 3-prior     seed 6: died (missile) at frame  863  fired  29  flares  48  10.6 ms/frame
+L2 pilot 3-prior     seed 7: SURVIVED at frame 1800  fired  55  flares  54  6.6 ms/frame
+L2 pilot 3-prior     seed 8: SURVIVED at frame 1800  fired  55  flares 102  8.4 ms/frame
+L2 pilot 3-prior     seed 9: SURVIVED at frame 1800  fired  55  flares 111  9.4 ms/frame
+L2 pilot 3-prior     seed 10: SURVIVED at frame 1800  fired  55  flares  87  7.1 ms/frame
+L2 pilot 3-prior     seed 11: died (missile) at frame  953  fired  31  flares  63  12.4 ms/frame
+L2 pilot 3-prior     seed 12: SURVIVED at frame 1800  fired  55  flares  78  8.5 ms/frame
+L2 pilot 3-prior     seed 13: SURVIVED at frame 1800  fired  55  flares 105  13.4 ms/frame
+L2 pilot 3-prior     seed 14: SURVIVED at frame 1800  fired  55  flares 141  13.8 ms/frame
+L2 pilot 3-prior     seed 15: SURVIVED at frame 1800  fired  55  flares  93  13.5 ms/frame
+L2 pilot 3-no_edges  seed 0: SURVIVED at frame 1800  fired  55  flares  33  13.9 ms/frame
+L2 pilot 3-no_edges  seed 1: SURVIVED at frame 1800  fired  55  flares 114  18.7 ms/frame
+L2 pilot 3-no_edges  seed 2: SURVIVED at frame 1800  fired  55  flares  54  16.0 ms/frame
+L2 pilot 3-no_edges  seed 3: SURVIVED at frame 1800  fired  55  flares  75  16.8 ms/frame
+L2 pilot 3-no_edges  seed 4: SURVIVED at frame 1800  fired  55  flares  48  13.2 ms/frame
+L2 pilot 3-no_edges  seed 5: SURVIVED at frame 1800  fired  55  flares  45  11.6 ms/frame
+L2 pilot 3-no_edges  seed 6: SURVIVED at frame 1800  fired  55  flares  81  16.8 ms/frame
+L2 pilot 3-no_edges  seed 7: SURVIVED at frame 1800  fired  55  flares  75  11.0 ms/frame
+L2 pilot 3-no_edges  seed 8: SURVIVED at frame 1800  fired  55  flares  63  12.8 ms/frame
+L2 pilot 3-no_edges  seed 9: SURVIVED at frame 1800  fired  55  flares  96  17.0 ms/frame
+L2 pilot 3-no_edges  seed 10: SURVIVED at frame 1800  fired  55  flares  33  12.2 ms/frame
+L2 pilot 3-no_edges  seed 11: SURVIVED at frame 1800  fired  55  flares  66  12.6 ms/frame
+L2 pilot 3-no_edges  seed 12: SURVIVED at frame 1800  fired  55  flares 117  13.4 ms/frame
+L2 pilot 3-no_edges  seed 13: SURVIVED at frame 1800  fired  55  flares  93  11.7 ms/frame
+L2 pilot 3-no_edges  seed 14: SURVIVED at frame 1800  fired  55  flares  99  12.8 ms/frame
+L2 pilot 3-no_edges  seed 15: SURVIVED at frame 1800  fired  55  flares  48  10.7 ms/frame
+L2 pilot 3-no_memory seed 0: SURVIVED at frame 1800  fired  55  flares  75  10.0 ms/frame
+L2 pilot 3-no_memory seed 1: SURVIVED at frame 1800  fired  55  flares  93  16.4 ms/frame
+L2 pilot 3-no_memory seed 2: SURVIVED at frame 1800  fired  55  flares  60  15.6 ms/frame
+L2 pilot 3-no_memory seed 3: SURVIVED at frame 1800  fired  55  flares  87  17.3 ms/frame
+L2 pilot 3-no_memory seed 4: SURVIVED at frame 1800  fired  55  flares  78  16.3 ms/frame
+L2 pilot 3-no_memory seed 5: SURVIVED at frame 1800  fired  55  flares  96  16.4 ms/frame
+L2 pilot 3-no_memory seed 6: SURVIVED at frame 1800  fired  55  flares  81  19.2 ms/frame
+L2 pilot 3-no_memory seed 7: SURVIVED at frame 1800  fired  55  flares 111  15.8 ms/frame
+L2 pilot 3-no_memory seed 8: SURVIVED at frame 1800  fired  55  flares 108  13.6 ms/frame
+L2 pilot 3-no_memory seed 9: SURVIVED at frame 1800  fired  55  flares  78  12.8 ms/frame
+L2 pilot 3-no_memory seed 10: SURVIVED at frame 1800  fired  55  flares  45  10.3 ms/frame
+L2 pilot 3-no_memory seed 11: SURVIVED at frame 1800  fired  55  flares  60  8.8 ms/frame
+L2 pilot 3-no_memory seed 12: SURVIVED at frame 1800  fired  55  flares  81  11.5 ms/frame
+L2 pilot 3-no_memory seed 13: SURVIVED at frame 1800  fired  55  flares 105  11.6 ms/frame
+L2 pilot 3-no_memory seed 14: SURVIVED at frame 1800  fired  55  flares  84  12.5 ms/frame
+L2 pilot 3-no_memory seed 15: SURVIVED at frame 1800  fired  55  flares  51  7.3 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L2     3               15/16        28.7 s       8.5   missile 1
+L2     3-oracle        16/16        30.0 s       7.2   -
+L2     3-prior         13/16        26.5 s       9.0   missile 3
+L2     3-no_edges      16/16        30.0 s      13.8   -
+L2     3-no_memory     16/16        30.0 s      13.5   -
+
+wrote training_data_v3/bench_final_L2_v3.json

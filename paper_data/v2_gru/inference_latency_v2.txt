@@ -1,0 +1,25 @@
+============================================================
+v2_gru: ThreatGNN + TemporalThreatAttention (GRU) + ManeuverHead
+Weights:      jet_brain_v3.pt
+Device:       CPU
+Context dim:  5  [norm_dist, tti_norm, closing_norm, aoa, mtype]
+============================================================
+Total iterations:    12342
+Avg latency (ms):    4.070
+Median latency (ms): 3.786
+Std dev (ms):        1.585
+P95 latency (ms):    5.972
+
+Latency by missile count K:
+  K=1  n= 3141  avg=3.863ms  p95=5.755ms
+  K=2  n= 3105  avg=4.018ms  p95=5.882ms
+  K=3  n= 2987  avg=4.136ms  p95=5.917ms
+  K=4  n= 3109  avg=4.265ms  p95=6.283ms
+
+GNN Maneuver Recommendation Distribution:
+  NORMAL                0  (0.0%)
+  BARREL_ROLL           5  (0.0%)
+  JINKING            2270  (18.4%)
+  FALLING_LEAF      10067  (81.6%)
+  COBRA                 0  (0.0%)
+  IMMELMANN             0  (0.0%)

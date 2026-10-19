@@ -1,0 +1,178 @@
+[
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 0,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 57,
+  "ms_per_frame": 13.076863277777775
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 1,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 66,
+  "ms_per_frame": 9.02636388888889
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 2,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 75,
+  "ms_per_frame": 7.648826
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 3,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 78,
+  "ms_per_frame": 9.898647055555559
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 4,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 66,
+  "ms_per_frame": 7.755119388888884
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 5,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 81,
+  "ms_per_frame": 8.425151166666673
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 6,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 81,
+  "ms_per_frame": 6.59322655555556
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 7,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 69,
+  "ms_per_frame": 6.4254966111111065
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 8,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 69,
+  "ms_per_frame": 7.223649722222218
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 9,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 81,
+  "ms_per_frame": 6.979722111111105
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 10,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 81,
+  "ms_per_frame": 7.663377833333334
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 11,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 87,
+  "ms_per_frame": 6.515268555555562
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 12,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 81,
+  "ms_per_frame": 4.928574277777768
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 13,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 90,
+  "ms_per_frame": 5.671737555555549
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 14,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 75,
+  "ms_per_frame": 4.106381166666672
+ },
+ {
+  "pilot": "3-no_memory",
+  "level": 2,
+  "seed": 15,
+  "survived": true,
+  "frames": 1800,
+  "cause": null,
+  "fired": 55,
+  "flares": 84,
+  "ms_per_frame": 4.248431277777785
+ }
+]

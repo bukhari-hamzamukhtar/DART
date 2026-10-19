@@ -1,0 +1,52 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Temporal graph brain online (jet_brain_tgn.pt, 116803 parameters).
+L1 pilot 3           seed 0: SURVIVED at frame 1800  fired  55  flares 153  5.4 ms/frame
+L1 pilot 3           seed 1: died (wall) at frame  643  fired  21  flares  69  6.4 ms/frame
+L1 pilot 3           seed 2: SURVIVED at frame 1800  fired  55  flares 120  5.0 ms/frame
+L1 pilot 3           seed 3: died (wall) at frame  625  fired  21  flares  54  5.6 ms/frame
+L1 pilot 3           seed 4: SURVIVED at frame 1800  fired  55  flares 174  5.8 ms/frame
+L1 pilot 3           seed 5: SURVIVED at frame 1800  fired  55  flares 138  5.2 ms/frame
+L1 pilot 3           seed 6: SURVIVED at frame 1800  fired  55  flares 162  4.9 ms/frame
+L1 pilot 3           seed 7: died (missile) at frame  996  fired  33  flares  99  4.8 ms/frame
+L1 pilot 3-oracle    seed 0: died (missile) at frame  956  fired  31  flares  78  3.8 ms/frame
+L1 pilot 3-oracle    seed 1: SURVIVED at frame 1800  fired  55  flares 201  4.2 ms/frame
+L1 pilot 3-oracle    seed 2: SURVIVED at frame 1800  fired  55  flares 117  3.4 ms/frame
+L1 pilot 3-oracle    seed 3: SURVIVED at frame 1800  fired  55  flares 156  3.8 ms/frame
+L1 pilot 3-oracle    seed 4: SURVIVED at frame 1800  fired  55  flares 153  4.3 ms/frame
+L1 pilot 3-oracle    seed 5: SURVIVED at frame 1800  fired  55  flares 135  3.8 ms/frame
+L1 pilot 3-oracle    seed 6: died (missile) at frame  360  fired  11  flares  30  4.2 ms/frame
+L1 pilot 3-oracle    seed 7: SURVIVED at frame 1800  fired  55  flares 144  4.4 ms/frame
+L1 pilot 3-prior     seed 0: died (missile) at frame  333  fired  11  flares  36  4.1 ms/frame
+L1 pilot 3-prior     seed 1: SURVIVED at frame 1800  fired  55  flares 207  5.3 ms/frame
+L1 pilot 3-prior     seed 2: SURVIVED at frame 1800  fired  55  flares 201  4.5 ms/frame
+L1 pilot 3-prior     seed 3: SURVIVED at frame 1800  fired  55  flares 200  5.2 ms/frame
+L1 pilot 3-prior     seed 4: SURVIVED at frame 1800  fired  55  flares 168  4.8 ms/frame
+L1 pilot 3-prior     seed 5: SURVIVED at frame 1800  fired  55  flares 188  5.4 ms/frame
+L1 pilot 3-prior     seed 6: SURVIVED at frame 1800  fired  55  flares 174  4.8 ms/frame
+L1 pilot 3-prior     seed 7: SURVIVED at frame 1800  fired  55  flares 209  4.6 ms/frame
+L1 pilot 3-no_edges  seed 0: SURVIVED at frame 1800  fired  55  flares 144  5.9 ms/frame
+L1 pilot 3-no_edges  seed 1: SURVIVED at frame 1800  fired  55  flares 201  5.6 ms/frame
+L1 pilot 3-no_edges  seed 2: SURVIVED at frame 1800  fired  55  flares 155  4.8 ms/frame
+L1 pilot 3-no_edges  seed 3: SURVIVED at frame 1800  fired  55  flares 165  5.3 ms/frame
+L1 pilot 3-no_edges  seed 4: SURVIVED at frame 1800  fired  55  flares 165  5.4 ms/frame
+L1 pilot 3-no_edges  seed 5: SURVIVED at frame 1800  fired  55  flares 150  4.5 ms/frame
+L1 pilot 3-no_edges  seed 6: SURVIVED at frame 1800  fired  55  flares 141  5.8 ms/frame
+L1 pilot 3-no_edges  seed 7: SURVIVED at frame 1800  fired  55  flares 135  5.4 ms/frame
+L1 pilot 3-no_memory seed 0: SURVIVED at frame 1800  fired  55  flares 132  5.6 ms/frame
+L1 pilot 3-no_memory seed 1: SURVIVED at frame 1800  fired  55  flares 195  5.7 ms/frame
+L1 pilot 3-no_memory seed 2: SURVIVED at frame 1800  fired  55  flares 141  5.3 ms/frame
+L1 pilot 3-no_memory seed 3: SURVIVED at frame 1800  fired  55  flares 162  5.3 ms/frame
+L1 pilot 3-no_memory seed 4: SURVIVED at frame 1800  fired  55  flares 165  5.8 ms/frame
+L1 pilot 3-no_memory seed 5: SURVIVED at frame 1800  fired  55  flares 138  4.7 ms/frame
+L1 pilot 3-no_memory seed 6: SURVIVED at frame 1800  fired  55  flares 138  4.6 ms/frame
+L1 pilot 3-no_memory seed 7: died (wall) at frame  785  fired  29  flares  36  4.8 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L1     3                5/8         23.5 s       5.4   missile 1, wall 2
+L1     3-oracle         6/8         25.2 s       4.0   missile 2
+L1     3-prior          7/8         26.9 s       4.8   missile 1
+L1     3-no_edges       8/8         30.0 s       5.4   -
+L1     3-no_memory      7/8         27.9 s       5.2   wall 1
+
+wrote training_data_v3/bench_flarewm_L1.json

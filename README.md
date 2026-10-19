@@ -3,6 +3,9 @@
 DART is a 2D game. You fire missiles at a jet, and an AI flies the jet. Everything runs live on
 one laptop CPU (Intel i5-8350U). No GPU is needed to play.
 
+**Play it in a browser, no install: https://neural-evasion.vercel.app**. That is the whole V3
+stack ported to JavaScript (`web/`), running on the visitor's own CPU.
+
 The repo holds two generations of the AI.
 
 | | when | how the jet decides | where |
@@ -106,8 +109,14 @@ The spring report's numbers were measured before these fixes.
 | `jet_brain_tgn*.pt`, `*.calib.json` | V3's temporal GNN and its two ablations, with their conformal margins |
 | `main3.py`, `simulation/`, `colab/` | spring build: game, data generator, training notebook |
 | `SIM_AUDIT.md`, `benchmark_v2.py`, `headless_latency.py`, `param_count.py` | the September audit of the spring build |
-| `training_data_v3/` | benchmark and evaluation results (the training episodes are too big to commit) |
+| `training_data_v3/` | benchmark and evaluation results (the training episodes are too big to commit; `neural_evasion/training/generate.py` rebuilds them) |
+| `web/` | the browser build: V3 in JavaScript, with Node tests that hold it to the Python model ([`web/README.md`](web/README.md)) |
+| `experiments/` | the cost-to-go experiment and the death-replay script behind section 2 of the architecture doc |
+| `crosstest/` | each world model on the other project's problem: V3 against CausalVis on CLEVRER counterfactuals ([`crosstest/CROSSTEST.md`](crosstest/CROSSTEST.md)) |
 | `paper/` | spring report (IEEE format) and architecture figure |
+| `paper_data/` | the numbers, ablations and loss curves behind the spring report |
+| `legacy/` | the v1 and v2 spring scripts (`main.py`, `main2.py`) and their checkpoints |
+| `timeline/` | the project's planning pages, one per stage (`dnn0` to `dnn4`) |
 
 ## Test, train, benchmark
 

@@ -1,0 +1,26 @@
+CLEVRER counterfactual TEST                                                    per option     per question  simulated pairs  missed invented
+no simulation: delete the object, keep the recording                       81.2% (2704)    48.7% (453)     0.0% (   0)     465      163
+CausalVis v7: learned world model (v6_voxel)                               88.1% (2936)    66.6% (619)    83.6% (1716)     207      189
+CausalVis v8: textbook laws fitted on TRAIN                                89.4% (2980)    69.8% (649)    86.1% (1715)     199      153
+V3 kinematic (setting chosen on VAL: cal +30, VAL 2966/3391)               86.8% (2891)    64.4% (599)    80.9% (1727)     237      204
+V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3391)                   87.1% (2902)    64.3% (598)    81.6% (1724)     237      193
+V3 refit (setting chosen on VAL: cal +45, VAL 3011/3391)                   88.0% (2932)    66.6% (619)    83.2% (1716)     209      191
+
+paired, McNemar on matched options (A right & B wrong vs B right & A wrong)
+   V3 kinematic (setting chosen on VAL: cal vs no simulation: delete the object, keep the recording matched 3325   368 vs 181   z = +7.98
+   V3 kinematic (setting chosen on VAL: cal vs CausalVis v7: learned world model (v6_voxel)         matched 3325    97 vs 140   z = -2.79
+   V3 kinematic (setting chosen on VAL: cal vs CausalVis v8: textbook laws fitted on TRAIN          matched 3325    55 vs 141   z = -6.14
+   V3 kinematic (setting chosen on VAL: cal vs V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3 matched 3325    25 vs  36   z = -1.41
+   V3 kinematic (setting chosen on VAL: cal vs V3 refit (setting chosen on VAL: cal +45, VAL 3011/3 matched 3325    54 vs  91   z = -3.07
+   V3 swarm (setting chosen on VAL: cal +30 vs no simulation: delete the object, keep the recording matched 3325   366 vs 168   z = +8.57
+   V3 swarm (setting chosen on VAL: cal +30 vs CausalVis v7: learned world model (v6_voxel)         matched 3325    99 vs 131   z = -2.11
+   V3 swarm (setting chosen on VAL: cal +30 vs CausalVis v8: textbook laws fitted on TRAIN          matched 3325    50 vs 125   z = -5.67
+   V3 swarm (setting chosen on VAL: cal +30 vs V3 kinematic (setting chosen on VAL: cal +30, VAL 29 matched 3325    36 vs  25   z = +1.41
+   V3 swarm (setting chosen on VAL: cal +30 vs V3 refit (setting chosen on VAL: cal +45, VAL 3011/3 matched 3325    48 vs  74   z = -2.35
+   V3 refit (setting chosen on VAL: cal +45 vs no simulation: delete the object, keep the recording matched 3325   379 vs 155   z = +9.69
+   V3 refit (setting chosen on VAL: cal +45 vs CausalVis v7: learned world model (v6_voxel)         matched 3325    89 vs  95   z = -0.44
+   V3 refit (setting chosen on VAL: cal +45 vs CausalVis v8: textbook laws fitted on TRAIN          matched 3325    59 vs 108   z = -3.79
+   V3 refit (setting chosen on VAL: cal +45 vs V3 kinematic (setting chosen on VAL: cal +30, VAL 29 matched 3325    91 vs  54   z = +3.07
+   V3 refit (setting chosen on VAL: cal +45 vs V3 swarm (setting chosen on VAL: cal +30, VAL 2979/3 matched 3325    74 vs  48   z = +2.35
+
+wrote C:/Users/Hamza Bukhari/Desktop/DNN\crosstest\results\clevrer_test.json

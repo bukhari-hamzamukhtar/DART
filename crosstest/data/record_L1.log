@@ -1,0 +1,32 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+level 1 train episode 1/24: 53 missile segments, 0s
+level 1 train episode 2/24: 65 missile segments, 1s
+level 1 train episode 3/24: 52 missile segments, 1s
+level 1 train episode 4/24: 57 missile segments, 1s
+level 1 train episode 5/24: 52 missile segments, 2s
+level 1 train episode 6/24: 45 missile segments, 2s
+level 1 train episode 7/24: 49 missile segments, 2s
+level 1 train episode 8/24: 63 missile segments, 3s
+level 1 train episode 9/24: 57 missile segments, 3s
+level 1 train episode 10/24: 66 missile segments, 3s
+level 1 train episode 11/24: 66 missile segments, 4s
+level 1 train episode 12/24: 64 missile segments, 4s
+level 1 train episode 13/24: 66 missile segments, 5s
+level 1 train episode 14/24: 64 missile segments, 5s
+level 1 train episode 15/24: 58 missile segments, 5s
+level 1 train episode 16/24: 64 missile segments, 6s
+level 1 train episode 17/24: 65 missile segments, 6s
+level 1 train episode 18/24: 65 missile segments, 6s
+level 1 train episode 19/24: 49 missile segments, 7s
+level 1 train episode 20/24: 48 missile segments, 7s
+level 1 train episode 21/24: 65 missile segments, 7s
+level 1 train episode 22/24: 60 missile segments, 8s
+level 1 train episode 23/24: 55 missile segments, 8s
+level 1 train episode 24/24: 58 missile segments, 8s
+wrote C:/Users/Hamza Bukhari/Desktop/DNN\crosstest\data\game_L1_train.pkl
+level 1 val episode 1/4: 54 missile segments, 0s
+level 1 val episode 2/4: 55 missile segments, 1s
+level 1 val episode 3/4: 60 missile segments, 1s
+level 1 val episode 4/4: 64 missile segments, 1s
+wrote C:/Users/Hamza Bukhari/Desktop/DNN\crosstest\data\game_L1_val.pkl

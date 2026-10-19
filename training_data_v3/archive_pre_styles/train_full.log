@@ -1,0 +1,63 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+train episodes 120 (72000 ticks), val episodes 18
+variant full, 116803 parameters
+step 50  33s  bias 0.113  guided 0.655  lead 0.214  link 0.701  pursuit 0.237  side 0.182  threat 1.018  turn 0.124  turn_hi 0.039
+step 100  68s  bias 0.121  guided 0.652  lead 0.184  link 0.641  pursuit 0.136  side 0.218  threat 1.053  turn 0.097  turn_hi 0.035
+step 150  103s  bias 0.129  guided 0.636  lead 0.105  link 0.619  pursuit 0.080  side 0.212  threat 1.091  turn 0.100  turn_hi 0.034
+step 200  139s  bias 0.138  guided 0.567  lead 0.059  link 0.514  pursuit 0.060  side 0.206  threat 0.928  turn 0.072  turn_hi 0.027
+step 250  171s  bias 0.128  guided 0.438  lead 0.032  link 0.316  pursuit 0.026  side 0.134  threat 0.984  turn 0.086  turn_hi 0.026
+step 300  205s  bias 0.116  guided 0.584  lead 0.060  link 0.332  pursuit 0.047  side 0.195  threat 1.145  turn 0.085  turn_hi 0.028
+step 350  239s  bias 0.094  guided 0.527  lead 0.071  link 0.302  pursuit 0.021  side 0.241  threat 0.988  turn 0.087  turn_hi 0.019
+step 400  271s  bias 0.135  guided 0.583  lead 0.057  link 0.261  pursuit 0.057  side 0.140  threat 0.813  turn 0.074  turn_hi 0.024
+step 450  298s  bias 0.127  guided 0.548  lead 0.053  link 0.327  pursuit 0.024  side 0.229  threat 1.139  turn 0.093  turn_hi 0.025
+step 500  324s  bias 0.083  guided 0.486  lead 0.073  link 0.179  pursuit 0.022  side 0.218  threat 0.944  turn 0.084  turn_hi 0.019
+VAL step 500: pursuit_acc 0.993  turn_mae 0.019  turn_hi_cover 0.935  bias_mae 0.005  lead_mae 0.074  side_acc 0.778  guided_acc 0.594  threat_acc 0.667  threat_recall 0.668  link_acc 0.885 link_f1 0.885
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn.pt (score 1.1212)
+step 550  388s  bias 0.090  guided 0.463  lead 0.041  link 0.201  pursuit 0.019  side 0.178  threat 1.002  turn 0.075  turn_hi 0.019
+step 600  416s  bias 0.108  guided 0.413  lead 0.043  link 0.222  pursuit 0.028  side 0.102  threat 0.855  turn 0.077  turn_hi 0.022
+step 650  456s  bias 0.086  guided 0.384  lead 0.038  link 0.295  pursuit 0.018  side 0.228  threat 0.913  turn 0.068  turn_hi 0.022
+step 700  497s  bias 0.100  guided 0.304  lead 0.031  link 0.172  pursuit 0.005  side 0.119  threat 0.928  turn 0.077  turn_hi 0.019
+step 750  534s  bias 0.110  guided 0.440  lead 0.040  link 0.150  pursuit 0.019  side 0.195  threat 0.979  turn 0.067  turn_hi 0.021
+step 800  573s  bias 0.082  guided 0.340  lead 0.034  link 0.134  pursuit 0.009  side 0.161  threat 1.002  turn 0.058  turn_hi 0.016
+step 850  612s  bias 0.071  guided 0.402  lead 0.053  link 0.138  pursuit 0.007  side 0.165  threat 0.885  turn 0.075  turn_hi 0.020
+step 900  653s  bias 0.102  guided 0.288  lead 0.047  link 0.142  pursuit 0.010  side 0.158  threat 0.732  turn 0.067  turn_hi 0.020
+step 950  690s  bias 0.058  guided 0.328  lead 0.053  link 0.224  pursuit 0.013  side 0.219  threat 0.790  turn 0.077  turn_hi 0.019
+step 1000  730s  bias 0.097  guided 0.338  lead 0.040  link 0.193  pursuit 0.008  side 0.186  threat 0.883  turn 0.079  turn_hi 0.020
+VAL step 1000: pursuit_acc 0.998  turn_mae 0.018  turn_hi_cover 0.917  bias_mae 0.004  lead_mae 0.055  side_acc 0.778  guided_acc 0.779  threat_acc 0.686  threat_recall 0.627  link_acc 0.916 link_f1 0.913
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn.pt (score 0.8760)
+step 1050  822s  bias 0.086  guided 0.361  lead 0.033  link 0.203  pursuit 0.011  side 0.193  threat 0.916  turn 0.072  turn_hi 0.020
+step 1100  858s  bias 0.078  guided 0.349  lead 0.040  link 0.136  pursuit 0.017  side 0.240  threat 1.187  turn 0.092  turn_hi 0.024
+step 1150  892s  bias 0.078  guided 0.335  lead 0.064  link 0.190  pursuit 0.046  side 0.154  threat 0.794  turn 0.078  turn_hi 0.020
+step 1200  927s  bias 0.109  guided 0.271  lead 0.031  link 0.143  pursuit 0.005  side 0.178  threat 0.880  turn 0.056  turn_hi 0.019
+step 1250  962s  bias 0.076  guided 0.201  lead 0.051  link 0.202  pursuit 0.032  side 0.086  threat 0.791  turn 0.075  turn_hi 0.022
+step 1300  997s  bias 0.064  guided 0.342  lead 0.048  link 0.236  pursuit 0.012  side 0.153  threat 1.094  turn 0.064  turn_hi 0.018
+step 1350  1032s  bias 0.087  guided 0.267  lead 0.026  link 0.253  pursuit 0.009  side 0.130  threat 0.902  turn 0.077  turn_hi 0.021
+step 1400  1068s  bias 0.060  guided 0.403  lead 0.040  link 0.191  pursuit 0.005  side 0.201  threat 1.031  turn 0.069  turn_hi 0.016
+step 1450  1103s  bias 0.077  guided 0.197  lead 0.020  link 0.097  pursuit 0.002  side 0.146  threat 0.976  turn 0.066  turn_hi 0.016
+step 1500  1139s  bias 0.066  guided 0.224  lead 0.033  link 0.161  pursuit 0.009  side 0.120  threat 0.953  turn 0.076  turn_hi 0.021
+VAL step 1500: pursuit_acc 0.998  turn_mae 0.017  turn_hi_cover 0.944  bias_mae 0.003  lead_mae 0.043  side_acc 0.778  guided_acc 0.832  threat_acc 0.608  threat_recall 0.773  link_acc 0.942 link_f1 0.943
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn.pt (score 0.8184)
+step 1550  1223s  bias 0.072  guided 0.281  lead 0.039  link 0.168  pursuit 0.002  side 0.218  threat 0.954  turn 0.098  turn_hi 0.021
+step 1600  1259s  bias 0.074  guided 0.236  lead 0.029  link 0.197  pursuit 0.004  side 0.222  threat 0.863  turn 0.070  turn_hi 0.020
+step 1650  1294s  bias 0.079  guided 0.270  lead 0.033  link 0.059  pursuit 0.003  side 0.103  threat 0.835  turn 0.070  turn_hi 0.019
+step 1700  1329s  bias 0.070  guided 0.258  lead 0.041  link 0.228  pursuit 0.004  side 0.154  threat 0.939  turn 0.067  turn_hi 0.020
+step 1750  1364s  bias 0.075  guided 0.206  lead 0.026  link 0.126  pursuit 0.017  side 0.177  threat 0.912  turn 0.070  turn_hi 0.018
+step 1800  1398s  bias 0.049  guided 0.206  lead 0.037  link 0.191  pursuit 0.001  side 0.215  threat 0.929  turn 0.077  turn_hi 0.017
+step 1850  1432s  bias 0.057  guided 0.173  lead 0.029  link 0.210  pursuit 0.005  side 0.134  threat 0.918  turn 0.067  turn_hi 0.019
+step 1900  1466s  bias 0.073  guided 0.163  lead 0.028  link 0.156  pursuit 0.001  side 0.186  threat 0.869  turn 0.068  turn_hi 0.021
+step 1950  1499s  bias 0.055  guided 0.165  lead 0.040  link 0.067  pursuit 0.006  side 0.205  threat 0.834  turn 0.088  turn_hi 0.021
+step 2000  1533s  bias 0.066  guided 0.212  lead 0.028  link 0.150  pursuit 0.002  side 0.125  threat 0.824  turn 0.064  turn_hi 0.019
+VAL step 2000: pursuit_acc 1.000  turn_mae 0.017  turn_hi_cover 0.959  bias_mae 0.002  lead_mae 0.041  side_acc 0.778  guided_acc 0.833  threat_acc 0.668  threat_recall 0.736  link_acc 0.957 link_f1 0.957
+step 2050  1613s  bias 0.049  guided 0.188  lead 0.024  link 0.094  pursuit 0.001  side 0.174  threat 0.732  turn 0.075  turn_hi 0.019
+step 2100  1645s  bias 0.053  guided 0.272  lead 0.041  link 0.177  pursuit 0.001  side 0.161  threat 0.987  turn 0.072  turn_hi 0.018
+step 2150  1680s  bias 0.056  guided 0.180  lead 0.071  link 0.075  pursuit 0.003  side 0.118  threat 0.835  turn 0.065  turn_hi 0.019
+step 2200  1714s  bias 0.062  guided 0.170  lead 0.031  link 0.103  pursuit 0.012  side 0.200  threat 0.868  turn 0.062  turn_hi 0.018
+step 2250  1747s  bias 0.058  guided 0.278  lead 0.039  link 0.130  pursuit 0.006  side 0.222  threat 0.802  turn 0.072  turn_hi 0.016
+step 2300  1780s  bias 0.056  guided 0.174  lead 0.032  link 0.068  pursuit 0.003  side 0.160  threat 0.817  turn 0.064  turn_hi 0.019
+step 2350  1814s  bias 0.063  guided 0.185  lead 0.034  link 0.066  pursuit 0.012  side 0.083  threat 0.902  turn 0.075  turn_hi 0.018
+step 2400  1849s  bias 0.056  guided 0.195  lead 0.030  link 0.079  pursuit 0.004  side 0.126  threat 0.819  turn 0.074  turn_hi 0.019
+step 2450  1883s  bias 0.060  guided 0.189  lead 0.036  link 0.137  pursuit 0.007  side 0.166  threat 0.857  turn 0.067  turn_hi 0.019
+step 2500  1915s  bias 0.048  guided 0.124  lead 0.036  link 0.306  pursuit 0.002  side 0.230  threat 0.960  turn 0.069  turn_hi 0.020
+VAL step 2500: pursuit_acc 1.000  turn_mae 0.017  turn_hi_cover 0.952  bias_mae 0.002  lead_mae 0.041  side_acc 0.778  guided_acc 0.868  threat_acc 0.657  threat_recall 0.776  link_acc 0.964 link_f1 0.964
+saved C:\Users\Hamza Bukhari\Desktop\DNN\jet_brain_tgn.pt (score 0.7849)

@@ -1,0 +1,50 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+level 2 train episode 1/40: 600 ticks, 1s elapsed
+level 2 train episode 2/40: 600 ticks, 2s elapsed
+level 2 train episode 3/40: 600 ticks, 3s elapsed
+level 2 train episode 4/40: 600 ticks, 3s elapsed
+level 2 train episode 5/40: 600 ticks, 4s elapsed
+level 2 train episode 6/40: 600 ticks, 5s elapsed
+level 2 train episode 7/40: 600 ticks, 6s elapsed
+level 2 train episode 8/40: 600 ticks, 6s elapsed
+level 2 train episode 9/40: 600 ticks, 7s elapsed
+level 2 train episode 10/40: 600 ticks, 9s elapsed
+level 2 train episode 11/40: 600 ticks, 11s elapsed
+level 2 train episode 12/40: 600 ticks, 12s elapsed
+level 2 train episode 13/40: 600 ticks, 14s elapsed
+level 2 train episode 14/40: 600 ticks, 16s elapsed
+level 2 train episode 15/40: 600 ticks, 17s elapsed
+level 2 train episode 16/40: 600 ticks, 19s elapsed
+level 2 train episode 17/40: 600 ticks, 20s elapsed
+level 2 train episode 18/40: 600 ticks, 22s elapsed
+level 2 train episode 19/40: 600 ticks, 24s elapsed
+level 2 train episode 20/40: 600 ticks, 25s elapsed
+level 2 train episode 21/40: 600 ticks, 27s elapsed
+level 2 train episode 22/40: 600 ticks, 28s elapsed
+level 2 train episode 23/40: 600 ticks, 29s elapsed
+level 2 train episode 24/40: 600 ticks, 31s elapsed
+level 2 train episode 25/40: 600 ticks, 32s elapsed
+level 2 train episode 26/40: 600 ticks, 33s elapsed
+level 2 train episode 27/40: 600 ticks, 35s elapsed
+level 2 train episode 28/40: 600 ticks, 36s elapsed
+level 2 train episode 29/40: 600 ticks, 37s elapsed
+level 2 train episode 30/40: 600 ticks, 39s elapsed
+level 2 train episode 31/40: 600 ticks, 40s elapsed
+level 2 train episode 32/40: 600 ticks, 41s elapsed
+level 2 train episode 33/40: 600 ticks, 43s elapsed
+level 2 train episode 34/40: 600 ticks, 44s elapsed
+level 2 train episode 35/40: 600 ticks, 45s elapsed
+level 2 train episode 36/40: 600 ticks, 46s elapsed
+level 2 train episode 37/40: 600 ticks, 47s elapsed
+level 2 train episode 38/40: 600 ticks, 48s elapsed
+level 2 train episode 39/40: 600 ticks, 49s elapsed
+level 2 train episode 40/40: 600 ticks, 50s elapsed
+wrote C:\Users\Hamza Bukhari\Desktop\DNN\training_data_v3\level2_train.pkl (40 episodes, 24000 ticks)
+level 2 val episode 1/6: 600 ticks, 1s elapsed
+level 2 val episode 2/6: 600 ticks, 2s elapsed
+level 2 val episode 3/6: 600 ticks, 3s elapsed
+level 2 val episode 4/6: 600 ticks, 4s elapsed
+level 2 val episode 5/6: 600 ticks, 5s elapsed
+level 2 val episode 6/6: 600 ticks, 6s elapsed
+wrote C:\Users\Hamza Bukhari\Desktop\DNN\training_data_v3\level2_val.pkl (6 episodes, 3600 ticks)

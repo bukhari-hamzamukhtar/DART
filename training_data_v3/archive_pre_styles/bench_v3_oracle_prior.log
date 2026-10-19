@@ -1,0 +1,60 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.9.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+L1 pilot 3-oracle    seed 0: SURVIVED at frame 1800  fired  55  flares 204  7.8 ms/frame
+L1 pilot 3-oracle    seed 1: SURVIVED at frame 1800  fired  55  flares 216  7.8 ms/frame
+L1 pilot 3-oracle    seed 2: SURVIVED at frame 1800  fired  55  flares 162  6.7 ms/frame
+L1 pilot 3-oracle    seed 3: SURVIVED at frame 1800  fired  55  flares 189  6.8 ms/frame
+L1 pilot 3-oracle    seed 4: SURVIVED at frame 1800  fired  55  flares 189  7.3 ms/frame
+L1 pilot 3-oracle    seed 5: SURVIVED at frame 1800  fired  55  flares 177  7.4 ms/frame
+L1 pilot 3-oracle    seed 6: SURVIVED at frame 1800  fired  55  flares 216  7.4 ms/frame
+L1 pilot 3-oracle    seed 7: died (missile) at frame 1498  fired  51  flares 153  6.9 ms/frame
+L1 pilot 3-prior     seed 0: SURVIVED at frame 1800  fired  55  flares 213  7.8 ms/frame
+L1 pilot 3-prior     seed 1: died (missile) at frame  902  fired  31  flares 119  7.8 ms/frame
+L1 pilot 3-prior     seed 2: died (missile) at frame  132  fired   7  flares  21  6.9 ms/frame
+L1 pilot 3-prior     seed 3: SURVIVED at frame 1800  fired  55  flares 203  7.2 ms/frame
+L1 pilot 3-prior     seed 4: SURVIVED at frame 1800  fired  55  flares 228  7.7 ms/frame
+L1 pilot 3-prior     seed 5: SURVIVED at frame 1800  fired  55  flares 207  7.2 ms/frame
+L1 pilot 3-prior     seed 6: SURVIVED at frame 1800  fired  55  flares 210  7.2 ms/frame
+L1 pilot 3-prior     seed 7: SURVIVED at frame 1800  fired  55  flares 216  7.6 ms/frame
+L2 pilot 3-oracle    seed 0: SURVIVED at frame 1800  fired  55  flares  24  5.8 ms/frame
+L2 pilot 3-oracle    seed 1: SURVIVED at frame 1800  fired  55  flares 120  7.9 ms/frame
+L2 pilot 3-oracle    seed 2: SURVIVED at frame 1800  fired  55  flares  69  7.1 ms/frame
+L2 pilot 3-oracle    seed 3: SURVIVED at frame 1800  fired  55  flares  81  7.7 ms/frame
+L2 pilot 3-oracle    seed 4: SURVIVED at frame 1800  fired  55  flares  54  7.1 ms/frame
+L2 pilot 3-oracle    seed 5: SURVIVED at frame 1800  fired  55  flares  66  7.1 ms/frame
+L2 pilot 3-oracle    seed 6: SURVIVED at frame 1800  fired  55  flares   0  7.3 ms/frame
+L2 pilot 3-oracle    seed 7: SURVIVED at frame 1800  fired  55  flares  84  7.8 ms/frame
+L2 pilot 3-prior     seed 0: SURVIVED at frame 1800  fired  55  flares  63  7.4 ms/frame
+L2 pilot 3-prior     seed 1: SURVIVED at frame 1800  fired  55  flares 144  7.9 ms/frame
+L2 pilot 3-prior     seed 2: SURVIVED at frame 1800  fired  55  flares  90  7.1 ms/frame
+L2 pilot 3-prior     seed 3: died (missile) at frame 1747  fired  55  flares  93  7.7 ms/frame
+L2 pilot 3-prior     seed 4: SURVIVED at frame 1800  fired  55  flares  90  7.1 ms/frame
+L2 pilot 3-prior     seed 5: SURVIVED at frame 1800  fired  55  flares  99  8.4 ms/frame
+L2 pilot 3-prior     seed 6: died (terrain) at frame  415  fired  16  flares  24  8.2 ms/frame
+L2 pilot 3-prior     seed 7: SURVIVED at frame 1800  fired  55  flares  63  6.2 ms/frame
+L3 pilot 3-oracle    seed 0: died (wall) at frame  943  fired  43  flares  96  9.6 ms/frame
+L3 pilot 3-oracle    seed 1: SURVIVED at frame 1800  fired  75  flares 213  8.5 ms/frame
+L3 pilot 3-oracle    seed 2: SURVIVED at frame 1800  fired  75  flares 225  9.2 ms/frame
+L3 pilot 3-oracle    seed 3: died (wall) at frame  582  fired  28  flares  99  9.7 ms/frame
+L3 pilot 3-oracle    seed 4: SURVIVED at frame 1800  fired  75  flares 216  8.4 ms/frame
+L3 pilot 3-oracle    seed 5: SURVIVED at frame 1800  fired  75  flares 207  8.3 ms/frame
+L3 pilot 3-oracle    seed 6: died (wall) at frame 1474  fired  60  flares 174  8.7 ms/frame
+L3 pilot 3-oracle    seed 7: died (wall) at frame  545  fired  28  flares  66  9.5 ms/frame
+L3 pilot 3-prior     seed 0: died (missile) at frame 1007  fired  43  flares 123  8.4 ms/frame
+L3 pilot 3-prior     seed 1: died (missile) at frame  384  fired  15  flares  45  8.0 ms/frame
+L3 pilot 3-prior     seed 2: died (missile) at frame  374  fired  15  flares  45  7.7 ms/frame
+L3 pilot 3-prior     seed 3: died (missile) at frame  363  fired  15  flares  42  7.9 ms/frame
+L3 pilot 3-prior     seed 4: died (missile) at frame 1410  fired  60  flares 174  9.1 ms/frame
+L3 pilot 3-prior     seed 5: died (missile) at frame 1364  fired  60  flares 165  8.2 ms/frame
+L3 pilot 3-prior     seed 6: died (missile) at frame  574  fired  28  flares  66  8.9 ms/frame
+L3 pilot 3-prior     seed 7: died (missile) at frame  453  fired  22  flares  45  8.7 ms/frame
+
+level  pilot         survived   mean alive   ms/frame  deaths
+L1     3-oracle         7/8         29.4 s       7.2   missile 1
+L1     3-prior          6/8         24.7 s       7.4   missile 2
+L2     3-oracle         8/8         30.0 s       7.2   -
+L2     3-prior          6/8         27.0 s       7.5   missile 1, terrain 1
+L3     3-oracle         4/8         22.4 s       9.0   wall 4
+L3     3-prior          0/8         12.4 s       8.4   missile 8
+
+wrote C:\Users\Hamza Bukhari\Desktop\DNN\training_data_v3\bench_L123_3-oracle_3-prior.json

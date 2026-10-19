@@ -1,0 +1,438 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .doc { padding: 1.5rem 0; font-family: var(--font-sans, sans-serif); }
+  .sh { display: flex; align-items: center; gap: 10px; padding: 0.6rem 1rem; margin-bottom: 1rem; background: var(--color-background-secondary); border-left: 3px solid var(--color-text-primary); border-radius: 0 8px 8px 0; }
+  .sn { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; }
+  .st { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+  .ct { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.5rem; }
+  .cb { font-size: 13px; color: var(--color-text-secondary); line-height: 1.65; }
+  .cb code { font-family: var(--font-mono); font-size: 12px; background: var(--color-background-secondary); padding: 1px 5px; border-radius: 4px; color: var(--color-text-primary); }
+  .cb strong { color: var(--color-text-primary); font-weight: 500; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+  .section { margin-bottom: 2rem; }
+  .note { border-left: 3px solid; padding: 0.7rem 1rem; border-radius: 0 8px 8px 0; margin-bottom: 0.75rem; font-size: 13px; line-height: 1.6; }
+  .n-ok  { border-color: var(--color-border-success); background: var(--color-background-success); color: var(--color-text-success); }
+  .n-info{ border-color: var(--color-border-info);    background: var(--color-background-info);    color: var(--color-text-info); }
+  .n-warn{ border-color: var(--color-border-warning); background: var(--color-background-warning); color: var(--color-text-warning); }
+  .pipe { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0.5rem 0; padding: 0.75rem 1rem; background: var(--color-background-secondary); border-radius: 8px; border: 0.5px solid var(--color-border-tertiary); }
+  .pb { font-size: 12px; font-weight: 500; padding: 5px 10px; border-radius: 6px; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-primary); color: var(--color-text-primary); text-align: center; }
+  .pa { font-size: 13px; color: var(--color-text-tertiary); }
+  .dim { display: inline-block; font-size: 11px; font-weight: 500; padding: 1px 6px; border-radius: 99px; background: var(--color-background-info); color: var(--color-text-info); margin-left: 4px; }
+  .maneuver { border: 0.5px solid var(--color-border-tertiary); border-radius: 10px; padding: 0.9rem 1.1rem; margin-bottom: 0.6rem; }
+  .mn { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .mt { font-size: 11px; font-weight: 500; padding: 1px 7px; border-radius: 99px; display: inline-block; margin-left: 6px; }
+  .mt-high { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .mt-med  { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .mt-low  { background: var(--color-background-success); color: var(--color-text-success); }
+  .md { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; margin-top: 0.3rem; }
+  .md code { font-family: var(--font-mono); font-size: 11px; background: var(--color-background-secondary); padding: 1px 4px; border-radius: 3px; color: var(--color-text-primary); }
+  .tl { display: flex; flex-direction: column; }
+  .tli { display: flex; gap: 12px; }
+  .tll { display: flex; flex-direction: column; align-items: center; min-width: 28px; }
+  .tld { width: 9px; height: 9px; border-radius: 50%; background: var(--color-text-primary); flex-shrink: 0; margin-top: 4px; }
+  .tld-w { background: var(--color-text-warning); }
+  .tln { width: 1px; flex: 1; background: var(--color-border-tertiary); min-height: 14px; }
+  .tlc { padding-bottom: 1rem; }
+  .tltime { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); }
+  .tllabel { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .tldetail { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin-top: 2px; }
+  h4 { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.04em; margin: 0.8rem 0 0.3rem; }
+</style>
+
+<div class="doc">
+
+  <div class="section">
+    <div class="sh"><span class="sn">00</span><span class="st">Why this architecture — the academic story</span></div>
+    <div class="card">
+      <div class="ct">What you're combining and why it matters for your grade</div>
+      <div class="cb">
+        Current project: flat GNN where all objects (jet, all missiles, all flares) live in one graph. The model learns collision physics. One DNN concept.<br><br>
+        V2 project: <strong>Graph Neural Network + Cross-Graph Attention</strong>. Two distinct DNN paradigms combined into one end-to-end trainable pipeline. Each missile gets its own isolated sub-graph processed by the GNN. The resulting threat embeddings are then scored and aggregated by an attention mechanism. The attention weights are differentiable and jointly trained with the GNN — this is the "end-to-end" claim.<br><br>
+        The killer demo moment: the HUD shows a live bar for each active missile. Its height is the attention weight the AI assigns to that threat. When a nearby homing missile closes in, its bar goes to 100%. A distant ballistic in the corner drops to ~5%. You are <em>watching the AI decide where to look</em>. No other game project has this.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">01</span><span class="st">New GNN architecture — exact class definitions and dimensions</span></div>
+
+    <div class="note n-info">
+      Two new classes replace the single <code>InteractionNetwork</code>. The old class stays almost identical but gets a new <code>encode()</code> path that returns node embeddings instead of edge probabilities. Add one new class on top.
+    </div>
+
+    <div class="card">
+      <div class="ct">Class 1 — ThreatGNN (the sub-graph encoder)</div>
+      <div class="cb">
+        Processes a single small graph: nodes = jet + one missile + flare particles within 200px of that missile.<br><br>
+        <strong>Node features (5-dim):</strong> <code>[pos_x, pos_y, vel_x, vel_y, obj_type]</code><br>
+        obj_type: 0 = jet, 1 = missile, 2 = flare particle<br><br>
+        <strong>Edge features (4-dim):</strong> <code>[rel_pos_x, rel_pos_y, rel_vel_x, rel_vel_y]</code><br>
+        Fully connected between all nodes in the sub-graph.<br><br>
+        <strong>Architecture internals (unchanged from current):</strong><br>
+        EdgeModel: Linear(5*2+4=14 → 128 → 64 → msg_dim=32) with ReLU + LayerNorm<br>
+        NodeModel: Linear(64+32=96 → 128 → 64) with ReLU + LayerNorm<br>
+        3 MetaLayer steps (same as current num_steps=3)<br><br>
+        <strong>New: global pooling head</strong><br>
+        After the 3 MetaLayer steps, mean-pool all node embeddings → <code>Linear(64 → 32)</code> → ReLU → 32-dim threat embedding <code>h_i</code><br><br>
+        Output: one 32-dim vector representing the danger profile of that specific missile threat.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">Class 2 — CrossThreatAttention (the aggregator)</div>
+      <div class="cb">
+        Takes K threat embeddings from ThreatGNN + 2 context scalars per threat.<br><br>
+        <strong>Context per missile (2-dim):</strong> <code>[normalized_distance, normalized_TTI]</code><br>
+        distance = hypot(jet_pos - missile_pos) / 800 → clipped to [0,1]<br>
+        TTI (time-to-impact) = distance / closing_speed, normalized by 5 seconds → clipped to [0,1]<br><br>
+        <strong>Attention scorer:</strong> <code>Linear(32+2=34 → 32 → 1)</code> with ReLU, applied independently to each <code>[h_i; c_i]</code> → scalar score_i → <code>softmax</code> over all K threats → attention weight alpha_i<br><br>
+        <strong>Aggregation:</strong> <code>z = sum(alpha_i * h_i)</code> → 32-dim attended context<br><br>
+        <strong>Danger head:</strong> <code>Linear(32 → 16 → 1)</code> + Sigmoid → final danger probability in [0,1]<br><br>
+        <strong>Empty case (no missiles):</strong> skip GNN, return danger = 0.0 directly. Handled with a guard in forward().<br><br>
+        Output: one scalar danger probability + K attention weights (the weights go to the HUD).
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">Class 3 — NeuralEvasionBrain (the wrapper)</div>
+      <div class="cb">
+        Wraps both modules for clean calling from the game:<br><br>
+        <code>brain = NeuralEvasionBrain()</code><br>
+        <code>danger, attn_weights = brain(sub_graphs, contexts)</code><br><br>
+        Internally: loops over sub_graphs → ThreatGNN → stack embeddings → CrossThreatAttention → return.<br><br>
+        <strong>Batching for inference speed:</strong> Instead of looping, uses <code>torch_geometric.data.Batch.from_data_list(sub_graphs)</code> to process all K sub-graphs in a single batched forward pass through ThreatGNN. This is O(1) GPU/CPU calls regardless of K. After the batch, split embeddings by graph index (<code>batch.batch</code> attribute) → feed to attention. Total inference: ~3-5ms for up to 8 missiles.
+      </div>
+    </div>
+
+    <div class="pipe">
+      <div class="pb">sub-graph G_i<br><span style="font-size:10px;color:var(--color-text-secondary)">jet + missile_i + flares</span></div>
+      <div class="pa">→</div>
+      <div class="pb">ThreatGNN<br><span style="font-size:10px;color:var(--color-text-secondary)">3x MetaLayer</span></div>
+      <div class="pa">→</div>
+      <div class="pb">global pool<br><span style="font-size:10px;color:var(--color-text-secondary)">mean → Linear(64→32)</span></div>
+      <div class="pa">→</div>
+      <div class="pb">h_i ∈ R³²<br><span style="font-size:10px;color:var(--color-text-secondary)">threat embedding</span></div>
+    </div>
+    <div class="pipe" style="margin-top:0">
+      <div class="pb">stack [h_1..h_K]<br><span style="font-size:10px;color:var(--color-text-secondary)">+ context [dist, TTI]</span></div>
+      <div class="pa">→</div>
+      <div class="pb">attention scorer<br><span style="font-size:10px;color:var(--color-text-secondary)">MLP(34→1) + softmax</span></div>
+      <div class="pa">→</div>
+      <div class="pb">alpha_i weights<br><span style="font-size:10px;color:var(--color-text-secondary)">→ weighted sum z</span></div>
+      <div class="pa">→</div>
+      <div class="pb">danger head<br><span style="font-size:10px;color:var(--color-text-secondary)">Linear(32→1)+sigmoid</span></div>
+      <div class="pa">→</div>
+      <div class="pb">danger + alphas<br><span style="font-size:10px;color:var(--color-text-secondary)">to game + HUD</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">02</span><span class="st">Data pipeline — headless sim → JSON → training</span></div>
+
+    <div class="card">
+      <div class="ct">Headless physics simulator — what it generates</div>
+      <div class="cb">
+        Pure Python, no Pygame, no display. Runs at ~5000x real-time. Generates training examples.<br><br>
+        <strong>Simulation parameters:</strong><br>
+        — Map size: 800×600 (matches game)<br>
+        — 1 jet, random initial position, random heading<br>
+        — Jet moves with random heading perturbations (±0.1 rad/frame, simulating a dumb dodger)<br>
+        — 1–5 missiles spawned at random positions, homing or ballistic, random speeds 3.5–7.0<br>
+        — Flares spawn randomly every 2–4 seconds, 8 particles per burst<br>
+        — Run each simulation for 300 frames (~5 seconds at 60fps)<br>
+        — Generate 8,000 simulations = 2.4M frames<br><br>
+        <strong>What to log every 5 frames:</strong><br>
+        For each frame snapshot, log: jet state, all missile states, all flare states, and a binary label: <em>does any missile hit the jet within the next 20 frames?</em> (computed by running the physics forward 20 steps and checking circle-circle collision).<br><br>
+        <strong>Collision label (the fix):</strong><br>
+        <code>dist = hypot(missile.x - jet.x, missile.y - jet.y)</code><br>
+        <code>hit = dist &lt; (jet.radius + missile.radius)</code><br>
+        This replaces the random labels in the current notebook. Non-negotiable fix.
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="ct">JSON schema per training example</div>
+        <div class="cb">
+          <code>{</code><br>
+          <code>&nbsp;"jet": {"pos":[x,y],"vel":[vx,vy]},</code><br>
+          <code>&nbsp;"missiles": [{"pos":[],"vel":[],"type":1},...],</code><br>
+          <code>&nbsp;"flares": [{"pos":[],"vel":[]},...],</code><br>
+          <code>&nbsp;"label": 0 or 1</code><br>
+          <code>}</code><br><br>
+          One JSON object per line (JSONL format). Total file size ~150MB for 8k sims. Uploads to Colab in ~3 minutes.
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct">Training data balance</div>
+        <div class="cb">
+          Because the dumb jet often survives, ~70% of examples will be label=0. Apply class weights in BCE loss:<br><br>
+          <code>pos_weight = torch.tensor([0.7/0.3])</code><br>
+          <code>loss = BCEWithLogitsLoss(pos_weight=pos_weight)</code><br><br>
+          Target: F1 > 0.80 on held-out 15% validation split. Anything above 0.75 is sufficient for the game to work well.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">Graph construction from one JSON example</div>
+      <div class="cb">
+        For each example with K missiles, build K <code>Data</code> objects:<br><br>
+        <code>for i, missile in enumerate(example["missiles"]):</code><br>
+        <code>&nbsp;&nbsp;nearby_flares = [f for f in example["flares"]</code><br>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;if hypot(f.x-missile.x, f.y-missile.y) &lt; 200]</code><br>
+        <code>&nbsp;&nbsp;nodes = [jet] + [missile] + nearby_flares[:6]</code><br>
+        <code>&nbsp;&nbsp;# cap flares at 6 to bound graph size</code><br>
+        <code>&nbsp;&nbsp;sub_graph = build_data_object(nodes)</code><br><br>
+        All K sub-graphs share the same label (did any missile hit the jet). Batch them together with <code>Batch.from_data_list()</code>. The ThreatGNN encodes all K graphs simultaneously. Then attention aggregates.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">03</span><span class="st">Notebook changes — what the ipynb looks like after the upgrade</span></div>
+
+    <div class="note n-ok">
+      The notebook is the graded artifact. Make it clean, well-commented, and structured as 7 clear cells with markdown headers between them. Your professor reads the notebook, not main.py.
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="ct">Cell structure</div>
+        <div class="cb">
+          <strong>Cell 1:</strong> Install deps + device setup<br>
+          <strong>Cell 2:</strong> Headless simulator (generates data.jsonl)<br>
+          <strong>Cell 3:</strong> Dataset class + graph construction<br>
+          <strong>Cell 4:</strong> ThreatGNN + CrossThreatAttention + NeuralEvasionBrain architecture<br>
+          <strong>Cell 5:</strong> Training loop (30 epochs, BCE + class weights)<br>
+          <strong>Cell 6:</strong> Evaluation (F1, confusion matrix, attention weight visualization)<br>
+          <strong>Cell 7:</strong> Save weights + export<br>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct">Cell 6 — the attention visualization (key for grade)</div>
+        <div class="cb">
+          Take 3 test examples with 2+ missiles. For each, plot:<br><br>
+          — Bar chart: attention weight per missile (which threat got focus?)<br>
+          — Scatter plot: missile positions around jet, bar heights as labels<br>
+          — Color each bar by whether that missile was the actual closest threat<br><br>
+          This plot demonstrates the attention mechanism is learning physically meaningful weights — it focuses on nearby fast missiles, not distant slow ones. This is the "interpretability" section of your DNN project.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ct">Evaluation metrics — what to report</div>
+      <div class="cb">
+        <strong>1. Danger classification F1</strong> (BCE binary label) — target > 0.80<br>
+        <strong>2. Attention calibration</strong> — correlation between attention weight and missile TTI (should be negative: lower TTI = higher attention). Report Pearson r. Target r &lt; -0.5.<br>
+        <strong>3. Inference latency</strong> — time 1000 forward passes with K=3 missiles. Report mean ± std in ms.<br>
+        <strong>4. Ablation</strong> — compare flat GNN (old architecture) vs ThreatGNN-only (no attention, just max) vs full pipeline. F1 table with 3 rows. This is worth 20% of your grade on its own.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">04</span><span class="st">Game integration — what changes in main.py</span></div>
+
+    <div class="card">
+      <div class="ct">Updated gnn_inference_worker — the full new logic</div>
+      <div class="cb">
+        <strong>Step 1: Build candidate states</strong><br>
+        Same as before: 9 heading deltas, project jet position 10 frames forward per candidate.<br><br>
+        <strong>Step 2: For each candidate, build K sub-graphs (one per missile)</strong><br>
+        For each of the 9 candidates × K missiles, build a <code>Data</code> object. Batch all 9K graphs together. One forward pass through ThreatGNN. Split results by (candidate, missile).<br><br>
+        <strong>Step 3: CrossThreatAttention per candidate</strong><br>
+        For each candidate, feed its K embeddings + [distance, TTI] contexts into the attention module. Get danger_i and alpha_weights_i.<br><br>
+        <strong>Step 4: Multi-horizon (t+10, t+30, t+60)</strong><br>
+        Only run the full pipeline on the top-3 safest candidates from step 3 (prune 6 candidates). For those 3, repeat with 30-frame and 60-frame projections. Final score: <code>0.6*d10 + 0.3*d30 + 0.1*d60</code>.<br><br>
+        <strong>Step 5: Wall + center penalties</strong><br>
+        Same as current: wall penalty = 10.0, center drift penalty = distance/800 * 0.1.<br><br>
+        <strong>Step 6: Output to game</strong><br>
+        Push <code>(best_heading, drop_flare_bool, attention_weights, lowest_danger)</code> to decision_queue. The attention_weights go to the HUD renderer.
+      </div>
+    </div>
+
+    <div class="note n-warn">
+      <strong>TTI calculation (used as attention context):</strong> For missile i at position (mx,my) with velocity (mvx,mvy) and jet at (jx,jy) with velocity (jvx,jvy): relative velocity = sqrt((mvx-jvx)²+(mvy-jvy)²). Closing speed = dot product of relative position and relative velocity, divided by distance. TTI = distance / max(closing_speed, 0.1). Cap at 5.0 seconds.
+    </div>
+
+    <div class="card">
+      <div class="ct">HUD — live attention weight bars</div>
+      <div class="cb">
+        In the render loop, for each active missile i:<br><br>
+        — Draw a small vertical bar in the top-right corner, 8px wide, up to 40px tall<br>
+        — Height = alpha_i * 40 pixels<br>
+        — Color: interpolate from green (alpha=0) to red (alpha=1)<br>
+        — Label: "M1", "M2", "M3" below each bar<br>
+        — If a missile's bar is near 100% and the jet is in danger mode, flash it<br><br>
+        This is a live window into the GNN's reasoning. Add a text label "AI attention" above the bars.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">05</span><span class="st">Five maneuvers — exact trigger conditions and movement math</span></div>
+
+    <div class="note n-info">
+      All maneuvers are finite state machines. A global <code>ai_maneuver</code> variable has states: <code>NORMAL, FALLING_LEAF, COBRA, BARREL_ROLL, JINKING, IMMELMANN</code>. When in a non-NORMAL state, the GNN heading output is <strong>overridden</strong> by the scripted movement. A maneuver counter counts down frames. When it hits 0, state returns to NORMAL.
+    </div>
+
+    <div class="maneuver">
+      <div class="mn">1 — Falling Leaf<span class="mt mt-high">danger &gt; 0.65</span></div>
+      <div class="md">
+        <strong>Trigger:</strong> <code>danger > 0.65 AND count(missiles) >= 2 AND at least 2 missiles within 180px</code><br>
+        <strong>Duration:</strong> 90 frames (1.5 seconds)<br>
+        <strong>Movement:</strong> <code>jet.speed = max_speed * 0.2</code>. Heading oscillates: <code>heading += sin(frame_counter * 0.4) * 0.6</code>. This creates the characteristic side-to-side wobble. Flare deploy: every 18 frames, emit a 6-particle burst in a 180° rear arc.<br>
+        <strong>Exit condition:</strong> early exit if frame_counter reaches 90 OR all missiles are dead OR danger drops below 0.2.
+      </div>
+    </div>
+
+    <div class="maneuver">
+      <div class="mn">2 — Cobra<span class="mt mt-high">danger &gt; 0.72</span></div>
+      <div class="md">
+        <strong>Trigger:</strong> <code>danger > 0.72 AND single missile within 100px closing head-on (dot product of missile velocity and jet-to-missile vector is negative)</code><br>
+        <strong>Duration:</strong> 40 frames<br>
+        <strong>Movement:</strong> Frames 0–20: <code>jet.speed → 0.1 over 20 frames (lerp)</code>, heading rotates +π radians (180°) over 20 frames. Frames 20–25: deploy 14-particle flare wall, full 360°. Frames 25–40: <code>jet.speed → max_speed * 1.2</code>, heading continues in new direction.<br>
+        <strong>Cooldown:</strong> 8 seconds before Cobra can trigger again (too expensive to spam).
+      </div>
+    </div>
+
+    <div class="maneuver">
+      <div class="mn">3 — Barrel Roll<span class="mt mt-med">danger 0.4–0.62</span></div>
+      <div class="md">
+        <strong>Trigger:</strong> <code>danger between 0.40 and 0.62 AND single missile within 200px</code><br>
+        <strong>Duration:</strong> 72 frames (1.2 seconds)<br>
+        <strong>Movement:</strong> <code>heading += 0.15</code> every frame (constant angular velocity = circular path). Speed stays at 100%. No flares deployed — this is a pure geometry evasion, the circular path makes trajectory prediction hard. Draw a faint circle ghost on the trail to visually indicate the roll is active.<br>
+        <strong>Why it works:</strong> Circular motion has no predictable straight-line intercept point, which breaks proportional navigation homing.
+      </div>
+    </div>
+
+    <div class="maneuver">
+      <div class="mn">4 — Jinking<span class="mt mt-med">danger 0.48–0.68</span></div>
+      <div class="md">
+        <strong>Trigger:</strong> <code>danger between 0.48 and 0.68 AND count(missiles) >= 3</code> (multiple simultaneous threats)<br>
+        <strong>Duration:</strong> 120 frames (2 seconds)<br>
+        <strong>Movement:</strong> Every 10 frames, snap heading by a random value in <code>[-0.45, -0.3, +0.3, +0.45]</code> radians. Speed at 85%. No flares — conserve them for Cobra and Falling Leaf.<br>
+        <strong>Why it works:</strong> Chaotic heading changes defeat homing missiles' turn-rate limit. Requires 3+ missiles because with fewer, Barrel Roll or GNN evasion is sufficient.
+      </div>
+    </div>
+
+    <div class="maneuver">
+      <div class="mn">5 — Immelmann<span class="mt mt-low">wall escape</span></div>
+      <div class="md">
+        <strong>Trigger:</strong> <code>jet within 60px of any wall AND jet.speed > 2.0</code>. Priority override — fires even if another maneuver is active (prevents the jet from dying to walls while executing a Cobra).<br>
+        <strong>Duration:</strong> 30 frames<br>
+        <strong>Movement:</strong> Frames 0–30: <code>jet.speed = max_speed * 1.3</code> (afterburner), <code>heading += π/30</code> each frame (smooth 180° reversal). No flares. After 30 frames, jet is traveling in the opposite direction at full speed, away from the wall.<br>
+        <strong>Visual:</strong> The trail draws a clean U-turn arc, which is a distinctive visual signature that reads as intentional.
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:0.75rem">
+      <div class="ct">Priority stack — which maneuver wins when multiple trigger simultaneously</div>
+      <div class="cb">
+        <code>IMMELMANN > COBRA > FALLING_LEAF > JINKING > BARREL_ROLL > GNN_NORMAL</code><br><br>
+        Implementation: check conditions in this order at the start of the decision cycle. First match wins. A maneuver in progress cannot be interrupted except by IMMELMANN (wall escape is always priority).
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">06</span><span class="st">New weapons and game mechanics</span></div>
+    <div class="grid3">
+      <div class="card">
+        <div class="ct">Predictive ballistic (Q key)</div>
+        <div class="cb">
+          Right-click now fires a <code>BallisticMissile</code> at <code>(jet.x, jet.y)</code> at the exact moment of click — not at the mouse cursor. Fires at the jet's <em>current</em> position, forcing the player to time shots when the jet is where they need it. Change: 5 lines in the event handler.
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct">Cluster swarm (E key)</div>
+        <div class="cb">
+          On press: spawn 5 <code>HomingMissile</code> objects at angles <code>[click_heading - 20°, -10°, 0°, +10°, +20°]</code> relative to the direction from launcher to jet. Speed: 70% of normal. They fan out then converge. 6-second cooldown.
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct">Jet sprite (visual polish)</div>
+        <div class="cb">
+          Replace cyan circle with a rotated triangle: 3-point polygon with <code>pygame.draw.polygon</code>. The triangle's tip points in <code>jet.heading</code> direction. No PNG needed. During Barrel Roll, apply a slight x-scale compression using a surface transform to fake the bank angle.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">07</span><span class="st">Complete execution timeline</span></div>
+    <div class="tl">
+      <div class="tli">
+        <div class="tll"><div class="tld"></div><div class="tln"></div></div>
+        <div class="tlc">
+          <div class="tltime">Block 1 — ~2.5 hours</div>
+          <div class="tllabel">Fix data + build headless simulator + generate dataset</div>
+          <div class="tldetail">Fix collision labels (10 lines). Write the headless physics sim in Python (no Pygame). Generate 8,000 rounds → data.jsonl. Upload to Colab. This runs mostly unattended — start it and move to Block 2 while it runs.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tll"><div class="tld"></div><div class="tln"></div></div>
+        <div class="tlc">
+          <div class="tltime">Block 2 — ~2 hours (parallel with data generation)</div>
+          <div class="tllabel">Write new notebook architecture (Cells 3–4)</div>
+          <div class="tldetail">Code ThreatGNN, CrossThreatAttention, NeuralEvasionBrain. Write the Dataset class and graph builder. Do NOT train yet — just make sure forward() runs without errors on a dummy Data object.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tll"><div class="tld"></div><div class="tln"></div></div>
+        <div class="tlc">
+          <div class="tltime">Block 3 — ~1.5 hours</div>
+          <div class="tllabel">Training + evaluation on T4</div>
+          <div class="tldetail">Run training loop (30 epochs, ~20 mins). Generate attention visualization plots. Run ablation (flat GNN vs new). Download jet_brain_v2.pt weights.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tll"><div class="tld"></div><div class="tln"></div></div>
+        <div class="tlc">
+          <div class="tltime">Block 4 — ~2.5 hours</div>
+          <div class="tllabel">Update main.py — new inference worker + HUD</div>
+          <div class="tldetail">Replace InteractionNetwork with NeuralEvasionBrain. Rewrite gnn_inference_worker with batched sub-graphs + multi-horizon. Add attention weight HUD. Load new weights file.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tll"><div class="tld"></div><div class="tln"></div></div>
+        <div class="tlc">
+          <div class="tltime">Block 5 — ~2 hours</div>
+          <div class="tllabel">Implement all 5 maneuvers + new weapons</div>
+          <div class="tldetail">Add ai_maneuver state machine to the game loop. Wire all 5 maneuver triggers. Add predictive ballistic, cluster swarm. Replace jet circle with triangle sprite.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tll"><div class="tld tld-w"></div><div class="tln"></div></div>
+        <div class="tlc">
+          <div class="tltime">Block 6 — ~1 hour</div>
+          <div class="tllabel">Playtesting + tuning</div>
+          <div class="tldetail">Test each maneuver triggers correctly. Tune danger thresholds. Adjust missile speeds so the game is challenging but winnable. Record a 45-second demo clip.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tll"><div class="tld tld-w"></div></div>
+        <div class="tlc">
+          <div class="tltime">Block 7 — ~1 hour</div>
+          <div class="tllabel">WebSocket layer (only if time allows)</div>
+          <div class="tldetail">Strip pygame.display. Add websockets + asyncio broadcast. Build minimal HTML Canvas frontend. Do this last and only if blocks 1–6 are complete and stable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sh"><span class="sn">08</span><span class="st">The pitch — what to say in 60 seconds at open house</span></div>
+    <div class="card">
+      <div class="cb">
+        "This is a hierarchical Graph Neural Network with cross-graph attention controlling a real-time AI pilot. Every object in the scene — the jet, each missile, each flare particle — is a node in a graph. But instead of one flat graph, each missile gets its own isolated sub-graph processed by the GNN, which outputs a 32-dimensional threat embedding. Those embeddings are then weighted by a learned attention mechanism that the model has never seen an explicit label for — it discovered on its own that nearby fast missiles deserve more focus than distant slow ones. You can watch that live in the top corner. The AI uses those threat scores to evaluate 9 possible maneuvers every 100ms and picks the safest one — and when the danger crosses specific thresholds, it switches to one of five pre-encoded fighter pilot maneuvers. Try to hit it."
+      </div>
+    </div>
+  </div>
+
+</div>
