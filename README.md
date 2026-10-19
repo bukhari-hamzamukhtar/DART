@@ -108,6 +108,7 @@ The spring report's numbers were measured before these fixes.
 | `jet_brain_v3.pt` | the spring network, used by V1 and V2 |
 | `jet_brain_tgn*.pt`, `*.calib.json` | V3's temporal GNN and its two ablations, with their conformal margins |
 | `main3.py`, `simulation/`, `colab/` | spring build: game, data generator, training notebook |
+| `simulation/data/` | the spring training set itself, gzipped (the generator is not seeded, so these are the only copy) |
 | `SIM_AUDIT.md`, `benchmark_v2.py`, `headless_latency.py`, `param_count.py` | the September audit of the spring build |
 | `training_data_v3/` | benchmark and evaluation results (the training episodes are too big to commit; `neural_evasion/training/generate.py` rebuilds them) |
 | `web/` | the browser build: V3 in JavaScript, with Node tests that hold it to the Python model ([`web/README.md`](web/README.md)) |
